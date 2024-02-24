@@ -4271,7 +4271,6 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
-string default_web_client_id
 string dismiss_button_content_description
 string error_a11y_label
 string error_camera_app_not_found

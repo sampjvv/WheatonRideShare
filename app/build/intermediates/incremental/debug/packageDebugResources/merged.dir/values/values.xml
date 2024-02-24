@@ -5,19 +5,18 @@
     <color name="chat_color_sender">#FF9800</color>
     <color name="ic_launcher_background">#FFFFFF</color>
     <color name="light_gray">#C3C3C3</color>
-    <color name="my_primary">#02754D</color>
+    <color name="my_primary">#03A36B</color>
     <color name="my_secondary">#FFC107</color>
     <color name="off_white">#FAFAFA</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Easy Chat</string>
-    <string name="default_web_client_id" translatable="false">745155540833-fvdk5u97tdl1i3nje2hr4n0pnnlc9q4f.apps.googleusercontent.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">745155540833</string>
-    <string name="google_api_key" translatable="false">AIzaSyAkXBuJqEYHZJ00fpHgKcLGocgZ3ZXMWo0</string>
-    <string name="google_app_id" translatable="false">1:745155540833:android:8d8356e6c4a882ecde7720</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAkXBuJqEYHZJ00fpHgKcLGocgZ3ZXMWo0</string>
-    <string name="google_storage_bucket" translatable="false">easy-chat-backend.appspot.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1052666779306</string>
+    <string name="google_api_key" translatable="false">AIzaSyApHBZdQms66T_rc61utW54yc1XYfMIVGs</string>
+    <string name="google_app_id" translatable="false">1:1052666779306:android:842773f929c840522962d3</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyApHBZdQms66T_rc61utW54yc1XYfMIVGs</string>
+    <string name="google_storage_bucket" translatable="false">wheatoride.appspot.com</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="project_id" translatable="false">easy-chat-backend</string>
+    <string name="project_id" translatable="false">wheatoride</string>
     <style name="Theme.WheatORide" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
         <item name="colorPrimary">@color/my_primary</item>

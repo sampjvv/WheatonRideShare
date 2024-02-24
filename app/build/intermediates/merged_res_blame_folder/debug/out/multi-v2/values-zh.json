@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.wheatoride.app-mergeDebugResources-39:/values-zh/values-zh.xml",
+            "outputFile": "com.example.wheatoride.app-mergeDebugResources-38:/values-zh/values-zh.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sampj_xrlstxb\\.gradle\\caches\\transforms-3\\c962f0c82a307b6acece94418a555599\\transformed\\ucrop-2.2.6\\res\\values-zh\\values-zh.xml",
+                    "source": "C:\\Users\\sampj_xrlstxb\\.gradle\\caches\\transforms-3\\b35db6ffb0146b6172206b6b7f0518e0\\transformed\\ucrop-2.2.6\\res\\values-zh\\values-zh.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
