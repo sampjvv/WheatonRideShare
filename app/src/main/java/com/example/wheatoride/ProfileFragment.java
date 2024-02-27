@@ -36,10 +36,10 @@ public class ProfileFragment extends Fragment {
     ImageView profilePic;
     EditText usernameInput;
     EditText phoneInput;
+    EditText bio;
     Button updateProfileBtn;
     ProgressBar progressBar;
     TextView logoutBtn;
-
     UserModel currentUserModel;
     ActivityResultLauncher<Intent> imagePickLauncher;
     Uri selectedImageUri;
