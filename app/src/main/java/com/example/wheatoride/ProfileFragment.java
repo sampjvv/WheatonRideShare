@@ -37,6 +37,8 @@ public class ProfileFragment extends Fragment {
     EditText usernameInput;
     EditText phoneInput;
     EditText bio;
+
+    EditText emailInput;
     Button updateProfileBtn;
     ProgressBar progressBar;
     TextView logoutBtn;
@@ -71,6 +73,7 @@ public class ProfileFragment extends Fragment {
         profilePic = view.findViewById(R.id.profile_image_view);
         usernameInput = view.findViewById(R.id.profile_username);
         phoneInput = view.findViewById(R.id.profile_phone);
+        emailInput = view.findViewById(R.id.profile_email);
         updateProfileBtn = view.findViewById(R.id.profle_update_btn);
         progressBar = view.findViewById(R.id.profile_progress_bar);
         logoutBtn = view.findViewById(R.id.logout_btn);
@@ -114,11 +117,13 @@ public class ProfileFragment extends Fragment {
 
     void updateBtnClick(){
         String newUsername = usernameInput.getText().toString();
+        String newEmail = emailInput.getText().toString();
         if(newUsername.isEmpty() || newUsername.length()<3){
             usernameInput.setError("Username length should be at least 3 chars");
             return;
         }
         currentUserModel.setUsername(newUsername);
+        currentUserModel.setEmail(newEmail);
         setInProgress(true);
 
 
@@ -167,6 +172,7 @@ public class ProfileFragment extends Fragment {
             currentUserModel = task.getResult().toObject(UserModel.class);
             usernameInput.setText(currentUserModel.getUsername());
             phoneInput.setText(currentUserModel.getPhone());
+            emailInput.setText(currentUserModel.getEmail());
         });
     }
 
