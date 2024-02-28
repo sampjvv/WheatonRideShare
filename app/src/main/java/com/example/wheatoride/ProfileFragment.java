@@ -9,6 +9,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -36,8 +38,6 @@ public class ProfileFragment extends Fragment {
     ImageView profilePic;
     EditText usernameInput;
     EditText phoneInput;
-    EditText bio;
-
     EditText emailInput;
     Button updateProfileBtn;
     ProgressBar progressBar;
@@ -45,7 +45,8 @@ public class ProfileFragment extends Fragment {
     UserModel currentUserModel;
     ActivityResultLauncher<Intent> imagePickLauncher;
     Uri selectedImageUri;
-
+    Button darkModeBtn;
+    boolean isDark;
     public ProfileFragment() {
 
     }
@@ -77,8 +78,13 @@ public class ProfileFragment extends Fragment {
         updateProfileBtn = view.findViewById(R.id.profle_update_btn);
         progressBar = view.findViewById(R.id.profile_progress_bar);
         logoutBtn = view.findViewById(R.id.logout_btn);
+        darkModeBtn = view.findViewById(R.id.dark_mode_switch);
 
         getUserData();
+
+        darkModeBtn.setOnClickListener((v -> {
+            updateDarkModeBtn();
+        }));
 
         updateProfileBtn.setOnClickListener((v -> {
             updateBtnClick();
@@ -186,6 +192,19 @@ public class ProfileFragment extends Fragment {
             updateProfileBtn.setVisibility(View.VISIBLE);
         }
     }
+
+    void updateDarkModeBtn(){
+        if(isDark){
+            darkModeBtn.setText("dark");
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            isDark = false;
+        }else{
+            darkModeBtn.setText("light");
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            isDark = true;
+        }
+    }
+
 }
 
 

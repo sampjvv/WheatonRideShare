@@ -74,6 +74,13 @@
             android:id="@+id/profile_progress_bar"/>
     </LinearLayout>
 
+    <Button
+        android:id="@+id/dark_mode_switch"
+        android:layout_width="201dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_rounded_corner"
+        android:text="dark mode"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
