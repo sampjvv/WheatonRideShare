@@ -27,6 +27,7 @@ id bottom_layout
 id bottom_navigation
 id chat_message_input
 id chat_recycler_view
+id dark_mode_switch
 id divider
 id last_message_text
 id last_message_time_text
@@ -48,6 +49,7 @@ id menu_profile
 id message_send_btn
 id other_username
 id phone_text
+id profile_email
 id profile_image_view
 id profile_phone
 id profile_pic_image_view

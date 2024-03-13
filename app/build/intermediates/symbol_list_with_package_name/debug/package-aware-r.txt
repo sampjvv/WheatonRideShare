@@ -3495,6 +3495,7 @@ id custom
 id customPanel
 id cut
 id dark
+id dark_mode_switch
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3741,6 +3742,7 @@ id position
 id postLayout
 id preferenceDivider
 id pressed
+id profile_email
 id profile_image_view
 id profile_phone
 id profile_pic_image_view

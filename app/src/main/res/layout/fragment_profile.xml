@@ -28,7 +28,7 @@
         android:background="@drawable/edit_text_rounded_corner"
         android:elevation="5dp"
         android:id="@+id/profile_username"
-        />
+        style = "@style/textInverse"/>
 
     <EditText
         android:id="@+id/profile_phone"
@@ -40,7 +40,8 @@
         android:enabled="false"
         android:hint="Phone"
         android:inputType="text"
-        android:padding="10dp" />
+        android:padding="10dp"
+        style = "@style/textInverse"/>
 
     <EditText
         android:id="@+id/profile_email"
@@ -51,7 +52,9 @@
         android:inputType="text"
         android:layout_margin="10dp"
         android:background="@drawable/edit_text_rounded_corner"
-        android:elevation="5dp" />
+        android:elevation="5dp"
+        style = "@style/textInverse"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,6 +68,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_rounded_corner"
             android:text="Update profile"
+            android:textColor="@color/off_white"
             android:id="@+id/profle_update_btn"/>
         <ProgressBar
             android:layout_width="32dp"
@@ -79,6 +83,8 @@
         android:layout_width="201dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_rounded_corner"
+        android:textColor="@color/off_white"
+        style= "@style/textInverse"
         android:text="dark mode"/>
 
     <TextView
