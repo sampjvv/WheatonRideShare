@@ -2,13 +2,11 @@ package com.example.wheatoride;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,7 +17,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.AuthCredential;
@@ -115,23 +112,21 @@ public class LoginGoogleActivity extends AppCompatActivity {
                         assert user != null;
 
                         map.put("id", user.getUid());
-                        map.put("profile", Objects.requireNonNull(user.getPhotoUrl()).toString());
 
-                        userModel = new UserModel(user.getEmail(), user.getDisplayName(), Timestamp.now(), FirebaseUtil.currentUserId());
+                        userModel = new UserModel(user.getEmail(), user.getDisplayName(),
+                                Objects.requireNonNull(Objects.requireNonNull(user.getPhotoUrl()).toString()), Timestamp.now(),
+                                FirebaseUtil.currentUserId());
 
                         database.getReference().child("users").child(user.getUid()).setValue(map);
-                        FirebaseUtil.currentUserDetails().set(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
+                        FirebaseUtil.currentUserDetails().set(userModel).addOnCompleteListener(task1 -> {
 
-                                if (task.isSuccessful()) {
+                            if (task1.isSuccessful()) {
 
-                                    Toast.makeText(LoginGoogleActivity.this, "login successful", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginGoogleActivity.this, "login successful", Toast.LENGTH_SHORT).show();
 
-                                    Intent intent = new Intent(LoginGoogleActivity.this, MainActivity.class);
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                    startActivity(intent);
-                                }
+                                Intent intent = new Intent(LoginGoogleActivity.this, MainActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
                             }
                         });
 

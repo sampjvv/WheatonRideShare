@@ -1,17 +1,10 @@
 package com.example.wheatoride;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,22 +14,22 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.fragment.app.Fragment;
+
 import com.example.wheatoride.model.UserModel;
 import com.example.wheatoride.utils.AndroidUtil;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.github.dhaval2404.imagepicker.ImagePicker;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
-
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
 
 public class ProfileFragment extends Fragment {
 
     ImageView profilePic;
-    EditText usernameInput;
-    EditText phoneInput;
+    EditText nameInput;
     EditText emailInput;
     Button updateProfileBtn;
     ProgressBar progressBar;
@@ -66,13 +59,13 @@ public class ProfileFragment extends Fragment {
                 );
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_profile, container, false);
         profilePic = view.findViewById(R.id.profile_image_view);
-        usernameInput = view.findViewById(R.id.profile_username);
-        phoneInput = view.findViewById(R.id.profile_phone);
+        nameInput = view.findViewById(R.id.profile_name);
         emailInput = view.findViewById(R.id.profile_email);
         updateProfileBtn = view.findViewById(R.id.profle_update_btn);
         progressBar = view.findViewById(R.id.profile_progress_bar);
@@ -81,62 +74,41 @@ public class ProfileFragment extends Fragment {
 
         getUserData();
 
-        darkModeBtn.setOnClickListener((v -> {
-            updateDarkModeBtn();
+        darkModeBtn.setOnClickListener((v -> updateDarkModeBtn()));
+
+        updateProfileBtn.setOnClickListener((v -> updateBtnClick()));
+
+        logoutBtn.setOnClickListener((v)-> FirebaseMessaging.getInstance().deleteToken().addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                FirebaseUtil.logout();
+                Intent intent = new Intent(getContext(),SplashActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
         }));
 
-        updateProfileBtn.setOnClickListener((v -> {
-            updateBtnClick();
-        }));
-
-        logoutBtn.setOnClickListener((v)->{
-            FirebaseMessaging.getInstance().deleteToken().addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if(task.isSuccessful()){
-                        FirebaseUtil.logout();
-                        Intent intent = new Intent(getContext(),SplashActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intent);
-                    }
-                }
-            });
-
-
-
-        });
-
-        profilePic.setOnClickListener((v)->{
-            ImagePicker.with(this).cropSquare().compress(512).maxResultSize(512,512)
-                    .createIntent(new Function1<Intent, Unit>() {
-                        @Override
-                        public Unit invoke(Intent intent) {
-                            imagePickLauncher.launch(intent);
-                            return null;
-                        }
-                    });
-        });
+        profilePic.setOnClickListener((v)-> ImagePicker.with(this).cropSquare().compress(512).maxResultSize(512,512)
+                .createIntent(intent -> {
+                    imagePickLauncher.launch(intent);
+                    return null;
+                }));
 
         return view;
     }
 
     void updateBtnClick(){
-        String newUsername = usernameInput.getText().toString();
-        String newEmail = emailInput.getText().toString();
+        String newUsername = nameInput.getText().toString();
         if(newUsername.isEmpty() || newUsername.length()<3){
-            usernameInput.setError("Username length should be at least 3 chars");
+            nameInput.setError("Username length should be at least 3 chars");
             return;
         }
         currentUserModel.setFullName(newUsername);
-        currentUserModel.setEmail(newEmail);
         setInProgress(true);
 
 
         if(selectedImageUri!=null){
             FirebaseUtil.getCurrentProfilePicStorageRef().putFile(selectedImageUri)
-                    .addOnCompleteListener(task -> {
-                        updateToFirestore();
-                    });
+                    .addOnCompleteListener(task -> updateToFirestore());
         }else{
             updateToFirestore();
         }
@@ -176,9 +148,10 @@ public class ProfileFragment extends Fragment {
             setInProgress(false);
             currentUserModel = task.getResult().toObject(UserModel.class);
 
-            usernameInput.setText(currentUserModel.getFullName());
-            phoneInput.setText(currentUserModel.getwEmail());
-            emailInput.setText(currentUserModel.getEmail());
+            assert currentUserModel != null;
+            nameInput.setText(currentUserModel.getFullName());
+            emailInput.setText(currentUserModel.getwEmail());
+            AndroidUtil.setProfilePic(getContext(), Uri.parse(currentUserModel.getProfilePicUri()), profilePic);
         });
     }
 
@@ -193,6 +166,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     void updateDarkModeBtn(){
         if(isDark){
             darkModeBtn.setText("dark");

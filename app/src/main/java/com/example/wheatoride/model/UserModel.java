@@ -1,5 +1,7 @@
 package com.example.wheatoride.model;
 
+import android.net.Uri;
+
 import com.google.firebase.Timestamp;
 
 public class UserModel {
@@ -7,6 +9,8 @@ public class UserModel {
     private String fullName;
 
     private String email;
+
+    private String profilePicUri;
     private Timestamp createdTimestamp;
     private String userId;
     private String fcmToken;
@@ -14,11 +18,21 @@ public class UserModel {
     public UserModel() {
     }
 
-    public UserModel(String wEmail, String fullName, Timestamp createdTimestamp, String userId) {
+
+
+    public UserModel(String wEmail, String fullName, String profilePicUri, Timestamp createdTimestamp, String userId) {
         this.wEmail = wEmail;
         this.fullName = fullName;
+        this.profilePicUri = profilePicUri;
         this.createdTimestamp = createdTimestamp;
         this.userId = userId;
+    }
+
+    public String getProfilePicUri() {
+        return profilePicUri;
+    }
+    public void setProfilePicUri(String profilePicUri) {
+        this.profilePicUri = profilePicUri;
     }
 
     public String getwEmail() {
