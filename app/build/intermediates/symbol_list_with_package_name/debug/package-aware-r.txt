@@ -3177,6 +3177,7 @@ drawable icon_back
 drawable icon_search
 drawable icon_send
 drawable launcher_icon
+drawable logo
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3273,6 +3274,7 @@ drawable ucrop_vector_ic_crop
 drawable ucrop_vector_loader
 drawable ucrop_vector_loader_animated
 drawable ucrop_wrapper_controls_shape
+drawable wor_logo
 id AFRIKAANS
 id ALT
 id ARABIC
@@ -3411,6 +3413,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_post_button
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3557,6 +3560,7 @@ id fixed
 id flip
 id floating
 id forever
+id forum_recycler_view
 id fragment_container_view_tag
 id frost
 id fullscreen_header
@@ -3582,6 +3586,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id imageView_arrow
 id image_flag
 id image_view_crop
@@ -3595,6 +3600,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id info_text
 id invisible
 id inward
 id italic
@@ -3663,6 +3669,7 @@ id matrix
 id media_actions
 id menu_chat
 id menu_crop
+id menu_forum
 id menu_loader
 id menu_profile
 id message
@@ -3740,6 +3747,7 @@ id phone_text
 id pin
 id position
 id postLayout
+id post_info_text
 id preferenceDivider
 id pressed
 id profile_email
@@ -3771,6 +3779,7 @@ id rl_title
 id rotate_scroll_wheel
 id rounded
 id row_index_key
+id save_new_post
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3877,6 +3886,10 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
+id textView2
+id textView3
+id textView4
 id textView_code
 id textView_countryName
 id textView_noresult
@@ -4054,6 +4067,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_chat
+layout activity_forum
 layout activity_login_otp
 layout activity_login_phone_number
 layout activity_login_username
@@ -4081,7 +4095,10 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_choose_app
 layout fastscroll__default_bubble
+layout forum_create_post
+layout forum_post_row
 layout fragment_chat
+layout fragment_forum
 layout fragment_profile
 layout layout_code_picker
 layout layout_full_width_code_picker
@@ -4153,6 +4170,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout post
 layout profile_pic_view
 layout recent_chat_recycler_row
 layout search_user_recycler_row
@@ -4160,6 +4178,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout test
 layout ucrop_activity_photobox
 layout ucrop_aspect_ratio
 layout ucrop_controls
@@ -5522,6 +5541,9 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style background
+style textColor
+style textInverse
 style ucrop_ImageViewWidgetIcon
 style ucrop_TextViewCropAspectRatio
 style ucrop_TextViewWidget

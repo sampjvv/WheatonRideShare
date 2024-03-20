@@ -31,4 +31,7 @@
         
         <item name="android:windowBackground">@color/off_white</item>
     </style>
+    <style name="background"><item name="android:background">@color/off_white</item></style>
+    <style name="textColor"><item name="android:text">@color/black</item></style>
+    <style name="textInverse"><item name="android:textColorHint">@color/light_gray</item></style>
 </resources>

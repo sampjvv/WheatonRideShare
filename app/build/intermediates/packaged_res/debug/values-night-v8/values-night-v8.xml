@@ -14,4 +14,7 @@
         
         <item name="android:windowBackground">@color/black</item>
     </style>
+    <style name="background"><item name="android:background">@color/black</item></style>
+    <style name="textColor"><item name="android:textColor">@color/black</item></style>
+    <style name="textInverse"><item name="android:textColorHint">@color/light_gray</item></style>
 </resources>
