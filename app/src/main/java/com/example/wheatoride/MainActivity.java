@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     ProfileFragment profileFragment;
     ForumFragment forumFragment;
 
+    SettingsFragment SettingsFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         chatFragment = new ChatFragment();
         profileFragment = new ProfileFragment();
         forumFragment = new ForumFragment();
+        SettingsFragment = new SettingsFragment();
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -50,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 if(item.getItemId()==R.id.menu_forum){
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,forumFragment).commit();
                 }
-
+                if(item.getItemId()==R.id.menu_settings){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,SettingsFragment).commit();
+                }
                 return true;
             }
         });

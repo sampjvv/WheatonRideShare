@@ -1,11 +1,11 @@
-#Tue Mar 19 15:26:02 CDT 2024
-base.0=C\:\\Users\\sarah\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\sarah\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\sarah\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.3=C\:\\Users\\sarah\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.4=C\:\\Users\\sarah\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
-base.5=C\:\\Users\\sarah\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.6=C\:\\Users\\sarah\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+#Tue Mar 19 20:10:51 CDT 2024
+base.0=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
+base.3=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.4=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
+base.5=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.6=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=12/classes.dex

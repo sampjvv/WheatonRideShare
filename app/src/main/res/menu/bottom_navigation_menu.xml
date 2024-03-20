@@ -13,4 +13,8 @@
         android:icon="@drawable/person_icon"
         android:id="@+id/menu_profile"
         />
+    <item android:title="Settings"
+        android:icon="@drawable/flag_vatican_city"
+        android:id="@+id/menu_settings"
+        />
 </menu>

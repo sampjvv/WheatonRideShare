@@ -53,6 +53,7 @@ id main_toolbar
 id menu_chat
 id menu_forum
 id menu_profile
+id menu_settings
 id message_send_btn
 id other_username
 id phone_text
@@ -95,6 +96,7 @@ layout forum_post_row
 layout fragment_chat
 layout fragment_forum
 layout fragment_profile
+layout fragment_settings
 layout post
 layout profile_pic_view
 layout recent_chat_recycler_row

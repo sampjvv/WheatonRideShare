@@ -3672,6 +3672,7 @@ id menu_crop
 id menu_forum
 id menu_loader
 id menu_profile
+id menu_settings
 id message
 id message_send_btn
 id middle
@@ -4100,6 +4101,7 @@ layout forum_post_row
 layout fragment_chat
 layout fragment_forum
 layout fragment_profile
+layout fragment_settings
 layout layout_code_picker
 layout layout_full_width_code_picker
 layout layout_picker_dialog

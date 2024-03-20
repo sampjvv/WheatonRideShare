@@ -32,9 +32,11 @@ public class ForumActivity extends AppCompatActivity {
 
         RecyclerView recyclerView1 = findViewById(R.id.forum_recycler_view);
 
-        addPostButton.setOnClickListener( v -> {
-            Intent intent = new Intent(ForumActivity.this, SearchUserActivity.class);
+        addPostButton.setOnClickListener((v) -> {
+            Intent intent = new Intent(ForumActivity.this, CreatePostActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
+            finish();
         });
 
         setupForumRecyclerView();
