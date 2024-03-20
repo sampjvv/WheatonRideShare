@@ -56,6 +56,6 @@
     <style name="Widget.MaterialComponents.TabLayout.PrimarySurface" parent="Widget.MaterialComponents.TabLayout"/>
     <style name="Widget.MaterialComponents.Toolbar.PrimarySurface" parent="Widget.MaterialComponents.Toolbar.Surface"/>
     <style name="background"><item name="android:background">@color/black</item></style>
-    <style name="textColor"><item name="android:textColor">@color/white</item></style>
+    <style name="textColor"><item name="android:textColor">@color/black</item></style>
     <style name="textInverse"><item name="android:textColorHint">@color/light_gray</item></style>
 </resources>

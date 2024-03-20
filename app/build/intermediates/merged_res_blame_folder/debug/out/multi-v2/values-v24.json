@@ -4,7 +4,21 @@
             "outputFile": "com.example.wheatoride.app-mergeDebugResources-38:/values-v24/values-v24.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-3\\13f16ab4c233b27102edc38d2a6c2abd\\transformed\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+=======
+                    "source": "C:\\Users\\nosre\\.gradle\\caches\\transforms-3\\bd105b90a481fe5c7b2306fe9941df8b\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\nosre\\.gradle\\caches\\transforms-3\\13f16ab4c233b27102edc38d2a6c2abd\\transformed\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+>>>>>>> a7a67b9eeead4e1d80517a650d3710de48196ee8
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,6 +35,7 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-3\\bd105b90a481fe5c7b2306fe9941df8b\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
@@ -32,6 +47,9 @@
                 },
                 {
                     "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-3\\05129e0a5750d9ea2e01914185709202\\transformed\\material-1.8.0\\res\\values-v24\\values-v24.xml",
+=======
+                    "source": "C:\\Users\\nosre\\.gradle\\caches\\transforms-3\\05129e0a5750d9ea2e01914185709202\\transformed\\material-1.8.0\\res\\values-v24\\values-v24.xml",
+>>>>>>> a7a67b9eeead4e1d80517a650d3710de48196ee8
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

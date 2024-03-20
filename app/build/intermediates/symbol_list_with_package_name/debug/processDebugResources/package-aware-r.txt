@@ -3414,6 +3414,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_post_button
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3560,6 +3561,7 @@ id fixed
 id flip
 id floating
 id forever
+id forum_recycler_view
 id fragment_container_view_tag
 id frost
 id fullscreen_header
@@ -3600,6 +3602,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id info_text
 id invisible
 id inward
 id italic
@@ -3626,14 +3629,7 @@ id linear_flag_border
 id linear_flag_holder
 id listMode
 id list_item
-id login_countrycode
-id login_email_address
-id login_let_me_in_btn
-id login_mobile_number
-id login_next_btn
-id login_otp
 id login_progress_bar
-id login_username
 id logout_btn
 id lytCameraPick
 id lytGalleryPick
@@ -3669,8 +3665,10 @@ id matrix
 id media_actions
 id menu_chat
 id menu_crop
+id menu_forum
 id menu_loader
 id menu_profile
+id menu_settings
 id message
 id message_send_btn
 id middle
@@ -3746,6 +3744,7 @@ id phone_text
 id pin
 id position
 id postLayout
+id post_info_text
 id preferenceDivider
 id pressed
 id profile_email
@@ -3763,7 +3762,6 @@ id ratio
 id rectangles
 id recycler_countryDialog
 id recyler_view
-id resend_otp_textview
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3777,6 +3775,7 @@ id rl_title
 id rotate_scroll_wheel
 id rounded
 id row_index_key
+id save_new_post
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3819,7 +3818,6 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
-id send_otp_btn
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3886,6 +3884,7 @@ id textTop
 id textView
 id textView2
 id textView3
+id textView4
 id textView_code
 id textView_countryName
 id textView_noresult
@@ -4063,11 +4062,8 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_chat
-layout activity_login_email
+layout activity_forum
 layout activity_login_google
-layout activity_login_otp
-layout activity_login_phone_number
-layout activity_login_username
 layout activity_main
 layout activity_search_user
 layout activity_splash
@@ -4092,8 +4088,10 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_choose_app
 layout fastscroll__default_bubble
-layout forum
+layout forum_create_post
+layout forum_post_row
 layout fragment_chat
+layout fragment_forum
 layout fragment_profile
 layout layout_code_picker
 layout layout_full_width_code_picker
@@ -4173,6 +4171,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout test
 layout ucrop_activity_photobox
 layout ucrop_aspect_ratio
 layout ucrop_controls

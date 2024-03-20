@@ -4,7 +4,11 @@
             "outputFile": "com.example.wheatoride.app-mergeDebugResources-38:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-3\\bd105b90a481fe5c7b2306fe9941df8b\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
+=======
+                    "source": "C:\\Users\\nosre\\.gradle\\caches\\transforms-3\\bd105b90a481fe5c7b2306fe9941df8b\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
+>>>>>>> a7a67b9eeead4e1d80517a650d3710de48196ee8
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

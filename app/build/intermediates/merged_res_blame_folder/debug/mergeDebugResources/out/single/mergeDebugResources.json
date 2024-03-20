@@ -56,12 +56,12 @@
         "source": "com.example.wheatoride.app-main-46:/layout/profile_pic_view.xml"
     },
     {
-        "merged": "com.example.wheatoride.app-debug-44:/layout_activity_login_email.xml.flat",
-        "source": "com.example.wheatoride.app-main-46:/layout/activity_login_email.xml"
-    },
-    {
         "merged": "com.example.wheatoride.app-debug-44:/drawable_wor_logo.xml.flat",
         "source": "com.example.wheatoride.app-main-46:/drawable/wor_logo.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-44:/layout_fragment_forum.xml.flat",
+        "source": "com.example.wheatoride.app-main-46:/layout/fragment_forum.xml"
     },
     {
         "merged": "com.example.wheatoride.app-debug-44:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
@@ -108,10 +108,6 @@
         "source": "com.example.wheatoride.app-main-46:/layout/chat_message_recycler_row.xml"
     },
     {
-        "merged": "com.example.wheatoride.app-debug-44:/layout_activity_login_phone_number.xml.flat",
-        "source": "com.example.wheatoride.app-main-46:/layout/activity_login_phone_number.xml"
-    },
-    {
         "merged": "com.example.wheatoride.app-debug-44:/drawable_edit_text_rounded_corner.xml.flat",
         "source": "com.example.wheatoride.app-main-46:/drawable/edit_text_rounded_corner.xml"
     },
@@ -132,6 +128,10 @@
         "source": "com.example.wheatoride.app-debug-45:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
+        "merged": "com.example.wheatoride.app-debug-44:/layout_forum_create_post.xml.flat",
+        "source": "com.example.wheatoride.app-main-46:/layout/forum_create_post.xml"
+    },
+    {
         "merged": "com.example.wheatoride.app-debug-44:/drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "com.example.wheatoride.app-main-46:/drawable-v24/ic_launcher_foreground.xml"
     },
@@ -142,6 +142,10 @@
     {
         "merged": "com.example.wheatoride.app-debug-44:/layout_search_user_recycler_row.xml.flat",
         "source": "com.example.wheatoride.app-main-46:/layout/search_user_recycler_row.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-44:/layout_activity_forum.xml.flat",
+        "source": "com.example.wheatoride.app-main-46:/layout/activity_forum.xml"
     },
     {
         "merged": "com.example.wheatoride.app-debug-44:/mipmap-mdpi_ic_launcher_round.png.flat",
@@ -164,10 +168,6 @@
         "source": "com.example.wheatoride.app-main-46:/drawable/email_icon.xml"
     },
     {
-        "merged": "com.example.wheatoride.app-debug-44:/layout_activity_login_otp.xml.flat",
-        "source": "com.example.wheatoride.app-main-46:/layout/activity_login_otp.xml"
-    },
-    {
         "merged": "com.example.wheatoride.app-debug-44:/mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "com.example.wheatoride.app-debug-45:/mipmap-xxhdpi/ic_launcher_round.png"
     },
@@ -176,16 +176,20 @@
         "source": "com.example.wheatoride.app-debug-45:/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.wheatoride.app-debug-44:/layout_forum.xml.flat",
-        "source": "com.example.wheatoride.app-main-46:/layout/forum.xml"
-    },
-    {
         "merged": "com.example.wheatoride.app-debug-44:/layout_activity_splash.xml.flat",
         "source": "com.example.wheatoride.app-main-46:/layout/activity_splash.xml"
     },
     {
+        "merged": "com.example.wheatoride.app-debug-44:/layout_test.xml.flat",
+        "source": "com.example.wheatoride.app-main-46:/layout/test.xml"
+    },
+    {
         "merged": "com.example.wheatoride.app-debug-44:/drawable_phone_icon.xml.flat",
         "source": "com.example.wheatoride.app-main-46:/drawable/phone_icon.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-44:/layout_forum_post_row.xml.flat",
+        "source": "com.example.wheatoride.app-main-46:/layout/forum_post_row.xml"
     },
     {
         "merged": "com.example.wheatoride.app-debug-44:/mipmap-xxhdpi_ic_launcher.png.flat",
@@ -202,10 +206,6 @@
     {
         "merged": "com.example.wheatoride.app-debug-44:/drawable_otp_icon.xml.flat",
         "source": "com.example.wheatoride.app-main-46:/drawable/otp_icon.xml"
-    },
-    {
-        "merged": "com.example.wheatoride.app-debug-44:/layout_activity_login_username.xml.flat",
-        "source": "com.example.wheatoride.app-main-46:/layout/activity_login_username.xml"
     },
     {
         "merged": "com.example.wheatoride.app-debug-44:/mipmap-xhdpi_ic_launcher_round.png.flat",
