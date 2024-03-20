@@ -1,0 +1,6 @@
+com.example.wheatoride.test.app-annotation-experimental-1.3.0-0 C:\Users\sampe\.gradle\caches\transforms-3\8349b2608ad178dddfb88d56ed1c0e99\transformed\annotation-experimental-1.3.0\res
+com.example.wheatoride.test.app-core-1.5.0-1 C:\Users\sampe\.gradle\caches\transforms-3\f0b24cc5c2917fddb636adfa82f00550\transformed\core-1.5.0\res
+com.example.wheatoride.test.app-androidTest-2 C:\Users\sampe\StudioProjects\WheatonRideShare\app\build\generated\res\resValues\androidTest\debug
+com.example.wheatoride.test.app-mergeDebugAndroidTestResources-3 C:\Users\sampe\StudioProjects\WheatonRideShare\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.wheatoride.test.app-mergeDebugAndroidTestResources-4 C:\Users\sampe\StudioProjects\WheatonRideShare\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.wheatoride.test.app-debugAndroidTest-5 C:\Users\sampe\StudioProjects\WheatonRideShare\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

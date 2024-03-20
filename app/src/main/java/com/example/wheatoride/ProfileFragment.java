@@ -9,7 +9,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
@@ -128,7 +127,7 @@ public class ProfileFragment extends Fragment {
             usernameInput.setError("Username length should be at least 3 chars");
             return;
         }
-        currentUserModel.setUsername(newUsername);
+        currentUserModel.setFullName(newUsername);
         currentUserModel.setEmail(newEmail);
         setInProgress(true);
 
@@ -176,8 +175,9 @@ public class ProfileFragment extends Fragment {
         FirebaseUtil.currentUserDetails().get().addOnCompleteListener(task -> {
             setInProgress(false);
             currentUserModel = task.getResult().toObject(UserModel.class);
-            usernameInput.setText(currentUserModel.getUsername());
-            phoneInput.setText(currentUserModel.getPhone());
+
+            usernameInput.setText(currentUserModel.getFullName());
+            phoneInput.setText(currentUserModel.getwEmail());
             emailInput.setText(currentUserModel.getEmail());
         });
     }

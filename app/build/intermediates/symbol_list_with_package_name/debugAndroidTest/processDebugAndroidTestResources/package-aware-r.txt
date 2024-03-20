@@ -1,0 +1,3 @@
+com.example.wheatoride.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

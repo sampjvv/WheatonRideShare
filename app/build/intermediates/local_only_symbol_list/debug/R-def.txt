@@ -19,9 +19,11 @@ drawable icon_back
 drawable icon_search
 drawable icon_send
 drawable launcher_icon
+drawable logo
 drawable otp_icon
 drawable person_icon
 drawable phone_icon
+drawable wor_logo
 id back_btn
 id bottom_layout
 id bottom_navigation
@@ -29,6 +31,7 @@ id chat_message_input
 id chat_recycler_view
 id dark_mode_switch
 id divider
+id imageView
 id last_message_text
 id last_message_time_text
 id left_chat_layout
@@ -66,6 +69,9 @@ id search_user_btn
 id search_user_layout
 id search_user_recycler_view
 id send_otp_btn
+id textView
+id textView2
+id textView3
 id toolbar
 id user_name_text
 layout activity_chat
@@ -76,8 +82,10 @@ layout activity_main
 layout activity_search_user
 layout activity_splash
 layout chat_message_recycler_row
+layout forum
 layout fragment_chat
 layout fragment_profile
+layout post
 layout profile_pic_view
 layout recent_chat_recycler_row
 layout search_user_recycler_row
@@ -94,5 +102,8 @@ string google_storage_bucket
 string hello_blank_fragment
 string project_id
 style Theme.WheatORide
+style background
+style textColor
+style textInverse
 xml backup_rules
 xml data_extraction_rules

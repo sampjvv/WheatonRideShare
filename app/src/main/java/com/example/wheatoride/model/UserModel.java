@@ -3,8 +3,8 @@ package com.example.wheatoride.model;
 import com.google.firebase.Timestamp;
 
 public class UserModel {
-    private String phone;
-    private String username;
+    private String wEmail;
+    private String fullName;
 
     private String email;
     private Timestamp createdTimestamp;
@@ -14,27 +14,27 @@ public class UserModel {
     public UserModel() {
     }
 
-    public UserModel(String phone, String username, Timestamp createdTimestamp,String userId) {
-        this.phone = phone;
-        this.username = username;
+    public UserModel(String wEmail, String fullName, Timestamp createdTimestamp, String userId) {
+        this.wEmail = wEmail;
+        this.fullName = fullName;
         this.createdTimestamp = createdTimestamp;
         this.userId = userId;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getwEmail() {
+        return wEmail;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setwEmail(String wEmail) {
+        this.wEmail = wEmail;
     }
 
-    public String getUsername() {
-        return username;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public void setEmail(String email) { this.email = email;}

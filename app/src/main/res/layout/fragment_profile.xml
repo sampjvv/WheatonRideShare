@@ -88,11 +88,10 @@
         android:text="dark mode"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:id="@+id/logout_btn"/>
-
+        android:id="@+id/logout_btn"
+        android:layout_width="47dp"
+        android:layout_height="30dp"
+        android:text="Logout" />
 
 
 </LinearLayout>

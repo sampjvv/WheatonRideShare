@@ -80,7 +80,7 @@ public class ChatActivity extends AppCompatActivity {
         backBtn.setOnClickListener((v)->{
             onBackPressed();
         });
-        otherUsername.setText(otherUser.getUsername());
+        otherUsername.setText(otherUser.getFullName());
 
         sendMessageBtn.setOnClickListener((v -> {
             String message = messageInput.getText().toString().trim();
@@ -162,7 +162,7 @@ public class ChatActivity extends AppCompatActivity {
                    JSONObject jsonObject  = new JSONObject();
 
                    JSONObject notificationObj = new JSONObject();
-                   notificationObj.put("title",currentUser.getUsername());
+                   notificationObj.put("title",currentUser.getFullName());
                    notificationObj.put("body",message);
 
                    JSONObject dataObj = new JSONObject();

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1052666779306",
+    "firebase_url": "https://wheatoride-default-rtdb.firebaseio.com",
     "project_id": "wheatoride",
     "storage_bucket": "wheatoride.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.example.wheatoride"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1052666779306-uajorpnmvtb4gf8ibg9cr2au17prmmus.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wheatoride",
+            "certificate_hash": "dea3dd5c8af597c0853857f315842475c47cad21"
+          }
+        },
+        {
+          "client_id": "1052666779306-cpskj7kbrpk4orr4vi70kcn61dlcimh3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyApHBZdQms66T_rc61utW54yc1XYfMIVGs"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052666779306-cpskj7kbrpk4orr4vi70kcn61dlcimh3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
