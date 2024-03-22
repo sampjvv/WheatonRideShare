@@ -4,7 +4,7 @@
             "outputFile": "com.example.wheatoride.test.app-mergeDebugAndroidTestResources-3:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-3\\f0b24cc5c2917fddb636adfa82f00550\\transformed\\core-1.5.0\\res\\values-v28\\values.xml",
+                    "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-4\\cb7719b090c6969712ba66ae1eabd2e8\\transformed\\core-1.5.0\\res\\values-v28\\values.xml",
                     "from": {
                         "startLines": "4,13",
                         "startColumns": "0,0",

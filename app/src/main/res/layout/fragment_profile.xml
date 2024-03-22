@@ -12,7 +12,7 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:background="@drawable/circular_bg"
-        android:backgroundTint="@color/my_primary"
+        android:backgroundTint="@color/primary"
         android:src="@drawable/person_icon"
         android:scaleType="centerCrop"
         android:layout_marginBottom="40dp"
@@ -60,7 +60,7 @@
         <ProgressBar
             android:layout_width="32dp"
             android:layout_height="wrap_content"
-            android:indeterminateTint="@color/my_primary"
+            android:indeterminateTint="@color/primary"
             android:layout_gravity="center"
             android:id="@+id/profile_progress_bar"/>
     </LinearLayout>

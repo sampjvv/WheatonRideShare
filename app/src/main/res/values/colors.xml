@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="my_primary">#037C67</color>
-    <color name="my_secondary">#FFC800</color>
+    <color name="primary">#037C67</color>
+    <color name="gold">#FFC800</color>
+    <color name="orange">#F0881B</color>
+    <color name="light_green">#4CAF50</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
@@ -10,7 +12,6 @@
     <color name="off_white">#FAFAFA</color>
     <color name="light_gray">#C3C3C3</color>
 
-    <color name="chat_color_sender">#F0881B</color>
-    <color name="chat_color_receiver">#4CAF50</color>
+
 
 </resources>

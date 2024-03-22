@@ -4,7 +4,7 @@
             "outputFile": "com.example.wheatoride.app-mergeDebugResources-42:/values-zh/values-zh.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-3\\450e01c9a207f38b68094a996f80579a\\transformed\\ucrop-2.2.6\\res\\values-zh\\values-zh.xml",
+                    "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-4\\a7555b1cc94032f37e073eb0027a8236\\transformed\\ucrop-2.2.6\\res\\values-zh\\values-zh.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
