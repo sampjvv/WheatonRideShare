@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="chat_color_receiver">#4CAF50</color>
-    <color name="chat_color_sender">#F0881B</color>
+    <color name="gold">#FFC800</color>
     <color name="ic_launcher_background">#FFFFFF</color>
     <color name="light_gray">#C3C3C3</color>
-    <color name="my_primary">#037C67</color>
-    <color name="my_secondary">#FFC800</color>
+    <color name="light_green">#4CAF50</color>
     <color name="off_white">#FAFAFA</color>
+    <color name="orange">#F0881B</color>
+    <color name="primary">#037C67</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">WheatORide_v.1</string>
     <string name="default_web_client_id" translatable="false">1052666779306-cpskj7kbrpk4orr4vi70kcn61dlcimh3.apps.googleusercontent.com</string>
@@ -21,12 +21,12 @@
     <string name="project_id" translatable="false">wheatoride</string>
     <style name="Theme.WheatORide" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
-        <item name="colorPrimary">@color/my_primary</item>
-        <item name="colorPrimaryVariant">@color/my_primary</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
         <item name="colorOnPrimary">@color/white</item>
         
-        <item name="colorSecondary">@color/my_secondary</item>
-        <item name="colorSecondaryVariant">@color/my_secondary</item>
+        <item name="colorSecondary">@color/gold</item>
+        <item name="colorSecondaryVariant">@color/gold</item>
         <item name="colorOnSecondary">@color/black</item>
         
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>

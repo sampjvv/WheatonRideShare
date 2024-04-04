@@ -1399,8 +1399,6 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
-color chat_color_receiver
-color chat_color_sender
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -1462,10 +1460,12 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gold
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
 color light_gray
+color light_green
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -1986,13 +1986,13 @@ color mtrl_textinput_disabled_color
 color mtrl_textinput_filled_box_default_background_color
 color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
-color my_primary
-color my_secondary
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
 color off_white
+color orange
 color pressed_bg
+color primary
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark

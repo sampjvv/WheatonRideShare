@@ -15,7 +15,7 @@
         android:layout_height="93dp"
         android:layout_weight="20"
         android:src="@drawable/email_icon"
-        app:tint="@color/my_primary" />
+        app:tint="@color/primary" />
 
 
 
@@ -47,7 +47,7 @@
             android:layout_width="32dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
-            android:indeterminateTint="@color/my_primary" />
+            android:indeterminateTint="@color/primary" />
     </LinearLayout>
 
 </LinearLayout>

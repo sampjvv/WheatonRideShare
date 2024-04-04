@@ -61,6 +61,7 @@ public class LoginGoogleActivity extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
 
         googleBtn.setOnClickListener(view -> {
+            System.out.println("Clicked");
             googleSignIn();
             progressBar.setVisibility(View.VISIBLE);
         });
@@ -97,15 +98,14 @@ public class LoginGoogleActivity extends AppCompatActivity {
         }
 
     }
-//line 93
+
     private void firebaseAuth(String idToken) {
 
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
-        auth.signInWithCredential(credential)
-                .addOnCompleteListener(task -> {
+        auth.signInWithCredential(credential).addOnCompleteListener(task -> {
 
                     if (task.isSuccessful()) {
-
+                        System.out.print("Success!!!!!!!!!!!!!!");
                         FirebaseUser user = auth.getCurrentUser();
 
                         HashMap<String, Object> map = new HashMap<>();
@@ -128,12 +128,20 @@ public class LoginGoogleActivity extends AppCompatActivity {
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
                             }
+                        })
+                        .addOnFailureListener(e -> {
+                            // This will print stack trace of the Exception to the console.
+                            e.printStackTrace();
                         });
 
                     } else {
                         Toast.makeText(LoginGoogleActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
                     }
 
+                })
+                .addOnFailureListener(e -> {
+                    // This will print stack trace of the Exception to the console.
+                    e.printStackTrace();
                 });
 
     }

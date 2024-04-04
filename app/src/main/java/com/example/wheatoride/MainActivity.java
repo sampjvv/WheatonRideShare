@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,chatFragment).commit();
                 }
                 if(item.getItemId()==R.id.menu_profile){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,profileFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,profileFragment).addToBackStack(null).commit();
                 }
                 if(item.getItemId()==R.id.menu_forum){
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,forumFragment).commit();

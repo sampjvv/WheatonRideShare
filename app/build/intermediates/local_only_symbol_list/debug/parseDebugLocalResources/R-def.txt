@@ -1,13 +1,13 @@
 R_DEF: Internal format may change without notice
 local
 color black
-color chat_color_receiver
-color chat_color_sender
+color gold
 color ic_launcher_background
 color light_gray
-color my_primary
-color my_secondary
+color light_green
 color off_white
+color orange
+color primary
 color white
 drawable btn_rounded_corner
 drawable chat_icon

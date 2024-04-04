@@ -150,7 +150,7 @@ public class ProfileFragment extends Fragment {
 
             assert currentUserModel != null;
             nameInput.setText(currentUserModel.getFullName());
-            emailInput.setText(currentUserModel.getwEmail());
+            emailInput.setText(currentUserModel.getEmail());
             AndroidUtil.setProfilePic(getContext(), Uri.parse(currentUserModel.getProfilePicUri()), profilePic);
         });
     }

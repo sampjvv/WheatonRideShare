@@ -1,14 +1,10 @@
 package com.example.wheatoride.model;
 
-import android.net.Uri;
-
 import com.google.firebase.Timestamp;
 
 public class UserModel {
-    private String wEmail;
-    private String fullName;
-
     private String email;
+    private String fullName;
 
     private String profilePicUri;
     private Timestamp createdTimestamp;
@@ -21,7 +17,7 @@ public class UserModel {
 
 
     public UserModel(String wEmail, String fullName, String profilePicUri, Timestamp createdTimestamp, String userId) {
-        this.wEmail = wEmail;
+        this.email = wEmail;
         this.fullName = fullName;
         this.profilePicUri = profilePicUri;
         this.createdTimestamp = createdTimestamp;
@@ -35,12 +31,12 @@ public class UserModel {
         this.profilePicUri = profilePicUri;
     }
 
-    public String getwEmail() {
-        return wEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setwEmail(String wEmail) {
-        this.wEmail = wEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getFullName() {
@@ -50,10 +46,6 @@ public class UserModel {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
-
-    public void setEmail(String email) { this.email = email;}
-
-    public String getEmail(){return this.email;}
 
     public Timestamp getCreatedTimestamp() {
         return createdTimestamp;
