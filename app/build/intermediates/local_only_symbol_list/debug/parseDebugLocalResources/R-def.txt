@@ -43,6 +43,7 @@ id left_chat_layout
 id left_chat_textview
 id login_progress_bar
 id logout_btn
+id main
 id main_frame_layout
 id main_search_btn
 id main_toolbar
@@ -77,6 +78,7 @@ id toolbar
 id user_name_text
 layout activity_chat
 layout activity_forum
+layout activity_forum2
 layout activity_login_google
 layout activity_main
 layout activity_search_user

@@ -26,19 +26,19 @@ public class ForumActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forum);
+        setContentView(R.layout.activity_forum2);
 
-        addPostButton = findViewById(R.id.add_post_button);
+        //addPostButton = findViewById(R.id.add_post_button);
 
-        RecyclerView recyclerView1 = findViewById(R.id.forum_recycler_view);
-
+        //RecyclerView recyclerView1 = findViewById(R.id.forum_recycler_view);
+/**
         addPostButton.setOnClickListener((v) -> {
             Intent intent = new Intent(ForumActivity.this, CreatePostActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
         });
-
+**/
         setupForumRecyclerView();
 
 
