@@ -10,7 +10,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="off_white">#FAFAFA</color>
-    <color name="light_gray">#C3C3C3</color>
+    <color name="light_gray">#707070</color>
+    <color name="night">#1E1F22</color>
 
 
 

@@ -20,12 +20,12 @@
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-46:\\drawable\\logo.png"
     },
     {
-        "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\drawable_icon_back.xml.flat",
-        "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-46:\\drawable\\icon_back.xml"
-    },
-    {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-45:\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\drawable_icon_back.xml.flat",
+        "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-46:\\drawable\\icon_back.xml"
     },
     {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\drawable_circular_bg.xml.flat",
@@ -42,10 +42,6 @@
     {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\layout_post.xml.flat",
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-46:\\layout\\post.xml"
-    },
-    {
-        "merged": "com.example.wheatoride.app-debug-44:/drawable_launcher_icon.png.flat",
-        "source": "com.example.wheatoride.app-main-46:/drawable/launcher_icon.png"
     },
     {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -66,6 +62,10 @@
     {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\layout_profile_pic_view.xml.flat",
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-46:\\layout\\profile_pic_view.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-44:/layout_fragment_forum.xml.flat",
+        "source": "com.example.wheatoride.app-main-46:/layout/fragment_forum.xml"
     },
     {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\drawable_btn_rounded_corner.xml.flat",

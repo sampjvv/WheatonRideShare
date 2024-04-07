@@ -1985,6 +1985,7 @@ int color mtrl_textinput_disabled_color 0x7f050279
 int color mtrl_textinput_filled_box_default_background_color 0x7f05027a
 int color mtrl_textinput_focused_box_stroke_color 0x7f05027b
 int color mtrl_textinput_hovered_box_stroke_color 0x7f05027c
+int color night 0x7f0502b5
 int color notification_action_color_filter 0x7f05027d
 int color notification_icon_bg_color 0x7f05027e
 int color notification_material_background_media_default_color 0x7f05027f

@@ -26,11 +26,11 @@ public class ForumActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forum);
+        setContentView(R.layout.activity_forum); // Change this to your activity's layout
 
         addPostButton = findViewById(R.id.add_post_button);
 
-        RecyclerView recyclerView1 = findViewById(R.id.forum_recycler_view);
+        recyclerView = findViewById(R.id.forum_recycler_view); // Initialize the correct RecyclerView
 
         addPostButton.setOnClickListener((v) -> {
             Intent intent = new Intent(ForumActivity.this, CreatePostActivity.class);
@@ -40,8 +40,6 @@ public class ForumActivity extends AppCompatActivity {
         });
 
         setupForumRecyclerView();
-
-
     }
 
 
