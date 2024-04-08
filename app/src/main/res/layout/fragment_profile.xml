@@ -58,6 +58,7 @@
         android:padding="10dp"
         android:color="@style/textInverse"
         android:maxLength="200"
+        android:textColor="@color/black"
         android:gravity="top|start"/>
 
 
