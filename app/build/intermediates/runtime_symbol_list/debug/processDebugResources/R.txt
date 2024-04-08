@@ -3786,7 +3786,7 @@ int id scrollIndicatorDown 0x7f0801fa
 int id scrollIndicatorUp 0x7f0801fb
 int id scrollView 0x7f0801fc
 int id scrollable 0x7f0801fd
-int id seach_username_input 0x7f0801fe
+int id seach_name_input 0x7f0802a4
 int id search_badge 0x7f0801ff
 int id search_bar 0x7f080200
 int id search_bar_text_view 0x7f080201

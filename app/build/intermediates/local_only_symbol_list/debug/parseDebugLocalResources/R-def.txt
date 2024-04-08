@@ -66,7 +66,7 @@ id recyler_view
 id right_chat_layout
 id right_chat_textview
 id save_new_post
-id seach_username_input
+id seach_name_input
 id search_user_btn
 id search_user_layout
 id search_user_recycler_view

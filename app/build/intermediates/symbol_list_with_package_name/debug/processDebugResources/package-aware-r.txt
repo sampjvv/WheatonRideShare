@@ -3787,7 +3787,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
-id seach_username_input
+id seach_name_input
 id search_badge
 id search_bar
 id search_bar_text_view

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -23,12 +24,13 @@ public class SearchUserActivity extends AppCompatActivity {
 
     SearchUserRecyclerAdapter adapter;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_user);
 
-        searchInput = findViewById(R.id.seach_username_input);
+        searchInput = findViewById(R.id.seach_name_input);
         searchButton = findViewById(R.id.search_user_btn);
         backButton = findViewById(R.id.back_btn);
         recyclerView = findViewById(R.id.search_user_recycler_view);
@@ -42,8 +44,8 @@ public class SearchUserActivity extends AppCompatActivity {
 
         searchButton.setOnClickListener(v -> {
             String searchTerm = searchInput.getText().toString();
-            if(searchTerm.isEmpty() || searchTerm.length()<3){
-                searchInput.setError("Invalid Username");
+            if(searchTerm.isEmpty()){
+                searchInput.setError("Enter a Name to Search");
                 return;
             }
             setupSearchRecyclerView(searchTerm);
@@ -53,8 +55,8 @@ public class SearchUserActivity extends AppCompatActivity {
     void setupSearchRecyclerView(String searchTerm){
 
         Query query = FirebaseUtil.allUserCollectionReference()
-                .whereGreaterThanOrEqualTo("username",searchTerm)
-                .whereLessThanOrEqualTo("username",searchTerm+'\uf8ff');
+                .whereGreaterThanOrEqualTo("fullName",searchTerm)
+                .whereLessThanOrEqualTo("fullName",searchTerm+'\uf8ff');
 
         FirestoreRecyclerOptions<UserModel> options = new FirestoreRecyclerOptions.Builder<UserModel>()
                 .setQuery(query,UserModel.class).build();
