@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.wheatoride.app-mergeDebugResources-42:/values-es/values-es.xml",
+            "outputFile": "com.example.wheatoride.app-mergeDebugResources-44:/values-es/values-es.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-4\\e3fe94d3d197bef8938dc0af97b637fe\\transformed\\imagepicker-2.1\\res\\values-es\\values-es.xml",

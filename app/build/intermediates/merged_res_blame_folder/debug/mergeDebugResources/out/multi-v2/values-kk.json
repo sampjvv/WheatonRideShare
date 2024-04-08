@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.wheatoride.app-mergeDebugResources-42:/values-kk/values-kk.xml",
+            "outputFile": "com.example.wheatoride.app-mergeDebugResources-44:/values-kk/values-kk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-4\\74ceb5437913c6e50e043c44618cfc3e\\transformed\\core-1.9.0\\res\\values-kk\\values-kk.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.wheatoride.app-mergeDebugResources-42:/values-zh/values-zh.xml",
+            "outputFile": "com.example.wheatoride.app-mergeDebugResources-44:/values-zh/values-zh.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-4\\a7555b1cc94032f37e073eb0027a8236\\transformed\\ucrop-2.2.6\\res\\values-zh\\values-zh.xml",

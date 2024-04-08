@@ -3730,7 +3730,7 @@ id notification_main_column_container
 id off
 id on
 id onInterceptTouchReturnSwipe
-id other_username
+id other_name
 id outline
 id outward
 id overshoot
@@ -3752,6 +3752,7 @@ id postLayout
 id post_info_text
 id preferenceDivider
 id pressed
+id profile_create_btn
 id profile_description
 id profile_email
 id profile_image_view
@@ -3767,6 +3768,7 @@ id ratio
 id rectangles
 id recycler_countryDialog
 id recyler_view
+id report_drawn
 id reverseSawtooth
 id right
 id rightToLeft
@@ -4066,6 +4068,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_build_profile
 layout activity_chat
 layout activity_forum
 layout activity_login_google

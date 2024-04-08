@@ -5,7 +5,6 @@ import com.google.firebase.Timestamp;
 public class UserModel {
     private String email;
     private String fullName;
-
     private String profilePicUri;
     private Timestamp createdTimestamp;
     private String userId;
