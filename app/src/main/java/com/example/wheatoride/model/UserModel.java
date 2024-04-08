@@ -10,11 +10,22 @@ public class UserModel {
     private Timestamp createdTimestamp;
     private String userId;
     private String fcmToken;
+    private String description;
 
     public UserModel() {
+
     }
 
 
+
+    public UserModel(String wEmail, String fullName, String profilePicUri, Timestamp createdTimestamp, String userId, String description) {
+        this.email = wEmail;
+        this.fullName = fullName;
+        this.profilePicUri = profilePicUri;
+        this.createdTimestamp = createdTimestamp;
+        this.userId = userId;
+        this.description = description;
+    }
 
     public UserModel(String wEmail, String fullName, String profilePicUri, Timestamp createdTimestamp, String userId) {
         this.email = wEmail;
@@ -22,6 +33,7 @@ public class UserModel {
         this.profilePicUri = profilePicUri;
         this.createdTimestamp = createdTimestamp;
         this.userId = userId;
+        this.description = "";
     }
 
     public String getProfilePicUri() {
@@ -69,5 +81,13 @@ public class UserModel {
 
     public void setFcmToken(String fcmToken) {
         this.fcmToken = fcmToken;
+    }
+
+    public void setDescription(String newDescription) {
+        this.description = newDescription;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

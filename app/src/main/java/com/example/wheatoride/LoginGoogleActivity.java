@@ -101,7 +101,7 @@ public class LoginGoogleActivity extends AppCompatActivity {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         auth.signInWithCredential(credential).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        System.out.print("Success!!!!!!!!!!!!!!");
+                        System.out.print("Success");
                         FirebaseUser user = auth.getCurrentUser();
 
                         HashMap<String, Object> map = new HashMap<>();

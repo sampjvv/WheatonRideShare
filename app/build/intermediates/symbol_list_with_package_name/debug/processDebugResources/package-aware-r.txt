@@ -3752,6 +3752,7 @@ id postLayout
 id post_info_text
 id preferenceDivider
 id pressed
+id profile_description
 id profile_email
 id profile_image_view
 id profile_name

@@ -3751,6 +3751,7 @@ int id postLayout 0x7f0801d3
 int id post_info_text 0x7f0801d4
 int id preferenceDivider 0x7f0801d5
 int id pressed 0x7f0801d6
+int id profile_description 0x7f0802a7
 int id profile_email 0x7f0801d7
 int id profile_image_view 0x7f0801d8
 int id profile_name 0x7f0801d9

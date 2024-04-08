@@ -59,6 +59,7 @@ id message_send_btn
 id other_username
 id phone_text
 id post_info_text
+id profile_description
 id profile_email
 id profile_image_view
 id profile_name
