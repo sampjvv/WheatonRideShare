@@ -22,9 +22,12 @@ drawable icon_search
 drawable icon_send
 drawable launcher_icon
 drawable logo
+drawable offer_icon
 drawable otp_icon
 drawable person_icon
 drawable phone_icon
+drawable request_icon
+drawable settings_icon
 drawable wor_logo
 id add_post_button
 id back_btn
@@ -48,8 +51,9 @@ id main_frame_layout
 id main_search_btn
 id main_toolbar
 id menu_chat
-id menu_forum
+id menu_offer
 id menu_profile
+id menu_request
 id menu_settings
 id message_send_btn
 id other_username

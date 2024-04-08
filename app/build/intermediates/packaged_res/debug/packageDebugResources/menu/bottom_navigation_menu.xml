@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Forum"
-        android:icon="@drawable/person_icon"
-        android:id="@+id/menu_forum"
+    <item android:title="Offers"
+        android:icon="@drawable/offer_icon"
+        android:id="@+id/menu_offer"
+        />
+    <item android:title="Requests"
+        android:icon="@drawable/request_icon"
+        android:id="@+id/menu_request"
         />
     <item android:title="Chats"
         android:icon="@drawable/chat_icon"
@@ -14,7 +18,7 @@
         android:id="@+id/menu_profile"
         />
     <item android:title="Settings"
-        android:icon="@drawable/flag_vatican_city"
+        android:icon="@drawable/settings_icon"
         android:id="@+id/menu_settings"
         />
 </menu>

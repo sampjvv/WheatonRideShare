@@ -3250,9 +3250,12 @@ int drawable notification_template_icon_bg 0x7f0701f5
 int drawable notification_template_icon_low_bg 0x7f0701f6
 int drawable notification_tile_bg 0x7f0701f7
 int drawable notify_panel_notification_icon_bg 0x7f0701f8
+int drawable offer_icon 0x7f070213
 int drawable otp_icon 0x7f0701f9
 int drawable person_icon 0x7f0701fa
 int drawable phone_icon 0x7f0701fb
+int drawable request_icon 0x7f070215
+int drawable settings_icon 0x7f070214
 int drawable test_level_drawable 0x7f0701fc
 int drawable tooltip_frame_dark 0x7f0701fd
 int drawable tooltip_frame_light 0x7f0701fe
@@ -3665,9 +3668,10 @@ int id matrix 0x7f080181
 int id media_actions 0x7f080182
 int id menu_chat 0x7f080183
 int id menu_crop 0x7f080184
-int id menu_forum 0x7f080185
 int id menu_loader 0x7f080186
+int id menu_offer 0x7f0802a5
 int id menu_profile 0x7f080187
+int id menu_request 0x7f0802a6
 int id menu_settings 0x7f080188
 int id message 0x7f080189
 int id message_send_btn 0x7f08018a

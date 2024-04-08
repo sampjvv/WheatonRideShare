@@ -3251,9 +3251,12 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable offer_icon
 drawable otp_icon
 drawable person_icon
 drawable phone_icon
+drawable request_icon
+drawable settings_icon
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3666,9 +3669,10 @@ id matrix
 id media_actions
 id menu_chat
 id menu_crop
-id menu_forum
 id menu_loader
+id menu_offer
 id menu_profile
+id menu_request
 id menu_settings
 id message
 id message_send_btn
