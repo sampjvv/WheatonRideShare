@@ -64,10 +64,6 @@
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-46:\\layout\\profile_pic_view.xml"
     },
     {
-        "merged": "com.example.wheatoride.app-debug-44:/layout_fragment_forum.xml.flat",
-        "source": "com.example.wheatoride.app-main-46:/layout/fragment_forum.xml"
-    },
-    {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\drawable_btn_rounded_corner.xml.flat",
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-46:\\drawable\\btn_rounded_corner.xml"
     },
@@ -196,6 +192,10 @@
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-45:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
+        "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\layout_fragment_settings.xml.flat",
+        "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-46:\\layout\\fragment_settings.xml"
+    },
+    {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\layout_recent_chat_recycler_row.xml.flat",
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-46:\\layout\\recent_chat_recycler_row.xml"
     },
@@ -210,6 +210,10 @@
     {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-45:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-44:/layout_fragment_settings.xml.flat",
+        "source": "com.example.wheatoride.app-main-46:/layout/fragment_settings.xml"
     },
     {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-44:\\layout_activity_search_user.xml.flat",

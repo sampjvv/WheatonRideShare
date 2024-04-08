@@ -70,11 +70,9 @@ public class ProfileFragment extends Fragment {
         updateProfileBtn = view.findViewById(R.id.profle_update_btn);
         progressBar = view.findViewById(R.id.profile_progress_bar);
         logoutBtn = view.findViewById(R.id.logout_btn);
-        darkModeBtn = view.findViewById(R.id.dark_mode_switch);
+
 
         getUserData();
-
-        darkModeBtn.setOnClickListener((v -> updateDarkModeBtn()));
 
         updateProfileBtn.setOnClickListener((v -> updateBtnClick()));
 
@@ -97,12 +95,12 @@ public class ProfileFragment extends Fragment {
     }
 
     void updateBtnClick(){
-        String newUsername = nameInput.getText().toString();
-        if(newUsername.isEmpty() || newUsername.length()<3){
-            nameInput.setError("Username length should be at least 3 chars");
-            return;
-        }
-        currentUserModel.setFullName(newUsername);
+//        String newUsername = nameInput.getText().toString();
+//        if(newUsername.isEmpty() || newUsername.length()<3){
+//            nameInput.setError("Username length should be at least 3 chars");
+//            return;
+//        }
+//        currentUserModel.setFullName(newUsername);
         setInProgress(true);
 
 
@@ -166,18 +164,6 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    @SuppressLint("SetTextI18n")
-    void updateDarkModeBtn(){
-        if(isDark){
-            darkModeBtn.setText("dark");
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            isDark = false;
-        }else{
-            darkModeBtn.setText("light");
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            isDark = true;
-        }
-    }
 
 }
 
