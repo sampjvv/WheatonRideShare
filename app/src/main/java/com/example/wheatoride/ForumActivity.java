@@ -28,7 +28,6 @@ public class ForumActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum2);
 
-        //addPostButton = findViewById(R.id.add_post_button);
 
         //RecyclerView recyclerView1 = findViewById(R.id.forum_recycler_view);
 /**
@@ -38,10 +37,8 @@ public class ForumActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
-**/
         setupForumRecyclerView();
-
-
+ **/
     }
 
 

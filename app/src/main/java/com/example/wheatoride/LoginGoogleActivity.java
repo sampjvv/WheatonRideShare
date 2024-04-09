@@ -91,6 +91,8 @@ public class LoginGoogleActivity extends AppCompatActivity {
             } catch (Exception e){
                 progressBar.setVisibility(View.GONE);
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                System.out.println(e.getMessage());
             }
 
 
