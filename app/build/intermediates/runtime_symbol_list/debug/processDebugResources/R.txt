@@ -3729,7 +3729,7 @@ int id notification_main_column_container 0x7f0801be
 int id off 0x7f0801bf
 int id on 0x7f0801c0
 int id onInterceptTouchReturnSwipe 0x7f0801c1
-int id other_name 0x7f0802a8
+int id other_name 0x7f0801c2
 int id outline 0x7f0801c3
 int id outward 0x7f0801c4
 int id overshoot 0x7f0801c5
