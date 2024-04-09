@@ -114,8 +114,8 @@
 61-->C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:23:9-48
 62        <activity
 62-->C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:25:9-27:40
-63            android:name="com.example.wheatoride.Forum_Activity"
-63-->C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:26:13-43
+63            android:name="com.example.wheatoride.BuildProfileActivity"
+63-->C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:26:13-49
 64            android:exported="false" />
 64-->C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:27:13-37
 65

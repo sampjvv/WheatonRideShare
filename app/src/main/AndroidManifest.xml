@@ -23,7 +23,7 @@
         android:theme="@style/Theme.WheatORide"
         tools:targetApi="31">
         <activity
-            android:name=".Forum_Activity"
+            android:name=".BuildProfileActivity"
             android:exported="false" />
 
         <meta-data

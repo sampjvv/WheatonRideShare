@@ -10,7 +10,7 @@
     <color name="orange">#F0881B</color>
     <color name="primary">#037C67</color>
     <color name="white">#FFFFFFFF</color>
-    <string name="app_name">WheatORide_v.1</string>
+    <string name="app_name">WheatORide</string>
     <string name="default_web_client_id" translatable="false">1052666779306-cpskj7kbrpk4orr4vi70kcn61dlcimh3.apps.googleusercontent.com</string>
     <string name="firebase_database_url" translatable="false">https://wheatoride-default-rtdb.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">1052666779306</string>

@@ -1,16 +1,16 @@
 package com.example.wheatoride;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wheatoride.adapter.ChatRecyclerAdapter;
 import com.example.wheatoride.model.ChatMessageModel;
@@ -19,10 +19,7 @@ import com.example.wheatoride.model.UserModel;
 import com.example.wheatoride.utils.AndroidUtil;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.Query;
 
 import org.json.JSONObject;
@@ -48,7 +45,7 @@ public class ChatActivity extends AppCompatActivity {
     EditText messageInput;
     ImageButton sendMessageBtn;
     ImageButton backBtn;
-    TextView otherUsername;
+    TextView otherName;
     RecyclerView recyclerView;
     ImageView imageView;
 
@@ -65,7 +62,7 @@ public class ChatActivity extends AppCompatActivity {
         messageInput = findViewById(R.id.chat_message_input);
         sendMessageBtn = findViewById(R.id.message_send_btn);
         backBtn = findViewById(R.id.back_btn);
-        otherUsername = findViewById(R.id.other_username);
+        otherName = findViewById(R.id.other_name);
         recyclerView = findViewById(R.id.chat_recycler_view);
         imageView = findViewById(R.id.profile_pic_image_view);
 
@@ -77,10 +74,8 @@ public class ChatActivity extends AppCompatActivity {
                     }
                 });
 
-        backBtn.setOnClickListener((v)->{
-            onBackPressed();
-        });
-        otherUsername.setText(otherUser.getFullName());
+        backBtn.setOnClickListener((v)-> getOnBackPressedDispatcher().onBackPressed());
+        otherName.setText(otherUser.getFullName());
 
         sendMessageBtn.setOnClickListener((v -> {
             String message = messageInput.getText().toString().trim();
@@ -124,13 +119,10 @@ public class ChatActivity extends AppCompatActivity {
 
         ChatMessageModel chatMessageModel = new ChatMessageModel(message,FirebaseUtil.currentUserId(),Timestamp.now());
         FirebaseUtil.getChatroomMessageReference(chatroomId).add(chatMessageModel)
-                .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentReference> task) {
-                        if(task.isSuccessful()){
-                            messageInput.setText("");
-                            sendNotification(message);
-                        }
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()){
+                        messageInput.setText("");
+                        sendNotification(message);
                     }
                 });
     }
@@ -162,6 +154,7 @@ public class ChatActivity extends AppCompatActivity {
                    JSONObject jsonObject  = new JSONObject();
 
                    JSONObject notificationObj = new JSONObject();
+                   assert currentUser != null;
                    notificationObj.put("title",currentUser.getFullName());
                    notificationObj.put("body",message);
 
@@ -175,8 +168,8 @@ public class ChatActivity extends AppCompatActivity {
                    callApi(jsonObject);
 
 
-               }catch (Exception e){
-
+               }catch (Exception e) {
+                   throw new RuntimeException(e);
                }
 
            }
@@ -201,7 +194,7 @@ public class ChatActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+            public void onResponse(@NonNull Call call, @NonNull Response response) {
 
             }
         });

@@ -47,11 +47,11 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_rounded_corner"
             android:layout_margin="10dp"
-            android:hint="Username"
+            android:hint="Name"
             android:padding="10dp"
             android:elevation="4dp"
             android:layout_toLeftOf="@id/search_user_btn"
-            android:id="@+id/seach_username_input"
+            android:id="@+id/seach_name_input"
             />
         <ImageButton
             android:layout_width="40dp"

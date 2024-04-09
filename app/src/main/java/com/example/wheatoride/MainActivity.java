@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 if(item.getItemId()==R.id.menu_profile){
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,profileFragment).addToBackStack(null).commit();
                 }
-                if(item.getItemId()==R.id.menu_forum){
+                if(item.getItemId()==R.id.menu_offer){
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,forumFragment).commit();
                 }
                 if(item.getItemId()==R.id.menu_settings){

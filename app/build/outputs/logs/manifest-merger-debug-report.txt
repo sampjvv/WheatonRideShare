@@ -82,7 +82,7 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:
 MERGED from [com.google.android.gms:play-services-measurement-base:21.5.1] C:\Users\sarah\.gradle\caches\transforms-4\d6756a82a5b1e13c938eecc13865e9fb\transformed\play-services-measurement-base-21.5.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\sarah\.gradle\caches\transforms-4\f219702552d1a4f978891cf03ba8e6cd\transformed\play-services-basement-18.3.0\AndroidManifest.xml:16:1-26:12
 MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\sarah\.gradle\caches\transforms-4\e5e2dbba1859edb53d18e39a3900f923\transformed\fragment-1.5.7\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.activity:activity:1.8.0] C:\Users\sarah\.gradle\caches\transforms-4\8e8e438b4bdd2b150105af1e0916f93b\transformed\activity-1.8.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.8.2] C:\Users\sarah\.gradle\caches\transforms-4\913be5372b5ef116ce19c238d64a123e\transformed\activity-1.8.2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\sarah\.gradle\caches\transforms-4\8ba4408bb752435180c38dd351e9990c\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:15:1-33:12
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\sarah\.gradle\caches\transforms-4\60976ff16d00f7d1aa1c6f4ce75bd3ac\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:15:1-37:12
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\sarah\.gradle\caches\transforms-4\4d2226d15648824e293c0df1a77e4550\transformed\transport-runtime-3.1.8\AndroidManifest.xml:15:1-41:12
@@ -279,12 +279,12 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sa
 		ADDED from C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:23:9-48
 	android:dataExtractionRules
 		ADDED from C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:17:9-65
-activity#com.example.wheatoride.Forum_Activity
+activity#com.example.wheatoride.BuildProfileActivity
 ADDED from C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:25:9-27:40
 	android:exported
 		ADDED from C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:26:13-43
+		ADDED from C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:26:13-49
 meta-data#com.google.firebase.messaging.default_notification_icon
 ADDED from C:\Users\sarah\StudioProjects\WheatonRideShare\app\src\main\AndroidManifest.xml:29:9-31:58
 	android:resource
@@ -515,8 +515,8 @@ MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\sara
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\sarah\.gradle\caches\transforms-4\f219702552d1a4f978891cf03ba8e6cd\transformed\play-services-basement-18.3.0\AndroidManifest.xml:18:5-43
 MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\sarah\.gradle\caches\transforms-4\e5e2dbba1859edb53d18e39a3900f923\transformed\fragment-1.5.7\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\sarah\.gradle\caches\transforms-4\e5e2dbba1859edb53d18e39a3900f923\transformed\fragment-1.5.7\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.8.0] C:\Users\sarah\.gradle\caches\transforms-4\8e8e438b4bdd2b150105af1e0916f93b\transformed\activity-1.8.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.8.0] C:\Users\sarah\.gradle\caches\transforms-4\8e8e438b4bdd2b150105af1e0916f93b\transformed\activity-1.8.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] C:\Users\sarah\.gradle\caches\transforms-4\913be5372b5ef116ce19c238d64a123e\transformed\activity-1.8.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] C:\Users\sarah\.gradle\caches\transforms-4\913be5372b5ef116ce19c238d64a123e\transformed\activity-1.8.2\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\sarah\.gradle\caches\transforms-4\8ba4408bb752435180c38dd351e9990c\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\sarah\.gradle\caches\transforms-4\8ba4408bb752435180c38dd351e9990c\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\sarah\.gradle\caches\transforms-4\60976ff16d00f7d1aa1c6f4ce75bd3ac\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41

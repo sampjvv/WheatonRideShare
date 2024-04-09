@@ -17,7 +17,7 @@ com.example.wheatoride.app-core-1.9.0-15 C:\Users\sarah\.gradle\caches\transform
 com.example.wheatoride.app-firebase-messaging-23.4.1-16 C:\Users\sarah\.gradle\caches\transforms-4\76a5d2a9f96e6c3ee9b0ea1c2d6a154c\transformed\firebase-messaging-23.4.1\res
 com.example.wheatoride.app-appcompat-1.6.1-17 C:\Users\sarah\.gradle\caches\transforms-4\7a3c4b8e54284fe10ba59eb40a39046d\transformed\appcompat-1.6.1\res
 com.example.wheatoride.app-core-ktx-1.9.0-18 C:\Users\sarah\.gradle\caches\transforms-4\813541282c2062c3e0342c36fc8f2a5f\transformed\core-ktx-1.9.0\res
-com.example.wheatoride.app-activity-1.8.0-19 C:\Users\sarah\.gradle\caches\transforms-4\8e8e438b4bdd2b150105af1e0916f93b\transformed\activity-1.8.0\res
+com.example.wheatoride.app-activity-1.8.2-19 C:\Users\sarah\.gradle\caches\transforms-4\913be5372b5ef116ce19c238d64a123e\transformed\activity-1.8.2\res
 com.example.wheatoride.app-emoji2-1.2.0-20 C:\Users\sarah\.gradle\caches\transforms-4\91494ce7ead1c461407cc215a9ffe89e\transformed\emoji2-1.2.0\res
 com.example.wheatoride.app-paging-rxjava3-3.0.0-21 C:\Users\sarah\.gradle\caches\transforms-4\9686cb987c0057aee6b3cb144f0316ce\transformed\paging-rxjava3-3.0.0\res
 com.example.wheatoride.app-firebase-common-20.4.2-22 C:\Users\sarah\.gradle\caches\transforms-4\a3b66ed1b056f0b189ece18e2a6991c5\transformed\firebase-common-20.4.2\res

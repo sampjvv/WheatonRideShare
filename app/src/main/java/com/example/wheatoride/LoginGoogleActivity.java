@@ -1,5 +1,6 @@
 package com.example.wheatoride;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,7 +8,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.wheatoride.model.UserModel;
@@ -24,9 +26,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
 import java.util.Objects;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class LoginGoogleActivity extends AppCompatActivity {
 
@@ -36,10 +41,12 @@ public class LoginGoogleActivity extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseDatabase database;
     GoogleSignInClient mGoogleSignInClient;
+    FirebaseFirestore firestore;
 
     UserModel userModel;
 
-    int RC_SIGN_IN = 20;
+    // Declare an instance of ActivityResultLauncher
+    ActivityResultLauncher<Intent> signInResultLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +58,13 @@ public class LoginGoogleActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
+        firestore = FirebaseFirestore.getInstance();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
-                        .requestEmail().build();
+                .requestEmail().build();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this,gso);
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         progressBar.setVisibility(View.GONE);
 
@@ -66,85 +74,74 @@ public class LoginGoogleActivity extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
         });
 
+        // Initialize the ActivityResultLauncher instance
+        signInResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+                        try {
+                            GoogleSignInAccount account = task.getResult(ApiException.class);
+                            progressBar.setVisibility(View.GONE);
+                            ExecutorService executor = Executors.newSingleThreadExecutor();
+                            executor.execute(() -> firebaseAuth(account.getIdToken()));
+                        } catch (Exception e) {
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+        );
     }
 
     private void googleSignIn() {
         Intent intent = mGoogleSignInClient.getSignInIntent();
-        //noinspection deprecation
-        startActivityForResult(intent, RC_SIGN_IN);
-
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-
-        if (requestCode == RC_SIGN_IN){
-
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-
-            try {
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                progressBar.setVisibility(View.GONE);
-                firebaseAuth(account.getIdToken());
-            } catch (Exception e){
-                progressBar.setVisibility(View.GONE);
-                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-
-                System.out.println(e.getMessage());
-            }
-
-
-
-        }
-
+        signInResultLauncher.launch(intent);
     }
 
     private void firebaseAuth(String idToken) {
-
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         auth.signInWithCredential(credential).addOnCompleteListener(task -> {
-
                     if (task.isSuccessful()) {
-                        System.out.print("Success!!!!!!!!!!!!!!");
+                        System.out.print("Success");
                         FirebaseUser user = auth.getCurrentUser();
 
-                        HashMap<String, Object> map = new HashMap<>();
-                        assert user != null;
+                        if (user != null) {
+                            // Retrieve additional user data from Firestore
+                            firestore.collection("users").document(user.getUid()).get()
+                                    .addOnCompleteListener(userDataTask -> {
+                                        if (userDataTask.isSuccessful()) {
+                                            DocumentSnapshot document = userDataTask.getResult();
+                                            if (document != null && document.exists()) {
+                                                // Populate UserModel with Firestore data
+                                                userModel = document.toObject(UserModel.class);
+                                                userModel.setUserId(user.getUid()); // Set the ID
 
-                        map.put("id", user.getUid());
+                                                // Save UserModel to Firebase Realtime Database
+                                                database.getReference().child("users").child(user.getUid())
+                                                        .setValue(userModel)
+                                                        .addOnCompleteListener(task1 -> {
+                                                            if (task1.isSuccessful()) {
+                                                                Toast.makeText(LoginGoogleActivity.this,
+                                                                        "Login successful", Toast.LENGTH_SHORT).show();
 
-                        userModel = new UserModel(user.getEmail(), user.getDisplayName(),
-                                Objects.requireNonNull(Objects.requireNonNull(user.getPhotoUrl()).toString()), Timestamp.now(),
-                                FirebaseUtil.currentUserId());
-
-                        database.getReference().child("users").child(user.getUid()).setValue(map);
-                        FirebaseUtil.currentUserDetails().set(userModel).addOnCompleteListener(task1 -> {
-
-                            if (task1.isSuccessful()) {
-
-                                Toast.makeText(LoginGoogleActivity.this, "login successful", Toast.LENGTH_SHORT).show();
-
-                                Intent intent = new Intent(LoginGoogleActivity.this, MainActivity.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                startActivity(intent);
-                            }
-                        })
-                        .addOnFailureListener(e -> {
-                            // This will print stack trace of the Exception to the console.
-                            e.printStackTrace();
-                        });
-
+                                                                Intent intent = new Intent(LoginGoogleActivity.this,
+                                                                        MainActivity.class);
+                                                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                                                                        Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                                startActivity(intent);
+                                                            }
+                                                        })
+                                                        .addOnFailureListener(Throwable::printStackTrace);
+                                            }
+                                        }
+                                    });
+                        }
                     } else {
-                        Toast.makeText(LoginGoogleActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginGoogleActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                     }
-
                 })
-                .addOnFailureListener(e -> {
-                    // This will print stack trace of the Exception to the console.
-                    e.printStackTrace();
-                });
-
+                .addOnFailureListener(Throwable::printStackTrace);
     }
 }

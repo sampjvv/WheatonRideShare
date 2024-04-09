@@ -17,7 +17,6 @@ import android.widget.TextView;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import com.example.wheatoride.model.UserModel;
@@ -29,18 +28,18 @@ import com.google.firebase.messaging.FirebaseMessaging;
 public class ProfileFragment extends Fragment {
 
     ImageView profilePic;
-    EditText nameInput;
-    EditText emailInput;
+    EditText descriptionInput;
+    TextView nameInput;
+    TextView emailInput;
     Button updateProfileBtn;
     ProgressBar progressBar;
     TextView logoutBtn;
     UserModel currentUserModel;
     ActivityResultLauncher<Intent> imagePickLauncher;
     Uri selectedImageUri;
-    Button darkModeBtn;
-    boolean isDark;
-    public ProfileFragment() {
 
+
+    public ProfileFragment() {
     }
 
     @Override
@@ -59,22 +58,20 @@ public class ProfileFragment extends Fragment {
                 );
     }
 
-    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_profile, container, false);
         profilePic = view.findViewById(R.id.profile_image_view);
+        descriptionInput = view.findViewById(R.id.profile_description);
         nameInput = view.findViewById(R.id.profile_name);
         emailInput = view.findViewById(R.id.profile_email);
         updateProfileBtn = view.findViewById(R.id.profle_update_btn);
         progressBar = view.findViewById(R.id.profile_progress_bar);
         logoutBtn = view.findViewById(R.id.logout_btn);
-        darkModeBtn = view.findViewById(R.id.dark_mode_switch);
+
 
         getUserData();
-
-        darkModeBtn.setOnClickListener((v -> updateDarkModeBtn()));
 
         updateProfileBtn.setOnClickListener((v -> updateBtnClick()));
 
@@ -97,12 +94,11 @@ public class ProfileFragment extends Fragment {
     }
 
     void updateBtnClick(){
-        String newUsername = nameInput.getText().toString();
-        if(newUsername.isEmpty() || newUsername.length()<3){
-            nameInput.setError("Username length should be at least 3 chars");
+        String newDescription = descriptionInput.getText().toString();
+        if(newDescription.isEmpty()){
             return;
         }
-        currentUserModel.setFullName(newUsername);
+        currentUserModel.setDescription(newDescription);
         setInProgress(true);
 
 
@@ -149,6 +145,7 @@ public class ProfileFragment extends Fragment {
             currentUserModel = task.getResult().toObject(UserModel.class);
 
             assert currentUserModel != null;
+            descriptionInput.setText(currentUserModel.getDescription());
             nameInput.setText(currentUserModel.getFullName());
             emailInput.setText(currentUserModel.getEmail());
             AndroidUtil.setProfilePic(getContext(), Uri.parse(currentUserModel.getProfilePicUri()), profilePic);
@@ -166,18 +163,6 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    @SuppressLint("SetTextI18n")
-    void updateDarkModeBtn(){
-        if(isDark){
-            darkModeBtn.setText("dark");
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            isDark = false;
-        }else{
-            darkModeBtn.setText("light");
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            isDark = true;
-        }
-    }
 
 }
 

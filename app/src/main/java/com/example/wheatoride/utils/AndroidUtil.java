@@ -17,23 +17,29 @@ public class AndroidUtil {
     }
 
     public static void passUserModelAsIntent(Intent intent, UserModel model){
-       intent.putExtra("username",model.getFullName());
-       intent.putExtra("phone",model.getEmail());
+       intent.putExtra("fullName",model.getFullName());
+       intent.putExtra("email",model.getEmail());
        intent.putExtra("userId",model.getUserId());
-        intent.putExtra("fcmToken",model.getFcmToken());
+       intent.putExtra("fcmToken",model.getFcmToken());
+       intent.putExtra("profilePicUri",model.getProfilePicUri());
+       intent.putExtra("description",model.getDescription());
+
 
     }
 
     public static UserModel getUserModelFromIntent(Intent intent){
         UserModel userModel = new UserModel();
-        userModel.setFullName(intent.getStringExtra("username"));
-        userModel.setEmail(intent.getStringExtra("phone"));
+        userModel.setFullName(intent.getStringExtra("fullName"));
+        userModel.setEmail(intent.getStringExtra("email"));
         userModel.setUserId(intent.getStringExtra("userId"));
         userModel.setFcmToken(intent.getStringExtra("fcmToken"));
+        userModel.setProfilePicUri(intent.getStringExtra("profilePicUri"));
+        userModel.setDescription(intent.getStringExtra("description"));
         return userModel;
     }
 
     public static void setProfilePic(Context context, Uri imageUri, ImageView imageView){
         Glide.with(context).load(imageUri).apply(RequestOptions.circleCropTransform()).into(imageView);
+        System.out.println("set Profile Pic");
     }
 }

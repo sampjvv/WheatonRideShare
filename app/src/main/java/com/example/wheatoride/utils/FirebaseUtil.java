@@ -1,5 +1,7 @@
 package com.example.wheatoride.utils;
 
+import android.annotation.SuppressLint;
+
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
@@ -18,10 +20,7 @@ public class FirebaseUtil {
     }
 
     public static boolean isLoggedIn(){
-        if(currentUserId()!=null){
-            return true;
-        }
-        return false;
+        return currentUserId() != null;
     }
 
     public static DocumentReference currentUserDetails(){
@@ -60,8 +59,9 @@ public class FirebaseUtil {
         }
     }
 
+    @SuppressLint("SimpleDateFormat")
     public static String timestampToString(Timestamp timestamp){
-        return new SimpleDateFormat("HH:MM").format(timestamp.toDate());
+        return new SimpleDateFormat("hh:mm").format(timestamp.toDate());
     }
 
     public static void logout(){
@@ -69,12 +69,12 @@ public class FirebaseUtil {
     }
 
     public static StorageReference  getCurrentProfilePicStorageRef(){
-        return FirebaseStorage.getInstance().getReference().child("profile_pic")
+        return FirebaseStorage.getInstance().getReference().child("profilePicUri")
                 .child(FirebaseUtil.currentUserId());
     }
 
     public static StorageReference  getOtherProfilePicStorageRef(String otherUserId){
-        return FirebaseStorage.getInstance().getReference().child("profile_pic")
+        return FirebaseStorage.getInstance().getReference().child("profilePicUri")
                 .child(otherUserId);
     }
 

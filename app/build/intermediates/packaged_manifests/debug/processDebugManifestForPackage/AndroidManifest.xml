@@ -60,7 +60,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.WheatORide" >
         <activity
-            android:name="com.example.wheatoride.Forum_Activity"
+            android:name="com.example.wheatoride.BuildProfileActivity"
             android:exported="false" />
 
         <meta-data

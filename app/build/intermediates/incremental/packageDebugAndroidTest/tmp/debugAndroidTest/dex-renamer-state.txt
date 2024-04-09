@@ -1,8 +1,8 @@
-#Thu Apr 04 14:18:20 CDT 2024
-base.0=C\:\\Users\\sampe\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
-base.1=C\:\\Users\\sampe\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
-base.2=C\:\\Users\\sampe\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\12\\classes.dex
-base.3=C\:\\Users\\sampe\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\1\\classes.dex
+#Tue Apr 09 13:28:49 CDT 2024
+base.0=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+base.1=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+base.2=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\12\\classes.dex
+base.3=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\1\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=12/classes.dex
