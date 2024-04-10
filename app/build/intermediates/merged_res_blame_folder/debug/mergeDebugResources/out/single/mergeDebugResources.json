@@ -84,6 +84,10 @@
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\drawable\\icon_search.xml"
     },
     {
+        "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_application.xml.flat",
+        "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_application.xml"
+    },
+    {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\drawable_settings_icon.xml.flat",
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\drawable\\settings_icon.xml"
     },
@@ -98,6 +102,10 @@
     {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\drawable_edit_text_rounded_corner.xml.flat",
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\drawable\\edit_text_rounded_corner.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_chat_message_recycler_row.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/chat_message_recycler_row.xml"
     },
     {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_fragment_profile.xml.flat",

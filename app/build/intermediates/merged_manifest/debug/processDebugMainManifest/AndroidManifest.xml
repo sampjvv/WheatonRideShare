@@ -60,6 +60,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.WheatORide" >
         <activity
+            android:name="com.example.wheatoride.Application"
+            android:exported="false" />
+        <activity
             android:name="com.example.wheatoride.BuildProfileActivity"
             android:exported="false" />
 
