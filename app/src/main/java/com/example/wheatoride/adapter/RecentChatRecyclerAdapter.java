@@ -1,5 +1,6 @@
 package com.example.wheatoride.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -30,6 +31,7 @@ public class RecentChatRecyclerAdapter extends FirestoreRecyclerAdapter<Chatroom
         this.context = context;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onBindViewHolder(@NonNull ChatroomModelViewHolder holder, int position, @NonNull ChatroomModel model) {
         FirebaseUtil.getOtherUserFromChatroom(model.getUserIds())
@@ -37,20 +39,14 @@ public class RecentChatRecyclerAdapter extends FirestoreRecyclerAdapter<Chatroom
                         if(task.isSuccessful()){
                             boolean lastMessageSentByMe = model.getLastMessageSenderId().equals(FirebaseUtil.currentUserId());
 
-
                             UserModel otherUserModel = task.getResult().toObject(UserModel.class);
 
-                            FirebaseUtil.getOtherProfilePicStorageRef(otherUserModel.getUserId()).getDownloadUrl()
-                                    .addOnCompleteListener(t -> {
-                                        if(t.isSuccessful()){
-                                            Uri uri  = t.getResult();
-                                            AndroidUtil.setProfilePic(context,uri,holder.profilePic);
-                                        }
-                                    });
+                            assert otherUserModel != null;
+                            AndroidUtil.setProfilePic(context, Uri.parse(otherUserModel.getProfilePicUri()),holder.profilePic);
 
                             holder.usernameText.setText(otherUserModel.getFullName());
                             if(lastMessageSentByMe)
-                                holder.lastMessageText.setText("You : "+model.getLastMessage());
+                                holder.lastMessageText.setText("You : " + model.getLastMessage());
                             else
                                 holder.lastMessageText.setText(model.getLastMessage());
                             holder.lastMessageTime.setText(FirebaseUtil.timestampToString(model.getLastMessageTimestamp()));

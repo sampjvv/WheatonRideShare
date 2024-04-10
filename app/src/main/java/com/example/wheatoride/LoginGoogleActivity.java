@@ -1,5 +1,6 @@
 package com.example.wheatoride;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,7 +8,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.wheatoride.model.UserModel;
@@ -38,8 +40,6 @@ public class LoginGoogleActivity extends AppCompatActivity {
 
     UserModel userModel;
 
-    int RC_SIGN_IN = 20;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,35 +54,33 @@ public class LoginGoogleActivity extends AppCompatActivity {
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail().build();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this,gso);
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         progressBar.setVisibility(View.GONE);
 
+        // Register for activity result outside the click listener
+        ActivityResultLauncher<Intent> signInResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
+                        try {
+                            GoogleSignInAccount account = task.getResult(ApiException.class);
+                            firebaseAuth(account.getIdToken());
+                        } catch (Exception e) {
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+        );
+
         googleBtn.setOnClickListener(view -> {
             progressBar.setVisibility(View.VISIBLE);
-            googleSignIn();
+            // Launch the sign-in intent
+            Intent intent = mGoogleSignInClient.getSignInIntent();
+            signInResultLauncher.launch(intent);
         });
-    }
-
-    private void googleSignIn() {
-        Intent intent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(intent, RC_SIGN_IN);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == RC_SIGN_IN){
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                firebaseAuth(account.getIdToken());
-            } catch (Exception e){
-                progressBar.setVisibility(View.GONE);
-                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }
     }
 
     private void firebaseAuth(String idToken) {
@@ -105,18 +103,18 @@ public class LoginGoogleActivity extends AppCompatActivity {
                         }
 
                         progressBar.setVisibility(View.GONE);
-                        Toast.makeText(LoginGoogleActivity.this, "login successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginGoogleActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(LoginGoogleActivity.this, MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     } else {
-                        Toast.makeText(LoginGoogleActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginGoogleActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
                     }
                 });
             } else {
-                Toast.makeText(LoginGoogleActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginGoogleActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
             }
         });
