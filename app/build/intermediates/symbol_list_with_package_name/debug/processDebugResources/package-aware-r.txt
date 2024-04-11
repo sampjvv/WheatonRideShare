@@ -3484,6 +3484,7 @@ id clockwise
 id closest
 id collapseActionView
 id compress
+id confirmRide
 id confirm_button
 id constraint
 id container

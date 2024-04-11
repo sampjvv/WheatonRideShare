@@ -46,6 +46,7 @@ public class ChatActivity extends AppCompatActivity {
     ImageButton sendMessageBtn;
     ImageButton backBtn;
     TextView otherName;
+   ImageButton confirmBtn;
     RecyclerView recyclerView;
     ImageView imageView;
 
@@ -63,6 +64,7 @@ public class ChatActivity extends AppCompatActivity {
         sendMessageBtn = findViewById(R.id.message_send_btn);
         backBtn = findViewById(R.id.back_btn);
         otherName = findViewById(R.id.other_name);
+        confirmBtn = findViewById(R.id.confirmRide);
         recyclerView = findViewById(R.id.chat_recycler_view);
         imageView = findViewById(R.id.profile_pic_image_view);
 
@@ -72,6 +74,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
         backBtn.setOnClickListener((v)-> getOnBackPressedDispatcher().onBackPressed());
+        confirmBtn.setOnClickListener((v)-> getOnBackPressedDispatcher().onBackPressed());
         otherName.setText(otherUser.getFullName());
 
         sendMessageBtn.setOnClickListener((v -> {
