@@ -18,6 +18,15 @@ public class ForumModel {
         createdTimestamp  = null;
 
     }
+    public ForumModel(String location){
+        this.userId = "";
+        seats = "";
+        this.location = location;
+        username = "";
+        createdTimestamp  = null;
+
+    }
+
     public ForumModel(String username, String seats, String location, String userId, Timestamp createdTimestamp){
         this.seats = seats;
         this.location = location;

@@ -3637,7 +3637,6 @@ int id logout_btn 0x7f080162
 int id lytCameraPick 0x7f080163
 int id lytGalleryPick 0x7f080164
 int id m3_side_sheet 0x7f080165
-int id main 0x7f080166
 int id main_frame_layout 0x7f080167
 int id main_search_btn 0x7f080168
 int id main_toolbar 0x7f080169
@@ -3749,7 +3748,7 @@ int id phone_text 0x7f0801d2
 int id pin 0x7f0801d3
 int id position 0x7f0801d4
 int id postLayout 0x7f0801d5
-int id post_info_text 0x7f0801d6
+int id post_text 0x7f0802aa
 int id preferenceDivider 0x7f0801d7
 int id pressed 0x7f0801d8
 int id profile_create_btn 0x7f0801d9
@@ -4073,7 +4072,6 @@ int layout activity_build_profile 0x7f0b001c
 int layout activity_chat 0x7f0b001d
 int layout activity_confirmation 0x7f0b001e
 int layout activity_forum 0x7f0b001f
-int layout activity_forum2 0x7f0b0020
 int layout activity_login_google 0x7f0b0021
 int layout activity_main 0x7f0b0022
 int layout activity_post_screen 0x7f0b0023

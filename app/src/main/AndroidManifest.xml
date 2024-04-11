@@ -25,6 +25,9 @@
         <activity
             android:name=".BuildProfileActivity"
             android:exported="false" />
+        <activity
+            android:name=".CreatePostActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"

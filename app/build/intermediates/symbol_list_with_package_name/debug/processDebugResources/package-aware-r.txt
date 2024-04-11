@@ -3638,7 +3638,6 @@ id logout_btn
 id lytCameraPick
 id lytGalleryPick
 id m3_side_sheet
-id main
 id main_frame_layout
 id main_search_btn
 id main_toolbar
@@ -3750,7 +3749,7 @@ id phone_text
 id pin
 id position
 id postLayout
-id post_info_text
+id post_text
 id preferenceDivider
 id pressed
 id profile_create_btn
@@ -4074,7 +4073,6 @@ layout activity_build_profile
 layout activity_chat
 layout activity_confirmation
 layout activity_forum
-layout activity_forum2
 layout activity_login_google
 layout activity_main
 layout activity_post_screen
