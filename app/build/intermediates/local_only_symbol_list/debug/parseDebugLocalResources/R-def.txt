@@ -35,6 +35,7 @@ id bottom_layout
 id bottom_navigation
 id chat_message_input
 id chat_recycler_view
+id confirmRide
 id dark_mode_switch
 id divider
 id forum_recycler_view

@@ -3483,6 +3483,7 @@ int id clockwise 0x7f0800c8
 int id closest 0x7f0800c9
 int id collapseActionView 0x7f0800ca
 int id compress 0x7f0800cb
+int id confirmRide 0x7f0802a8
 int id confirm_button 0x7f0800cc
 int id constraint 0x7f0800cd
 int id container 0x7f0800ce

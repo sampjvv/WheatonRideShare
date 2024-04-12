@@ -38,6 +38,7 @@ public class UserModel {
     public String getProfilePicUri() {
         return profilePicUri;
     }
+
     public void setProfilePicUri(String profilePicUri) {
         this.profilePicUri = profilePicUri;
     }

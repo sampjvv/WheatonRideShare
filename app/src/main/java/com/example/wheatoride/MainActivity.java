@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 if(item.getItemId()==R.id.menu_settings){
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,settingsFragment).commit();
                 }
+
                 return true;
             }
         });
