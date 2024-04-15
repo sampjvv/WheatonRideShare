@@ -15,6 +15,8 @@ import java.util.List;
 
 public class FirebaseUtil {
 
+
+
     public static String currentUserId(){
         return FirebaseAuth.getInstance().getUid();
     }

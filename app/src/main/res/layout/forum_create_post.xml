@@ -38,16 +38,20 @@
 
 
         <EditText
+            android:id="@+id/post_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:hint="Text"
-            android:inputType="text"
+            android:layout_height="150dp"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_rounded_corner"
             android:elevation="5dp"
-            android:id="@+id/post_info_text"
-            style = "@style/textInverse"/>
+            android:enabled="true"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:color="@style/textInverse"
+            android:maxLength="150"
+            android:textColor="@color/black"
+            android:gravity="top|start"/>
 
         <Button
             android:id="@+id/save_new_post"

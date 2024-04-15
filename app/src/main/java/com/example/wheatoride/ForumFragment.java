@@ -1,10 +1,13 @@
 package com.example.wheatoride;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,12 +19,17 @@ import com.example.wheatoride.model.ChatroomModel;
 import com.example.wheatoride.model.ForumModel;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 public class ForumFragment extends Fragment {
 
     RecyclerView recyclerView;
     ForumRecyclerAdapter adapter;
+    Button addPostButton;
+    FloatingActionButton fb;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     public ForumFragment() {
@@ -31,9 +39,18 @@ public class ForumFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_forum, container, false);
 
+        addPostButton = view.findViewById(R.id.add_post_button);
+
+        addPostButton.setOnClickListener((v) -> {
+            Intent intent = new Intent(getContext(), CreatePostActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        });
+
+
         return view;
     }
-/**
+
     void setupRecyclerView(){
 
         Query query = FirebaseUtil.allUserCollectionReference()
@@ -57,7 +74,8 @@ public class ForumFragment extends Fragment {
         });
 
     }
-**/
+
+
     @Override
     public void onStart() {
         super.onStart();

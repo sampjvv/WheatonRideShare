@@ -2,6 +2,7 @@ package com.example.wheatoride;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +23,32 @@ public class MainActivity extends AppCompatActivity {
     ForumFragment forumFragment;
 
     SettingsFragment settingsFragment;
+    boolean inChat = true;
+    boolean inRide = false;
+    boolean noSearch = false;
+
+    public void searchFinder(Fragment fragment){
+        if(fragment.equals(chatFragment)){
+            searchButton.setEnabled(true);
+            inChat = true;
+            inRide = false;
+            noSearch = false;
+
+        }
+        else if(fragment.equals(forumFragment)){
+            searchButton.setEnabled(true);
+            inChat = false;
+            inRide = true;
+            noSearch = false;
+        }
+        else{
+            searchButton.setEnabled(false);
+            inChat = false;
+            inRide = false;
+            noSearch = true;
+        }
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,30 +64,51 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         searchButton = findViewById(R.id.main_search_btn);
 
-        searchButton.setOnClickListener((v)->{
-            startActivity(new Intent(MainActivity.this,SearchUserActivity.class));
-        });
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if(item.getItemId()==R.id.menu_chat){
+                    searchFinder(chatFragment);
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,chatFragment).commit();
                 }
                 if(item.getItemId()==R.id.menu_profile){
+                    searchFinder(profileFragment);
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,profileFragment).addToBackStack(null).commit();
                 }
                 if(item.getItemId()==R.id.menu_offer){
+                    searchFinder(forumFragment);
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,forumFragment).commit();
                 }
                 if(item.getItemId()==R.id.menu_settings){
+                    searchFinder(settingsFragment);
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,settingsFragment).commit();
                 }
 
                 return true;
             }
         });
+
+        if(inChat){
+            searchButton.setEnabled(true);
+            searchButton.setOnClickListener((v)->{
+                startActivity(new Intent(MainActivity.this,SearchUserActivity.class));
+            });
+        }
+        else if(inRide){
+            searchButton.setEnabled(true);
+            searchButton.setOnClickListener((v)->{
+                startActivity(new Intent(MainActivity.this,SearchUserActivity.class));
+            });
+        }
+        else if(noSearch){
+            searchButton.setEnabled(false);
+        }
+
         bottomNavigationView.setSelectedItemId(R.id.menu_chat);
+
+
 
         getFCMToken();
 
