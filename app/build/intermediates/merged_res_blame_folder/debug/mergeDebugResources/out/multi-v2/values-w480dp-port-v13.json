@@ -4,7 +4,7 @@
             "outputFile": "com.example.wheatoride.app-mergeDebugResources-44:/values-w480dp-port-v13/values-w480dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-4\\096ef16d174fb0898633cdb67f1b6c62\\transformed\\material-1.8.0\\res\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
+                    "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-4\\702f7797ca39975a8d34166f6a1ef0f2\\transformed\\material-1.8.0\\res\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

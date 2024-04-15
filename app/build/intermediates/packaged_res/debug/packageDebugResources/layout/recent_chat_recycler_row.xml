@@ -22,14 +22,15 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
+                android:id="@+id/user_name_text"
+                style=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Username"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:id="@+id/user_name_text"
-                style = ""/>
+                tools:text="Name" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,7 +43,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="+000000000000"
+            tools:text="example@my.wheaton.edu"
             android:id="@+id/last_message_text"/>
     </LinearLayout>
+
     </LinearLayout>

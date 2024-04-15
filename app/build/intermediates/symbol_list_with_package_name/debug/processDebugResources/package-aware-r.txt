@@ -3727,6 +3727,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id number_of_seats
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3757,17 +3758,19 @@ id profile_description
 id profile_email
 id profile_image_view
 id profile_name
+id profile_phone_number
 id profile_pic_image_view
 id profile_pic_layout
 id profile_progress_bar
+id profile_switch
 id profle_update_btn
 id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id recent_recyler_view
 id rectangles
 id recycler_countryDialog
-id recyler_view
 id report_drawn
 id reverseSawtooth
 id right
@@ -3822,6 +3825,7 @@ id search_view_status_bar_spacer
 id search_view_toolbar
 id search_view_toolbar_container
 id search_voice_btn
+id seats_text
 id select_dialog_listview
 id selected
 id selection_type
@@ -3936,6 +3940,8 @@ id unlabeled
 id up
 id useLogo
 id user_name_text
+id vehicle_pic_image_view
+id vehicle_recyler_view
 id vertical_only
 id view_offset_helper
 id view_overlay
@@ -4188,6 +4194,7 @@ layout ucrop_fragment_photobox
 layout ucrop_layout_rotate_wheel
 layout ucrop_layout_scale_wheel
 layout ucrop_view
+layout vehicle_recycler_row
 menu bottom_navigation_menu
 menu ucrop_menu_activity
 mipmap ic_launcher

@@ -98,7 +98,8 @@ public class LoginGoogleActivity extends AppCompatActivity {
                         if (document.exists()) {
                             userModel = document.toObject(UserModel.class);
                         } else {
-                            userModel = new UserModel(user.getEmail(), user.getDisplayName(), Objects.requireNonNull(user.getPhotoUrl()).toString(), Timestamp.now(), userId);
+                            userModel = new UserModel(user.getEmail(), user.getDisplayName(),
+                                    Objects.requireNonNull(user.getPhotoUrl()).toString(), Timestamp.now(), userId);
                             docRef.set(userModel);
                         }
 
