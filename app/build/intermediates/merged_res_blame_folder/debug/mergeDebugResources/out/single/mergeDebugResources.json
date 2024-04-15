@@ -1,0 +1,254 @@
+[
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_vehicle_recycler_row.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/vehicle_recycler_row.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_icon_search.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/icon_search.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_edit_text_rounded_corner.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/edit_text_rounded_corner.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_phone_icon.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/phone_icon.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_settings_icon.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/settings_icon.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_chat.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_chat.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_circular_bg.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/circular_bg.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/xml_backup_rules.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_icon_send.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/icon_send.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/menu_bottom_navigation_menu.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/menu/bottom_navigation_menu.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_fragment_settings.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_icon_back.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/icon_back.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_fragment_forum.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/fragment_forum.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_test.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/test.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_fragment_chat.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/fragment_chat.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_email_icon.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/email_icon.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_recent_chat_recycler_row.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/recent_chat_recycler_row.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_offer_icon.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/offer_icon.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_btn_rounded_corner.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/btn_rounded_corner.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_vehicle_edit_recycler_row.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/vehicle_edit_recycler_row.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_splash.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_chat_message_recycler_row.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/chat_message_recycler_row.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_post_screen.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_post_screen.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_login_google.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_login_google.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_search_user_recycler_row.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/search_user_recycler_row.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_wor_logo.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/wor_logo.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_forum.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_forum.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_confirmation.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_confirmation.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_person_icon.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/person_icon.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_request_icon.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/request_icon.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_launcher_icon.png.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/launcher_icon.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_search_rides.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_search_rides.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_forum_create_post.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/forum_create_post.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_chat_icon.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/chat_icon.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_otp_icon.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/otp_icon.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_search_user.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_search_user.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_fragment_profile.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable_logo.png.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable/logo.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_post.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/post.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_profile_pic_view.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/profile_pic_view.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_build_profile.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_build_profile.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_main.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_forum_post_row.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/forum_post_row.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.wheatoride.app-debug-47:/mipmap-hdpi/ic_launcher.png"
+    }
+]
