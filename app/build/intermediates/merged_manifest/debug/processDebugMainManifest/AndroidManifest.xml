@@ -68,6 +68,9 @@
         <activity
             android:name="com.example.wheatoride.CreatePostActivity"
             android:exported="false" />
+        <activity
+            android:name="com.example.wheatoride.ConfirmActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"

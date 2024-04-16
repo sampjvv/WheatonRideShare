@@ -29,6 +29,8 @@ drawable phone_icon
 drawable request_icon
 drawable settings_icon
 drawable wor_logo
+id Confirm
+id Deny
 id add_post_button
 id back_btn
 id bottom_layout
@@ -88,6 +90,7 @@ id textView13
 id textView2
 id textView3
 id textView4
+id textView5
 id toolbar
 id user_name_text
 id vehicle_description
@@ -97,6 +100,7 @@ id vehicle_recyler_view
 id vehicle_seat_number
 layout activity_build_profile
 layout activity_chat
+layout activity_confirm
 layout activity_confirmation
 layout activity_forum
 layout activity_login_google

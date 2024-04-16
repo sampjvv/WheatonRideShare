@@ -3291,8 +3291,10 @@ id CHINESE_SIMPLIFIED
 id CHINESE_TRADITIONAL
 id CTRL
 id CZECH
+id Confirm
 id DANISH
 id DUTCH
+id Deny
 id ENGLISH
 id FARSI
 id FIXED_LINE
@@ -3900,6 +3902,7 @@ id textView13
 id textView2
 id textView3
 id textView4
+id textView5
 id textView_code
 id textView_countryName
 id textView_noresult
@@ -4083,6 +4086,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_build_profile
 layout activity_chat
+layout activity_confirm
 layout activity_confirmation
 layout activity_forum
 layout activity_login_google

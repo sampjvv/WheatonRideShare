@@ -124,6 +124,10 @@
         "source": "com.example.wheatoride.app-main-48:/layout/activity_post_screen.xml"
     },
     {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_confirm.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_confirm.xml"
+    },
+    {
         "merged": "com.example.wheatoride.app-debug-46:/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "com.example.wheatoride.app-debug-47:/mipmap-hdpi/ic_launcher_round.png"
     },
