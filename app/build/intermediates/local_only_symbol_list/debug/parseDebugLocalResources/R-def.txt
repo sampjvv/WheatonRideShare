@@ -29,8 +29,6 @@ drawable phone_icon
 drawable request_icon
 drawable settings_icon
 drawable wor_logo
-id Confirm
-id Deny
 id add_post_button
 id avalible_seats_text
 id back_btn
@@ -87,13 +85,8 @@ id search_user_btn
 id search_user_layout
 id search_user_recycler_view
 id seats_text
-<<<<<<< HEAD
-=======
-id textView
->>>>>>> 2ecac3cfd1a8632b50576646d9d7badb179c382e
 id textView13
 id textView4
-id textView5
 id toolbar
 id user_name_text
 id vehicle_description
@@ -103,7 +96,6 @@ id vehicle_recyler_view
 id vehicle_seat_number
 layout activity_build_profile
 layout activity_chat
-layout activity_confirm
 layout activity_confirmation
 layout activity_forum
 layout activity_login_google

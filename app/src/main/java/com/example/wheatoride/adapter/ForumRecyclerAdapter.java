@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.wheatoride.model.ForumModel;
 import com.example.wheatoride.ChatActivity;
 import com.example.wheatoride.R;
+import com.example.wheatoride.model.UserModel;
 import com.example.wheatoride.utils.AndroidUtil;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -35,11 +36,15 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
                 .get().addOnCompleteListener( task -> {
                     if(task.isSuccessful()){
                         ForumModel fm = task.getResult().toObject(ForumModel.class);
-                        holder.usernameText.setText(fm.getUsername());
+                        UserModel otherUserModel = task.getResult().toObject(UserModel.class);
+                        assert otherUserModel != null;
+                        AndroidUtil.setProfilePic(context, Uri.parse(otherUserModel.getProfilePicUri()),holder.profilePic);
+                        holder.usernameText.setText(otherUserModel.getFullName());
+
+                        //holder.usernameText.setText(fm.getUsername());
                         holder.description.setText(model.getDescription());
-                        holder.createdTimeStamp.setText(model.getCreatedTimestamp().toString());
-                        holder.usernameText.setText(model.getUsername());
-                        holder.description.setText(model.getDescription());
+                        //holder.createdTimeStamp.setText(model.getCreatedTimestamp().toString());
+                       // holder.usernameText.setText(model.getUsername());
                     }
                 });
 
@@ -79,7 +84,7 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
             availableSeats = itemView.findViewById(R.id.seats_text);
             usernameText = itemView.findViewById(R.id.user_name_text);
             profilePic = itemView.findViewById(R.id.profile_pic_image_view);
-            createdTimeStamp = itemView.findViewById(R.id.post_time_text);
+            //createdTimeStamp = itemView.findViewById(R.id.post_time_text);
         }
     }
 }

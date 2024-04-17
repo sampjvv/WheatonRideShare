@@ -56,8 +56,7 @@ public class ForumFragment extends Fragment {
     void setupForumRecyclerView(){
 
         Query query = FirebaseUtil.allPostsCollectionReference()
-                .whereArrayContains("userId",FirebaseUtil.currentUserId())
-                .orderBy("postsTimeStamp", Query.Direction.DESCENDING);
+                .orderBy("postTimeStamp", Query.Direction.DESCENDING);
 
         FirestoreRecyclerOptions<ForumModel> options = new FirestoreRecyclerOptions.Builder<ForumModel>()
                 .setQuery(query,ForumModel.class).build();

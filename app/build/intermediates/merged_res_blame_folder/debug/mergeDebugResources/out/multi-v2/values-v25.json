@@ -4,11 +4,7 @@
             "outputFile": "com.example.wheatoride.app-mergeDebugResources-44:/values-v25/values-v25.xml",
             "map": [
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\sarah\\.gradle\\caches\\transforms-4\\c7fd78156a0f20b6959faeddba893e08\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
-=======
-                    "source": "C:\\Users\\nosre\\.gradle\\caches\\transforms-4\\c7fd78156a0f20b6959faeddba893e08\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
->>>>>>> 2ecac3cfd1a8632b50576646d9d7badb179c382e
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",
