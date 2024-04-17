@@ -4,7 +4,7 @@
             "outputFile": "com.example.wheatoride.app-mergeDebugResources-44:/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sarah\\.gradle\\caches\\transforms-4\\023c7ade3a41f8c8172ddaefaadb1882\\transformed\\core-1.9.0\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-4\\023c7ade3a41f8c8172ddaefaadb1882\\transformed\\core-1.9.0\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\sarah\\.gradle\\caches\\transforms-4\\3ce9b96ff56c4d367d27f01a9183e8dc\\transformed\\browser-1.4.0\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-4\\3ce9b96ff56c4d367d27f01a9183e8dc\\transformed\\browser-1.4.0\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\sarah\\.gradle\\caches\\transforms-4\\c7fd78156a0f20b6959faeddba893e08\\transformed\\appcompat-1.6.1\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "source": "C:\\Users\\sampe\\.gradle\\caches\\transforms-4\\c7fd78156a0f20b6959faeddba893e08\\transformed\\appcompat-1.6.1\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
