@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Tue Apr 16 21:10:22 CDT 2024
 base.0=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
@@ -6,6 +7,16 @@ base.3=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermed
 base.4=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
 base.5=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 base.6=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+=======
+#Tue Apr 16 18:44:29 CDT 2024
+base.0=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
+base.3=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.4=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
+base.5=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.6=C\:\\Users\\nosre\\AndroidStudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+>>>>>>> 2ecac3cfd1a8632b50576646d9d7badb179c382e
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=12/classes.dex

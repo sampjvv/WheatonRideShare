@@ -31,26 +31,38 @@
         android:textSize="16sp"
         android:padding="10dp"
         android:hint="Name"
-        android:inputType="text"
-        android:layout_margin="10dp"
-        android:background="@drawable/edit_text_rounded_corner"
+        android:layout_marginHorizontal="10dp"
         android:enabled="false"
         android:elevation="5dp"
         android:id="@+id/profile_name"
         android:textColor="@color/light_gray"/>
+<!--    android:background="@drawable/edit_text_rounded_corner"-->
 
     <TextView
         android:id="@+id/profile_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:layout_margin="10dp"
-        android:background="@drawable/edit_text_rounded_corner"
+        android:layout_marginHorizontal="10dp"
         android:elevation="5dp"
         android:enabled="false"
         android:hint="Email"
         android:padding="10dp"
         android:textColor="@color/light_gray"/>
+
+    <TextView
+        android:id="@+id/profile_phone_number"
+        android:background="@drawable/edit_text_rounded_corner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:elevation="5dp"
+        android:enabled="true"
+        android:hint="Phone"
+        android:padding="10dp"/>
+
 
     <EditText
         android:id="@+id/profile_description"
@@ -67,6 +79,34 @@
         android:maxLength="150"
         android:textColor="@color/black"
         android:gravity="top|start"/>
+
+    <Switch
+        android:id="@+id/profile_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:padding="10dp"
+        android:enabled="true"
+        android:elevation="5dp"
+        android:textOn="On"
+        android:textOff="Off"
+        android:textColor="@color/black"
+        android:text="Driver"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:id="@+id/vehicle_recyler_view"/>
+
+    </LinearLayout>
 
 
     <LinearLayout

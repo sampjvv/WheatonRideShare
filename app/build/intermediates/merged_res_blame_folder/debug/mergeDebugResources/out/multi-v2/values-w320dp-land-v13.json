@@ -4,7 +4,11 @@
             "outputFile": "com.example.wheatoride.app-mergeDebugResources-44:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\sarah\\.gradle\\caches\\transforms-4\\702f7797ca39975a8d34166f6a1ef0f2\\transformed\\material-1.8.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
+=======
+                    "source": "C:\\Users\\nosre\\.gradle\\caches\\transforms-4\\702f7797ca39975a8d34166f6a1ef0f2\\transformed\\material-1.8.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
+>>>>>>> 2ecac3cfd1a8632b50576646d9d7badb179c382e
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

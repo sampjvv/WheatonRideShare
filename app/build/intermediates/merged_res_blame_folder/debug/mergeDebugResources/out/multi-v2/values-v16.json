@@ -4,7 +4,11 @@
             "outputFile": "com.example.wheatoride.app-mergeDebugResources-44:/values-v16/values-v16.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\sarah\\.gradle\\caches\\transforms-4\\023c7ade3a41f8c8172ddaefaadb1882\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+=======
+                    "source": "C:\\Users\\nosre\\.gradle\\caches\\transforms-4\\023c7ade3a41f8c8172ddaefaadb1882\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+>>>>>>> 2ecac3cfd1a8632b50576646d9d7badb179c382e
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +18,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\sarah\\.gradle\\caches\\transforms-4\\c7fd78156a0f20b6959faeddba893e08\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+=======
+                    "source": "C:\\Users\\nosre\\.gradle\\caches\\transforms-4\\c7fd78156a0f20b6959faeddba893e08\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+>>>>>>> 2ecac3cfd1a8632b50576646d9d7badb179c382e
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
