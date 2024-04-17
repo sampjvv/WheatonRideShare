@@ -4,7 +4,7 @@ import com.google.firebase.Timestamp;
 
 public class ForumModel {
     private String username;
-    private String location;
+    private String description;
     private String seats;
     private String userId;
     private Timestamp createdTimestamp;
@@ -13,23 +13,23 @@ public class ForumModel {
     public ForumModel(){
         this.userId = "";
         seats = "";
-        location = "";
+        description = "";
         username = "";
         createdTimestamp  = null;
 
     }
-    public ForumModel(String location){
+    public ForumModel(String description){
         this.userId = "";
         seats = "";
-        this.location = location;
+        this.description = description;
         username = "";
         createdTimestamp  = null;
 
     }
 
-    public ForumModel(String username, String seats, String location, String userId, Timestamp createdTimestamp){
+    public ForumModel(String username, String seats, String description, String userId, Timestamp createdTimestamp){
         this.seats = seats;
-        this.location = location;
+        this.description = description;
         this.username = username;
         this.userId = userId;
         this.createdTimestamp = createdTimestamp;
@@ -40,8 +40,8 @@ public class ForumModel {
         return username;
     }
 
-    public String getLocation() {
-        return location;
+    public String getDescription() {
+        return description;
     }
 
     public String getSeats() {
@@ -56,8 +56,8 @@ public class ForumModel {
         this.username = username;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLocation(String description) {
+        this.description = description;
     }
 
     public void setSeats(String seats) {

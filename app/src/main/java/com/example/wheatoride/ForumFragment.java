@@ -40,29 +40,30 @@ public class ForumFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_forum, container, false);
 
         addPostButton = view.findViewById(R.id.add_post_button);
+        recyclerView = view.findViewById(R.id.forum_recycler_view);
 
         addPostButton.setOnClickListener((v) -> {
             Intent intent = new Intent(getContext(), CreatePostActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         });
+        setupForumRecyclerView();
 
 
         return view;
     }
 
-    void setupRecyclerView(){
+    void setupForumRecyclerView(){
 
-        Query query = FirebaseUtil.allUserCollectionReference()
-                .orderBy("timestamp", Query.Direction.DESCENDING);
+        Query query = FirebaseUtil.allPostsCollectionReference()
+                .whereArrayContains("userId",FirebaseUtil.currentUserId())
+                .orderBy("postsTimeStamp", Query.Direction.DESCENDING);
 
         FirestoreRecyclerOptions<ForumModel> options = new FirestoreRecyclerOptions.Builder<ForumModel>()
                 .setQuery(query,ForumModel.class).build();
 
         adapter = new ForumRecyclerAdapter(options,getContext());
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
-        manager.setReverseLayout(true);
-        recyclerView.setLayoutManager(manager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
         adapter.startListening();
         adapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {

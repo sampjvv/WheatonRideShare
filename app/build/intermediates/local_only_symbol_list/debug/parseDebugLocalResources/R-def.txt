@@ -30,6 +30,7 @@ drawable request_icon
 drawable settings_icon
 drawable wor_logo
 id add_post_button
+id avalible_seats_text
 id back_btn
 id bottom_layout
 id bottom_navigation
@@ -37,11 +38,11 @@ id chat_message_input
 id chat_recycler_view
 id confirmRide
 id dark_mode_switch
+id description_text
 id divider
+id editTextText
 id forum_recycler_view
 id google_auth_btn
-id imageView
-id info_text
 id last_message_text
 id last_message_time_text
 id left_chat_layout
@@ -59,7 +60,9 @@ id menu_settings
 id message_send_btn
 id other_name
 id phone_text
+id post_seats
 id post_text
+id post_time_text
 id profile_create_btn
 id profile_description
 id profile_email
@@ -77,10 +80,8 @@ id seach_name_input
 id search_user_btn
 id search_user_layout
 id search_user_recycler_view
-id textView
+id seats_text
 id textView13
-id textView2
-id textView3
 id textView4
 id toolbar
 id user_name_text
@@ -100,7 +101,7 @@ layout fragment_chat
 layout fragment_forum
 layout fragment_profile
 layout fragment_settings
-layout post
+layout post_recycler_row
 layout profile_pic_view
 layout recent_chat_recycler_row
 layout search_user_recycler_row

@@ -53,6 +53,10 @@ public class FirebaseUtil {
         return FirebaseFirestore.getInstance().collection("chatrooms");
     }
 
+    public static CollectionReference allPostsCollectionReference(){
+        return FirebaseFirestore.getInstance().collection("posts");
+    }
+
     public static DocumentReference getOtherUserFromChatroom(List<String> userIds){
         if(userIds.get(0).equals(FirebaseUtil.currentUserId())){
             return allUserCollectionReference().document(userIds.get(1));
@@ -60,6 +64,11 @@ public class FirebaseUtil {
             return allUserCollectionReference().document(userIds.get(0));
         }
     }
+
+    public static DocumentReference getUsernameFromPost(){
+        return allUserCollectionReference().document(currentUserId());
+    }
+
 
     @SuppressLint("SimpleDateFormat")
     public static String timestampToString(Timestamp timestamp){

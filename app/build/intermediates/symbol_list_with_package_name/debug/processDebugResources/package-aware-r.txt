@@ -3437,6 +3437,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id avalible_seats_text
 id back_btn
 id barrier
 id baseline
@@ -3512,6 +3513,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id description_text
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3539,6 +3541,7 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editTextText
 id editText_search
 id edit_query
 id elastic
@@ -3593,7 +3596,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView
 id imageView_arrow
 id image_flag
 id image_view_crop
@@ -3607,7 +3609,6 @@ id immediateStop
 id included
 id indeterminate
 id info
-id info_text
 id invisible
 id inward
 id italic
@@ -3750,7 +3751,9 @@ id phone_text
 id pin
 id position
 id postLayout
+id post_seats
 id post_text
+id post_time_text
 id preferenceDivider
 id pressed
 id profile_create_btn
@@ -3823,6 +3826,7 @@ id search_view_status_bar_spacer
 id search_view_toolbar
 id search_view_toolbar_container
 id search_voice_btn
+id seats_text
 id select_dialog_listview
 id selected
 id selection_type
@@ -3889,10 +3893,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id textView13
-id textView2
-id textView3
 id textView4
 id textView_code
 id textView_countryName
@@ -4176,7 +4177,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
-layout post
+layout post_recycler_row
 layout profile_pic_view
 layout recent_chat_recycler_row
 layout search_user_recycler_row

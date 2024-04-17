@@ -53,12 +53,34 @@
             android:textColor="@color/black"
             android:gravity="top|start"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            >
+            <EditText
+                android:id="@+id/avalible_seats_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_rounded_corner"
+                android:elevation="5dp"
+                android:enabled="true"
+                android:hint="number of seats"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:color="@style/textInverse"
+                android:maxLength="150"
+                android:textColor="@color/black"
+                android:gravity="top|start"/>
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/save_new_post"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="save and post" />
-
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

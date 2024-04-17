@@ -28,8 +28,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="avaliable seats"
-            android:id="@+id/info_text"/>
+            android:text= "description"
+            android:id="@+id/description_text"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="avalible seats"
+            android:id="@+id/seats_text"/>
+
 
     </LinearLayout>
 </LinearLayout>
