@@ -38,6 +38,10 @@ public class UserModel {
         this.createdTimestamp = createdTimestamp;
         this.userId = userId;
         this.description = "";
+        this.isDriver = false;
+        this.vehicleModel = "";
+        this.vehicleNumSeats = "";
+        this.vehicleDescription = "";
     }
     public String getProfilePicUri() {
         return profilePicUri;
