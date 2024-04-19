@@ -1,5 +1,6 @@
 package com.example.wheatoride;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -24,6 +25,7 @@ import com.example.wheatoride.model.UserModel;
 import com.example.wheatoride.utils.AndroidUtil;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.github.dhaval2404.imagepicker.ImagePicker;
+import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class ProfileFragment extends Fragment {
@@ -84,10 +86,19 @@ public class ProfileFragment extends Fragment {
         progressBar = view.findViewById(R.id.profile_progress_bar);
         logoutBtn = view.findViewById(R.id.logout_btn);
 
+        vehicleInfoContainer.setVisibility(View.GONE);
 
         getUserData();
 
         updateProfileBtn.setOnClickListener((v -> updateBtnClick()));
+        driverSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                    if (isChecked) {
+                        vehicleInfoContainer.setVisibility(View.VISIBLE);
+                    } else {
+                        vehicleInfoContainer.setVisibility(View.GONE);
+                    }
+                });
+
 
         logoutBtn.setOnClickListener((v)-> FirebaseMessaging.getInstance().deleteToken().addOnCompleteListener(task -> {
             if(task.isSuccessful()){
@@ -108,19 +119,53 @@ public class ProfileFragment extends Fragment {
     }
 
     void updateBtnClick(){
-        String newDescription = descriptionInput.getText().toString();
-        if(newDescription.isEmpty()){
-            return;
-        }
-        currentUserModel.setDescription(newDescription);
+
         setInProgress(true);
 
+        String successMessage = "Updated successfully";
 
+        //phone number
+        String newPhone = phoneInput.getText().toString();
+        if(newPhone.isEmpty()){
+            successMessage = successMessage + "; empty phone number";
+        }
+        //TODO: set up area code picker
+        currentUserModel.setPhoneNumber(newPhone);
+
+        //description
+        String newDescription = descriptionInput.getText().toString();
+        if(newDescription.isEmpty()){
+            successMessage = successMessage + "; empty description";
+        }
+        currentUserModel.setDescription(newDescription);
+
+        //vehicle
+        boolean isDriver = driverSwitch.isChecked();
+        String newVehicleModel = vehicleModel.getText().toString();
+        String newVehicleNumSeats = vehicleNumSeats.getText().toString();
+        String newVehicleDescription = vehicleDescription.getText().toString();
+
+        if(isDriver){
+            if(newVehicleModel.isEmpty() ||
+                    newVehicleNumSeats.isEmpty() ||
+                    newVehicleDescription.isEmpty()) {
+                AndroidUtil.showToast(getContext(),"Update failed: missing vehicle info");
+                setInProgress(false);
+                return;
+            }
+            currentUserModel.setDriver(true);
+            currentUserModel.setVehicleModel(newVehicleModel);
+            currentUserModel.setVehicleNumSeats(newVehicleNumSeats);
+            currentUserModel.setVehicleDescription(newVehicleDescription);
+        }
+
+        //profile pic
         if(selectedImageUri!=null){
+            String finalSuccessMessage = successMessage;
             FirebaseUtil.getCurrentProfilePicStorageRef().putFile(selectedImageUri)
-                    .addOnCompleteListener(task -> updateToFirestore());
+                    .addOnCompleteListener(task -> updateToFirestore(finalSuccessMessage));
         }else{
-            updateToFirestore();
+            updateToFirestore(successMessage);
         }
 
 
@@ -129,12 +174,12 @@ public class ProfileFragment extends Fragment {
 
     }
 
-    void updateToFirestore(){
+    void updateToFirestore(String successMessage){
         FirebaseUtil.currentUserDetails().set(currentUserModel)
                 .addOnCompleteListener(task -> {
                     setInProgress(false);
                     if(task.isSuccessful()){
-                        AndroidUtil.showToast(getContext(),"Updated successfully");
+                        AndroidUtil.showToast(getContext(),successMessage);
                     }else{
                         AndroidUtil.showToast(getContext(),"Updated failed");
                     }
@@ -162,6 +207,15 @@ public class ProfileFragment extends Fragment {
             descriptionInput.setText(currentUserModel.getDescription());
             nameView.setText(currentUserModel.getFullName());
             emailView.setText(currentUserModel.getEmail());
+            phoneInput.setText(currentUserModel.getPhoneNumber());
+            vehicleModel.setText(currentUserModel.getVehicleModel());
+            vehicleNumSeats.setText(currentUserModel.getVehicleNumSeats());
+            vehicleDescription.setText(currentUserModel.getVehicleDescription());
+            driverSwitch.setChecked(currentUserModel.isDriver());
+            if(currentUserModel.isDriver()){
+                vehicleInfoContainer.setVisibility(View.VISIBLE);
+            }
+
             AndroidUtil.setProfilePic(getContext(), Uri.parse(currentUserModel.getProfilePicUri()), profilePic);
         });
     }

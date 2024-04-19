@@ -81,7 +81,7 @@
         android:textColor="@color/black"
         android:gravity="top|start"/>
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
+    <Switch
         android:id="@+id/profile_switch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -89,8 +89,6 @@
         android:padding="10dp"
         android:enabled="true"
         android:elevation="5dp"
-        android:textOn="On"
-        android:textOff="Off"
         android:textColor="@color/black"
         android:text="Driver"/>
 
