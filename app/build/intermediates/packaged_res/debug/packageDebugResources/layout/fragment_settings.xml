@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsFragment"
+    android:orientation="vertical"
+    android:gravity="left"
+    android:layout_margin="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="876dp"
+        android:layout_marginTop="20dp"
+
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/editTextText"
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fastscroll__bubble_corner"
+            android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+            android:ems="10"
+            android:indeterminateTint="@color/primary"
+            android:text="Dark Mode" />
+
+        <Switch
+            android:id="@+id/dark_mode_switch"
+            style="@style/textInverse"
+            android:layout_width="100dp"
+            android:layout_height="57dp"
+            android:background="@drawable/btn_rounded_corner"
+            android:text="dark mode"
+            android:textColor="@color/off_white" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

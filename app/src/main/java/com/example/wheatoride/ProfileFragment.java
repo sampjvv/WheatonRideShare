@@ -10,7 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -27,15 +29,22 @@ import com.google.firebase.messaging.FirebaseMessaging;
 public class ProfileFragment extends Fragment {
 
     ImageView profilePic;
+    TextView nameView;
+    TextView emailView;
+    EditText phoneInput;
     EditText descriptionInput;
-    TextView nameInput;
-    TextView emailInput;
+    Switch driverSwitch;
+    LinearLayout vehicleInfoContainer;
+    EditText vehicleModel;
+    EditText vehicleNumSeats;
+    EditText vehicleDescription;
     Button updateProfileBtn;
     ProgressBar progressBar;
     TextView logoutBtn;
     UserModel currentUserModel;
     ActivityResultLauncher<Intent> imagePickLauncher;
     Uri selectedImageUri;
+
 
 
     public ProfileFragment() {
@@ -63,8 +72,14 @@ public class ProfileFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_profile, container, false);
         profilePic = view.findViewById(R.id.profile_image_view);
         descriptionInput = view.findViewById(R.id.profile_description);
-        nameInput = view.findViewById(R.id.profile_name);
-        emailInput = view.findViewById(R.id.profile_email);
+        nameView = view.findViewById(R.id.profile_name);
+        emailView = view.findViewById(R.id.profile_email);
+        phoneInput = view.findViewById(R.id.profile_phone_number);
+        driverSwitch = view.findViewById(R.id.profile_switch);
+        vehicleInfoContainer = view.findViewById(R.id.vehicle_info_container);
+        vehicleModel = view.findViewById(R.id.vehicle_model);
+        vehicleNumSeats = view.findViewById(R.id.vehicle_num_seats);
+        vehicleDescription = view.findViewById(R.id.vehicle_description);
         updateProfileBtn = view.findViewById(R.id.profle_update_btn);
         progressBar = view.findViewById(R.id.profile_progress_bar);
         logoutBtn = view.findViewById(R.id.logout_btn);
@@ -145,8 +160,8 @@ public class ProfileFragment extends Fragment {
 
             assert currentUserModel != null;
             descriptionInput.setText(currentUserModel.getDescription());
-            nameInput.setText(currentUserModel.getFullName());
-            emailInput.setText(currentUserModel.getEmail());
+            nameView.setText(currentUserModel.getFullName());
+            emailView.setText(currentUserModel.getEmail());
             AndroidUtil.setProfilePic(getContext(), Uri.parse(currentUserModel.getProfilePicUri()), profilePic);
         });
     }
