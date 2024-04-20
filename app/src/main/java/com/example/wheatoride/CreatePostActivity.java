@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
@@ -31,6 +32,7 @@ import java.util.Map;
 public class CreatePostActivity extends AppCompatActivity {
 
     EditText text;
+    EditText availbaleSeatsText;
     ImageButton backButton;
     Button createPostButton;
     ForumModel forumModel;
@@ -39,9 +41,7 @@ public class CreatePostActivity extends AppCompatActivity {
     CollectionReference postRef;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String TAG = "CreatePostActivity";
-    String downloadURL, currentUserID, saveCurrentTime, saveCurrentDate,
-    postText;
-
+    String currentUserID, saveCurrentTime, postText, numOfSeats;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forum_create_post);
@@ -55,6 +55,7 @@ public class CreatePostActivity extends AppCompatActivity {
         text = findViewById(R.id.post_text);
         backButton  = findViewById(R.id.back_btn);
         createPostButton = findViewById(R.id.save_new_post);
+        availbaleSeatsText = findViewById(R.id.avalible_seats_text);
 
         postText = text.getText().toString();
 
@@ -66,6 +67,8 @@ public class CreatePostActivity extends AppCompatActivity {
         createPostButton.setOnClickListener(v-> {
             forumModel = new ForumModel(text.toString());
             postText = text.getText().toString();
+            saveCurrentTime = FirebaseUtil.timestampToString(Timestamp.now());
+            numOfSeats = availbaleSeatsText.getText().toString();
             savingPostInformationToDatabase();
 
         });
@@ -74,8 +77,10 @@ public class CreatePostActivity extends AppCompatActivity {
     void savingPostInformationToDatabase(){
         Map<String,String> postMap = new HashMap<>();
         postMap.put("userId", currentUserID);
-        postMap.put("date", saveCurrentDate);
         postMap.put("description", postText);
+        postMap.put("numOfSeats", numOfSeats);
+        postMap.put("postTimeStamp", saveCurrentTime);
+
         postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {

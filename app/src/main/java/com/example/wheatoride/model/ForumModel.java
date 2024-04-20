@@ -15,7 +15,7 @@ public class ForumModel {
         seats = "";
         description = "";
         username = "";
-        createdTimestamp  = null;
+        createdTimestamp  = Timestamp.now();
 
     }
     public ForumModel(String description){
@@ -23,7 +23,7 @@ public class ForumModel {
         seats = "";
         this.description = description;
         username = "";
-        createdTimestamp  = null;
+        createdTimestamp  = Timestamp.now();
 
     }
 

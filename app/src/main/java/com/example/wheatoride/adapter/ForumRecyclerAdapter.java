@@ -38,28 +38,19 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
                         ForumModel fm = task.getResult().toObject(ForumModel.class);
                         UserModel otherUserModel = task.getResult().toObject(UserModel.class);
                         assert otherUserModel != null;
+
                         AndroidUtil.setProfilePic(context, Uri.parse(otherUserModel.getProfilePicUri()),holder.profilePic);
                         holder.usernameText.setText(otherUserModel.getFullName());
 
-                        //holder.usernameText.setText(fm.getUsername());
                         holder.description.setText(model.getDescription());
-                        //holder.createdTimeStamp.setText(model.getCreatedTimestamp().toString());
-                       // holder.usernameText.setText(model.getUsername());
+                        holder.createdTimeStamp.setText(model.getCreatedTimestamp().toString());
+                        holder.availableSeats.setText(model.getSeats());
+
+                        holder.itemView.setOnClickListener(v -> {
+
+                        });
                     }
                 });
-
-        /**
-        FirebaseUtil.getOtherProfilePicStorageRef(model.getUserId()).getDownloadUrl()
-                .addOnCompleteListener(t -> {
-                    if(t.isSuccessful()){
-                        Uri uri  = t.getResult();
-                        AndroidUtil.setProfilePic(context,uri,holder.profilePic);
-                    }
-                });
-        holder.itemView.setOnClickListener(v -> {
-
-        });
-         **/
 
     }
 
@@ -81,10 +72,10 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
         public ForumModelViewHolder(@NonNull View itemView) {
             super(itemView);
             description = itemView.findViewById(R.id.description_text);
-            availableSeats = itemView.findViewById(R.id.seats_text);
+            availableSeats = itemView.findViewById(R.id.avalible_seats_text);
             usernameText = itemView.findViewById(R.id.user_name_text);
             profilePic = itemView.findViewById(R.id.profile_pic_image_view);
-            //createdTimeStamp = itemView.findViewById(R.id.post_time_text);
+            createdTimeStamp = itemView.findViewById(R.id.post_time_text);
         }
     }
 }
