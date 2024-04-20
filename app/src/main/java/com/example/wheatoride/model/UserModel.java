@@ -5,11 +5,16 @@ import com.google.firebase.Timestamp;
 public class UserModel {
     private String email;
     private String fullName;
+    private String phoneNumber;
     private String profilePicUri;
     private Timestamp createdTimestamp;
     private String userId;
     private String fcmToken;
     private String description;
+    private boolean isDriver;
+    private String vehicleModel;
+    private String vehicleNumSeats;
+    private String vehicleDescription;
 
     public UserModel() {
 
@@ -33,8 +38,11 @@ public class UserModel {
         this.createdTimestamp = createdTimestamp;
         this.userId = userId;
         this.description = "";
+        this.isDriver = false;
+        this.vehicleModel = "";
+        this.vehicleNumSeats = "";
+        this.vehicleDescription = "";
     }
-
     public String getProfilePicUri() {
         return profilePicUri;
     }
@@ -66,7 +74,6 @@ public class UserModel {
     public void setCreatedTimestamp(Timestamp createdTimestamp) {
         this.createdTimestamp = createdTimestamp;
     }
-
     public String getUserId() {
         return userId;
     }
@@ -89,5 +96,45 @@ public class UserModel {
 
     public String getDescription() {
         return description;
+    }
+
+
+    public boolean isDriver() {
+        return isDriver;
+    }
+
+    public void setDriver(boolean driver) {
+        isDriver = driver;
+    }
+
+    public String getVehicleModel() {
+        return vehicleModel;
+    }
+
+    public void setVehicleModel(String vehicleModel) {
+        this.vehicleModel = vehicleModel;
+    }
+
+    public String getVehicleNumSeats() {
+        return vehicleNumSeats;
+    }
+
+    public void setVehicleNumSeats(String vehicleNumSeats) {
+        this.vehicleNumSeats = vehicleNumSeats;
+    }
+
+    public String getVehicleDescription() {
+        return vehicleDescription;
+    }
+
+    public void setVehicleDescription(String vehicleDescription) {
+        this.vehicleDescription = vehicleDescription;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
