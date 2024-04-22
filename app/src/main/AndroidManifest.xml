@@ -30,7 +30,7 @@
             android:name=".CreatePostActivity"
             android:exported="false" />
         <activity
-            android:name=".ConfirmationActivity"
+            android:name=".ConfirmActivity"
             android:exported="false" />
 
         <meta-data
