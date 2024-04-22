@@ -1,32 +1,28 @@
 package com.example.wheatoride;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.wheatoride.adapter.SearchUserRecyclerAdapter;
-import com.example.wheatoride.model.UserModel;
+import com.example.wheatoride.adapter.ForumRecyclerAdapter;
+import com.example.wheatoride.model.ForumModel;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.Query;
 
-public class SearchRidesActivity extends AppCompatActivity {
+public class SearchRideActivity extends AppCompatActivity {
 
     EditText searchInput;
     ImageButton searchButton;
     ImageButton backButton;
     RecyclerView recyclerView;
 
-    SearchUserRecyclerAdapter adapter;
+    ForumRecyclerAdapter adapter;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -34,7 +30,7 @@ public class SearchRidesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_user);
 
-        searchInput = findViewById(R.id.seach_name_input);
+        searchInput = findViewById(R.id.search_name_input);
         searchButton = findViewById(R.id.search_user_btn);
         backButton = findViewById(R.id.back_btn);
         recyclerView = findViewById(R.id.search_user_recycler_view);
@@ -49,7 +45,7 @@ public class SearchRidesActivity extends AppCompatActivity {
         searchButton.setOnClickListener(v -> {
             String searchTerm = searchInput.getText().toString();
             if(searchTerm.isEmpty()){
-                searchInput.setError("Enter a Name to Search");
+                searchInput.setError("Enter a Location to Search");
                 return;
             }
             setupSearchRecyclerView(searchTerm);
@@ -57,15 +53,17 @@ public class SearchRidesActivity extends AppCompatActivity {
     }
 
     void setupSearchRecyclerView(String searchTerm){
+        Query query = FirebaseUtil.allPostsCollectionReference()
+                .whereGreaterThanOrEqualTo("description",searchTerm)
+                .whereLessThanOrEqualTo("description",searchTerm+'\uf8ff');
+        //   Query query = FirebaseUtil.allUserCollectionReference()
+        //         .whereGreaterThanOrEqualTo("fullName",searchTerm)
+        //       .whereLessThanOrEqualTo("fullName",searchTerm+'\uf8ff');
 
-        Query query = FirebaseUtil.allUserCollectionReference()
-                .whereGreaterThanOrEqualTo("fullName",searchTerm)
-                .whereLessThanOrEqualTo("fullName",searchTerm+'\uf8ff');
+        FirestoreRecyclerOptions<ForumModel> options = new FirestoreRecyclerOptions.Builder<ForumModel>()
+                .setQuery(query,ForumModel.class).build();
 
-        FirestoreRecyclerOptions<UserModel> options = new FirestoreRecyclerOptions.Builder<UserModel>()
-                .setQuery(query,UserModel.class).build();
-
-        adapter = new SearchUserRecyclerAdapter(options,getApplicationContext());
+        adapter = new ForumRecyclerAdapter(options,getApplicationContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
         adapter.startListening();

@@ -51,7 +51,7 @@
             android:padding="10dp"
             android:elevation="4dp"
             android:layout_toLeftOf="@id/search_user_btn"
-            android:id="@+id/seach_name_input"
+            android:id="@+id/search_name_input"
             />
         <ImageButton
             android:layout_width="40dp"
