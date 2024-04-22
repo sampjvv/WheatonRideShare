@@ -42,6 +42,7 @@ public class CreatePostActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String TAG = "CreatePostActivity";
     String currentUserID, saveCurrentTime, postText, numOfSeats;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forum_create_post);

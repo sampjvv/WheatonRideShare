@@ -1,6 +1,7 @@
 package com.example.wheatoride.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.wheatoride.CreatePostActivity;
 import com.example.wheatoride.model.ForumModel;
 import com.example.wheatoride.ChatActivity;
 import com.example.wheatoride.R;
@@ -19,6 +21,8 @@ import com.example.wheatoride.utils.AndroidUtil;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+
+import java.text.DateFormat;
 
 public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, ForumRecyclerAdapter.ForumModelViewHolder> {
 
@@ -32,7 +36,7 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
     @Override
     protected void onBindViewHolder(@NonNull ForumRecyclerAdapter.ForumModelViewHolder holder, int position, @NonNull ForumModel model) {
 
-        FirebaseUtil.getUsernameFromPost()
+        FirebaseUtil.getUsernameFromPost(model.getUserId())
                 .get().addOnCompleteListener( task -> {
                     if(task.isSuccessful()){
                         ForumModel fm = task.getResult().toObject(ForumModel.class);
@@ -43,10 +47,11 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
                         holder.usernameText.setText(otherUserModel.getFullName());
 
                         holder.description.setText(model.getDescription());
-                        holder.createdTimeStamp.setText(model.getCreatedTimestamp().toString());
-                        holder.availableSeats.setText(model.getSeats());
+                        holder.createdTimeStamp.setText(DateFormat.getDateInstance().format(model.getCreatedTimestamp().toDate()));
+                        //holder.availableSeats.setText(model.getSeats());
 
                         holder.itemView.setOnClickListener(v -> {
+
 
                         });
                     }

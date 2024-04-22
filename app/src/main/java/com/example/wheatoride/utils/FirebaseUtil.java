@@ -65,8 +65,8 @@ public class FirebaseUtil {
         }
     }
 
-    public static DocumentReference getUsernameFromPost(){
-        return allUserCollectionReference().document("userId");
+    public static DocumentReference getUsernameFromPost(String userId){
+        return allUserCollectionReference().document(userId);
     }
 
 

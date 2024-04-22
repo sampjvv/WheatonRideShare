@@ -16,15 +16,14 @@ public class ForumModel {
         description = "";
         username = "";
         createdTimestamp  = Timestamp.now();
-
     }
+
     public ForumModel(String description){
         this.userId = "";
         seats = "";
         this.description = description;
         username = "";
         createdTimestamp  = Timestamp.now();
-
     }
 
     public ForumModel(String username, String seats, String description, String userId, Timestamp createdTimestamp){
@@ -33,7 +32,6 @@ public class ForumModel {
         this.username = username;
         this.userId = userId;
         this.createdTimestamp = createdTimestamp;
-
     }
 
     public String getUsername() {
