@@ -46,14 +46,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="309dp"
+        android:layout_height="318dp"
+        android:background="@color/gold"
+        app:srcCompat="@drawable/logo"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="111dp" />
+
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="181dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="252dp"
+        android:layout_width="154dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="388dp"
         android:text="Confirm?"
         android:textAlignment="center"
+        android:textColor="@color/primary"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
