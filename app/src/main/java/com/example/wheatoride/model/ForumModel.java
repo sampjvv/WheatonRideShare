@@ -7,6 +7,7 @@ public class ForumModel {
     private String description;
     private String seats;
     private String userId;
+    private String location;
     private Timestamp createdTimestamp;
 
 
@@ -15,7 +16,9 @@ public class ForumModel {
         seats = "";
         description = "";
         username = "";
+        location = "";
         createdTimestamp  = Timestamp.now();
+
     }
 
     public ForumModel(String description){
@@ -26,8 +29,9 @@ public class ForumModel {
         createdTimestamp  = Timestamp.now();
     }
 
-    public ForumModel(String username, String seats, String description, String userId, Timestamp createdTimestamp){
+    public ForumModel(String username, String seats, String description, String userId, String location, Timestamp createdTimestamp){
         this.seats = seats;
+        this.location = location;
         this.description = description;
         this.username = username;
         this.userId = userId;
@@ -42,6 +46,8 @@ public class ForumModel {
         return description;
     }
 
+    public String getLocation(){ return location;}
+
     public String getSeats() {
         return seats;
     }
@@ -54,7 +60,7 @@ public class ForumModel {
         this.username = username;
     }
 
-    public void setLocation(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -66,6 +72,7 @@ public class ForumModel {
         this.userId = userId;
     }
 
+    public void setLocation(String location){this.location = location;}
     public void setCreatedTimestamp(Timestamp createdTimestamp) {
         this.createdTimestamp = createdTimestamp;
     }

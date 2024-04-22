@@ -33,6 +33,8 @@ public class CreatePostActivity extends AppCompatActivity {
 
     EditText text;
     EditText availbaleSeatsText;
+
+    EditText forumLocation;
     ImageButton backButton;
     Button createPostButton;
     ForumModel forumModel;
@@ -41,7 +43,7 @@ public class CreatePostActivity extends AppCompatActivity {
     CollectionReference postRef;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String TAG = "CreatePostActivity";
-    String currentUserID, saveCurrentTime, postText, numOfSeats;
+    String currentUserID, saveCurrentTime, postText, numOfSeats, location;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +59,7 @@ public class CreatePostActivity extends AppCompatActivity {
         backButton  = findViewById(R.id.back_btn);
         createPostButton = findViewById(R.id.save_new_post);
         availbaleSeatsText = findViewById(R.id.avalible_seats_text);
+        forumLocation = findViewById(R.id.forum_locaiton);
 
         postText = text.getText().toString();
 
@@ -70,6 +73,7 @@ public class CreatePostActivity extends AppCompatActivity {
             postText = text.getText().toString();
             saveCurrentTime = FirebaseUtil.timestampToString(Timestamp.now());
             numOfSeats = availbaleSeatsText.getText().toString();
+            location = forumLocation.getText().toString();
             savingPostInformationToDatabase();
 
         });
@@ -81,6 +85,7 @@ public class CreatePostActivity extends AppCompatActivity {
         postMap.put("description", postText);
         postMap.put("numOfSeats", numOfSeats);
         postMap.put("postTimeStamp", saveCurrentTime);
+        postMap.put("location", location);
 
         postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override

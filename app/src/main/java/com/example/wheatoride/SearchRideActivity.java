@@ -54,8 +54,8 @@ public class SearchRideActivity extends AppCompatActivity {
 
     void setupSearchRecyclerView(String searchTerm){
         Query query = FirebaseUtil.allPostsCollectionReference()
-                .whereGreaterThanOrEqualTo("description",searchTerm)
-                .whereLessThanOrEqualTo("description",searchTerm+'\uf8ff');
+                .whereGreaterThanOrEqualTo("location",searchTerm)
+                .whereLessThanOrEqualTo("location",searchTerm+'\uf8ff');
         //   Query query = FirebaseUtil.allUserCollectionReference()
         //         .whereGreaterThanOrEqualTo("fullName",searchTerm)
         //       .whereLessThanOrEqualTo("fullName",searchTerm+'\uf8ff');
