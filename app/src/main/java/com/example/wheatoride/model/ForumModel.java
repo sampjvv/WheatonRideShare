@@ -9,7 +9,6 @@ public class ForumModel {
     private String userId;
     private String location;
     private Timestamp createdTimestamp;
-    private String location;
 
 
     public ForumModel(){
@@ -56,7 +55,6 @@ public class ForumModel {
     public String getUserId () {return userId; }
 
     public Timestamp getCreatedTimestamp () {return createdTimestamp; }
-    public String getLocation() { return location; }
 
     public void setUsername(String username) {
         this.username = username;
@@ -78,7 +76,6 @@ public class ForumModel {
     public void setCreatedTimestamp(Timestamp createdTimestamp) {
         this.createdTimestamp = createdTimestamp;
     }
-    public void setLocation(String location) { this.location = location; }
 
 
 }
