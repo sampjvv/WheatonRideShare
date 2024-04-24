@@ -98,9 +98,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        boolean toForum = false;
 
-        bottomNavigationView.setSelectedItemId(R.id.menu_chat);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            toForum = extras.getBoolean("toForum");
+        }
 
+        if (toForum) {
+            bottomNavigationView.setSelectedItemId(R.id.menu_offer);
+            searchFinder(forumFragment);
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,forumFragment).commit();
+
+        } else {
+            bottomNavigationView.setSelectedItemId(R.id.menu_chat);
+        }
 
 
         getFCMToken();
