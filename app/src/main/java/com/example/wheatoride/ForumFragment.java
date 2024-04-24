@@ -37,7 +37,7 @@ public class ForumFragment extends Fragment {
     }
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_request_ride, container, false);
+        View view =  inflater.inflate(R.layout.fragment_forum, container, false);
 
         addPostButton = view.findViewById(R.id.add_post_button);
         recyclerView = view.findViewById(R.id.forum_recycler_view);
