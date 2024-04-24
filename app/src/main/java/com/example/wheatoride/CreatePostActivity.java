@@ -60,7 +60,6 @@ public class CreatePostActivity extends AppCompatActivity {
         createPostButton = findViewById(R.id.save_new_post);
         locationEdit = findViewById(R.id.create_location_text);
         availbaleSeatsText = findViewById(R.id.avalible_seats_text);
-        locationEdit = findViewById(R.id.forum_locaiton);
 
         postText = text.getText().toString();
         location = locationEdit.getText().toString();

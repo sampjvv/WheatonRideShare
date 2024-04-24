@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-#Mon Apr 22 17:20:57 CDT 2024
+#Tue Apr 23 19:29:35 CDT 2024
 base.0=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
@@ -7,16 +6,6 @@ base.3=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermed
 base.4=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
 base.5=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 base.6=C\:\\Users\\sarah\\StudioProjects\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
-=======
-#Tue Apr 23 09:27:05 PDT 2024
-base.0=C\:\\Users\\qstep\\OneDrive\\Desktop\\software\\Current\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\qstep\\OneDrive\\Desktop\\software\\Current\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\qstep\\OneDrive\\Desktop\\software\\Current\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.3=C\:\\Users\\qstep\\OneDrive\\Desktop\\software\\Current\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.4=C\:\\Users\\qstep\\OneDrive\\Desktop\\software\\Current\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
-base.5=C\:\\Users\\qstep\\OneDrive\\Desktop\\software\\Current\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.6=C\:\\Users\\qstep\\OneDrive\\Desktop\\software\\Current\\WheatonRideShare\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
->>>>>>> 80d6d638af7f9a49dcf8fc970318d1172799be5c
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=12/classes.dex
