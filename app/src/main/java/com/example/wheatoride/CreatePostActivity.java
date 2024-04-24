@@ -32,7 +32,7 @@ import java.util.Map;
 public class CreatePostActivity extends AppCompatActivity {
 
     EditText text;
-    EditText availbaleSeatsText;
+    EditText availbaleSeatsText, locationEdit;
     ImageButton backButton;
     Button createPostButton;
     ForumModel forumModel;
@@ -41,7 +41,7 @@ public class CreatePostActivity extends AppCompatActivity {
     CollectionReference postRef;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String TAG = "CreatePostActivity";
-    String currentUserID, saveCurrentTime, postText, numOfSeats;
+    String currentUserID, saveCurrentTime, postText, numOfSeats, location;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,9 +56,11 @@ public class CreatePostActivity extends AppCompatActivity {
         text = findViewById(R.id.post_text);
         backButton  = findViewById(R.id.back_btn);
         createPostButton = findViewById(R.id.save_new_post);
+        locationEdit = findViewById(R.id.create_location_text);
         availbaleSeatsText = findViewById(R.id.avalible_seats_text);
 
         postText = text.getText().toString();
+        location = locationEdit.getText().toString();
 
         backButton.setOnClickListener(v -> {
             onBackPressed();
@@ -70,6 +72,7 @@ public class CreatePostActivity extends AppCompatActivity {
             postText = text.getText().toString();
             saveCurrentTime = FirebaseUtil.timestampToString(Timestamp.now());
             numOfSeats = availbaleSeatsText.getText().toString();
+            location = locationEdit.getText().toString();
             savingPostInformationToDatabase();
 
         });
@@ -81,6 +84,7 @@ public class CreatePostActivity extends AppCompatActivity {
         postMap.put("description", postText);
         postMap.put("numOfSeats", numOfSeats);
         postMap.put("postTimeStamp", saveCurrentTime);
+        postMap.put("location", location);
 
         postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override

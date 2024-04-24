@@ -8,6 +8,7 @@ public class ForumModel {
     private String seats;
     private String userId;
     private Timestamp createdTimestamp;
+    private String location;
 
 
     public ForumModel(){
@@ -49,12 +50,13 @@ public class ForumModel {
     public String getUserId () {return userId; }
 
     public Timestamp getCreatedTimestamp () {return createdTimestamp; }
+    public String getLocation() { return location; }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setLocation(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -69,4 +71,7 @@ public class ForumModel {
     public void setCreatedTimestamp(Timestamp createdTimestamp) {
         this.createdTimestamp = createdTimestamp;
     }
+    public void setLocation(String location) { this.location = location; }
+
+
 }

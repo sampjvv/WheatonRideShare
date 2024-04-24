@@ -47,8 +47,10 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
                         holder.usernameText.setText(otherUserModel.getFullName());
 
                         holder.description.setText(model.getDescription());
+                        holder.availableSeats.setText(model.getSeats());
+                        holder.location.setText(model.getLocation());
                         holder.createdTimeStamp.setText(DateFormat.getDateInstance().format(model.getCreatedTimestamp().toDate()));
-                        //holder.availableSeats.setText(model.getSeats());
+
 
                         holder.itemView.setOnClickListener(v -> {
 
@@ -62,7 +64,7 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
     @NonNull
     @Override
     public ForumRecyclerAdapter.ForumModelViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.forum_post_row,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.post_recycler_row,parent,false);
         return new ForumModelViewHolder(view);
     }
 
@@ -70,6 +72,7 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
     class ForumModelViewHolder extends RecyclerView.ViewHolder{
         TextView usernameText;
         TextView availableSeats;
+        TextView location;
         TextView description;
         TextView createdTimeStamp;
         ImageView profilePic;
@@ -77,10 +80,12 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
         public ForumModelViewHolder(@NonNull View itemView) {
             super(itemView);
             description = itemView.findViewById(R.id.description_text);
-            availableSeats = itemView.findViewById(R.id.avalible_seats_text);
+            availableSeats = itemView.findViewById(R.id.post_seats);
             usernameText = itemView.findViewById(R.id.user_name_text);
             profilePic = itemView.findViewById(R.id.profile_pic_image_view);
             createdTimeStamp = itemView.findViewById(R.id.post_time_text);
+            location = itemView.findViewById(R.id.location_text);
+
         }
     }
 }
