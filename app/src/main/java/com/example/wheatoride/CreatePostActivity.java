@@ -1,5 +1,6 @@
 package com.example.wheatoride;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 
 import com.example.wheatoride.model.ForumModel;
+import com.example.wheatoride.ForumActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -58,12 +60,16 @@ public class CreatePostActivity extends AppCompatActivity {
         createPostButton = findViewById(R.id.save_new_post);
         locationEdit = findViewById(R.id.create_location_text);
         availbaleSeatsText = findViewById(R.id.avalible_seats_text);
+        locationEdit = findViewById(R.id.forum_locaiton);
 
         postText = text.getText().toString();
         location = locationEdit.getText().toString();
 
-        backButton.setOnClickListener(v -> {
-            onBackPressed();
+       // backButton.setOnClickListener((v)-> getOnBackPressedDispatcher().onBackPressed());
+        backButton.setOnClickListener((v)-> {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         });
 
 
@@ -72,8 +78,12 @@ public class CreatePostActivity extends AppCompatActivity {
             postText = text.getText().toString();
             saveCurrentTime = FirebaseUtil.timestampToString(Timestamp.now());
             numOfSeats = availbaleSeatsText.getText().toString();
+
             location = locationEdit.getText().toString();
             savingPostInformationToDatabase();
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
 
         });
 
