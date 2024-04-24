@@ -1,12 +1,23 @@
 package com.example.wheatoride;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.example.wheatoride.adapter.ForumRecyclerAdapter;
+import com.example.wheatoride.model.ForumModel;
+import com.example.wheatoride.utils.FirebaseUtil;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.Query;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -15,50 +26,73 @@ import android.view.ViewGroup;
  */
 public class RequestRideFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    RecyclerView recyclerView;
+    ForumRecyclerAdapter adapter;
+    Button addPostButton;
+    FloatingActionButton fb;
 
     public RequestRideFragment() {
         // Required empty public constructor
     }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RequestRideFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static RequestRideFragment newInstance(String param1, String param2) {
-        RequestRideFragment fragment = new RequestRideFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_request_ride, container, false);
+        View view =  inflater.inflate(R.layout.fragment_forum, container, false);
+
+        addPostButton = view.findViewById(R.id.add_post_button);
+        recyclerView = view.findViewById(R.id.forum_recycler_view);
+
+        addPostButton.setOnClickListener((v) -> {
+            Intent intent = new Intent(getContext(), CreatePostActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        });
+        setupForumRecyclerView();
+
+
+        return view;
+    }
+
+    void setupForumRecyclerView(){
+
+        Query query = FirebaseUtil.allPostsCollectionReference()
+                .orderBy("postTimeStamp", Query.Direction.DESCENDING);
+
+        FirestoreRecyclerOptions<ForumModel> options = new FirestoreRecyclerOptions.Builder<ForumModel>()
+                .setQuery(query,ForumModel.class).build();
+
+        adapter = new ForumRecyclerAdapter(options,getContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
+        adapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+            @Override
+            public void onItemRangeInserted(int positionStart, int itemCount) {
+                super.onItemRangeInserted(positionStart, itemCount);
+                recyclerView.smoothScrollToPosition(0);
+            }
+        });
+
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if(adapter!=null)
+            adapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if(adapter!=null)
+            adapter.stopListening();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(adapter!=null)
+            adapter.notifyDataSetChanged();
     }
 }

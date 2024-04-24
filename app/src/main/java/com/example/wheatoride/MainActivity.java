@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if(item.getItemId()==R.id.menu_chat){
                     searchFinder(chatFragment);
+                    searchButton.setOnClickListener((v)->{
+                        startActivity(new Intent(MainActivity.this,SearchUserActivity.class));
+                    });
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,chatFragment).commit();
                 }
                 if(item.getItemId()==R.id.menu_profile){
@@ -78,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,profileFragment).addToBackStack(null).commit();
                 }
                 if(item.getItemId()==R.id.menu_offer){
+                    searchButton.setEnabled(true);
+                    searchButton.setOnClickListener((v)->{
+                        startActivity(new Intent(MainActivity.this,SearchRideActivity.class));
+                    });
                     searchFinder(forumFragment);
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,forumFragment).commit();
                 }
@@ -90,21 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if(inChat){
-            searchButton.setEnabled(true);
-            searchButton.setOnClickListener((v)->{
-                startActivity(new Intent(MainActivity.this,SearchUserActivity.class));
-            });
-        }
-        else if(inRide){
-            searchButton.setEnabled(true);
-            searchButton.setOnClickListener((v)->{
-                startActivity(new Intent(MainActivity.this,SearchUserActivity.class));
-            });
-        }
-        else if(noSearch){
-            searchButton.setEnabled(false);
-        }
+
 
         bottomNavigationView.setSelectedItemId(R.id.menu_chat);
 
