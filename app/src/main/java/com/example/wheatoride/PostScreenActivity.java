@@ -46,6 +46,8 @@ public class PostScreenActivity extends AppCompatActivity {
     TextView vehicleNumSeats;
     TextView vehicleDescription;
 
+    Button directMsg;
+
     String userID;
 
     Switch driverSwitch;
@@ -71,6 +73,13 @@ public class PostScreenActivity extends AppCompatActivity {
         AndroidUtil.setProfilePic(getBaseContext(), Uri.parse(selectedImageUri.toString()), profilePic);
 
         descriptionInput = findViewById(R.id.profile_description);
+        directMsg = findViewById(R.id.post_to_user_button);
+        directMsg.setOnClickListener((v)-> {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("toForum", true);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        });
         CharSequence descText = userInfo.getCharSequence("desc");
         descriptionInput.setText(descText);
 
