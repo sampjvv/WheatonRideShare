@@ -111,17 +111,23 @@ public class MainActivity extends AppCompatActivity {
 
 
         boolean toForum = false;
+        boolean toReqForum = false;
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             toForum = extras.getBoolean("toForum");
+            toReqForum = extras.getBoolean("toReqForum");
+
         }
 
         if (toForum) {
             bottomNavigationView.setSelectedItemId(R.id.menu_offer);
             searchFinder(forumFragment);
-            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,forumFragment).commit();
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, forumFragment).commit();
+        } else if (toReqForum) {
+            bottomNavigationView.setSelectedItemId(R.id.menu_request);
+            searchFinder(requestRideFragment);
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, requestRideFragment).commit();
         } else {
             bottomNavigationView.setSelectedItemId(R.id.menu_chat);
         }

@@ -14,24 +14,17 @@ import com.example.wheatoride.utils.FirebaseUtil;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.Timestamp;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 
 import com.example.wheatoride.model.ForumModel;
-import com.example.wheatoride.ForumActivity;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.EventListener;
 import java.util.HashMap;
 import java.util.Map;
 
-public class createRidesActivity extends AppCompatActivity {
+public class CreateRidesActivity extends AppCompatActivity {
 
     EditText text;
     EditText availbaleSeatsText, locationEdit;
@@ -67,6 +60,7 @@ public class createRidesActivity extends AppCompatActivity {
         // backButton.setOnClickListener((v)-> getOnBackPressedDispatcher().onBackPressed());
         backButton.setOnClickListener((v)-> {
             Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("toReqForum", true);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         });

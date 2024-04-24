@@ -42,7 +42,7 @@ public class RequestRideFragment extends Fragment {
         recyclerView = view.findViewById(R.id.forum_recycler_view);
 
         addPostButton.setOnClickListener((v) -> {
-            Intent intent = new Intent(getContext(), createRidesActivity.class);
+            Intent intent = new Intent(getContext(), CreateRidesActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         });

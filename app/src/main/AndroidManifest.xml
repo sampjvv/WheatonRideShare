@@ -23,7 +23,7 @@
         android:theme="@style/Theme.WheatORide"
         tools:targetApi="31">
         <activity
-            android:name=".createRidesActivity"
+            android:name=".CreateRidesActivity"
             android:exported="false" />
         <activity
             android:name=".SearchRideActivity"
