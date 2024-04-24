@@ -73,12 +73,14 @@ public class CreatePostActivity extends AppCompatActivity {
 
 
         createPostButton.setOnClickListener(v-> {
-            forumModel = new ForumModel(text.toString());
             postText = text.getText().toString();
             saveCurrentTime = FirebaseUtil.timestampToString(Timestamp.now());
             numOfSeats = availbaleSeatsText.getText().toString();
-
+            Log.d("seats: ", numOfSeats);
             location = locationEdit.getText().toString();
+            forumModel = new ForumModel(numOfSeats,text.toString(),location, Timestamp.now());
+
+            //location = locationEdit.getText().toString();
             savingPostInformationToDatabase();
             Intent intent = new Intent(this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -95,6 +97,8 @@ public class CreatePostActivity extends AppCompatActivity {
         postMap.put("postTimeStamp", saveCurrentTime);
         postMap.put("location", location);
 
+        //FirebaseFirestore.getInstance().collection("posts").document(FirebaseUtil.currentUserId()).set(forumModel);
+
         postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
@@ -107,11 +111,6 @@ public class CreatePostActivity extends AppCompatActivity {
             }
         });
 
+
     }
-
-
-
-
-
-
 }

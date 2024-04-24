@@ -39,7 +39,6 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
         FirebaseUtil.getUsernameFromPost(model.getUserId())
                 .get().addOnCompleteListener( task -> {
                     if(task.isSuccessful()){
-                        ForumModel fm = task.getResult().toObject(ForumModel.class);
                         UserModel otherUserModel = task.getResult().toObject(UserModel.class);
                         assert otherUserModel != null;
 
@@ -47,9 +46,11 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
                         holder.usernameText.setText(otherUserModel.getFullName());
 
                         holder.description.setText(model.getDescription());
-                        holder.availableSeats.setText(model.getSeats());
+                        holder.availableSeats.setText("# of seats:  " + model.getSeats());
                         holder.location.setText(model.getLocation());
-                        holder.createdTimeStamp.setText(DateFormat.getDateInstance().format(model.getCreatedTimestamp().toDate()));
+                        //holder.createdTimeStamp.setText(DateFormat.getDateInstance().format(model.getCreatedTimestamp().toDate()));
+                        //holder.createdTimeStamp.setText(model.getCreatedTimestamp().toString());
+                        //holder.createdTimeStamp.setText(FirebaseUtil.timestampToString(model.getCreatedTimestamp()));
 
 
                         holder.itemView.setOnClickListener(v -> {

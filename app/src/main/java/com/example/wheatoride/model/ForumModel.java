@@ -1,5 +1,6 @@
 package com.example.wheatoride.model;
 
+import com.example.wheatoride.utils.FirebaseUtil;
 import com.google.firebase.Timestamp;
 
 public class ForumModel {
@@ -11,31 +12,14 @@ public class ForumModel {
     private Timestamp createdTimestamp;
 
 
-    public ForumModel(){
-        this.userId = "";
-        seats = "";
-        description = "";
-        username = "";
-        location = "";
-        createdTimestamp  = Timestamp.now();
-
+    public ForumModel() {
     }
 
-    public ForumModel(String description){
-        this.userId = "";
-        seats = "";
-        this.description = description;
-        username = "";
-        createdTimestamp  = Timestamp.now();
-    }
-
-    public ForumModel(String username, String seats, String description, String userId, String location, Timestamp createdTimestamp){
+    public ForumModel( String seats, String description, String location,Timestamp time){
         this.seats = seats;
         this.location = location;
         this.description = description;
-        this.username = username;
-        this.userId = userId;
-        this.createdTimestamp = createdTimestamp;
+        this.createdTimestamp = time;
     }
 
     public String getUsername() {
