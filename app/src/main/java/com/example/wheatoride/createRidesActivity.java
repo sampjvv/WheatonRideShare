@@ -87,28 +87,30 @@ public class createRidesActivity extends AppCompatActivity {
         });
 
     }
-    void savingPostInformationToDatabase(){
-        Map<String,String> postMap = new HashMap<>();
-        postMap.put("userId", currentUserID);
-        postMap.put("description", postText);
-        postMap.put("numOfSeats", numOfSeats);
-        postMap.put("postTimeStamp", saveCurrentTime);
-        postMap.put("location", location);
+    void savingPostInformationToDatabase() {
+        if (!postText.equals("") && !location.equals("")) {
 
-        postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Log.d(TAG, "DocumentSnapshot added with ID " + documentReference.getId());
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.w(TAG, "Error adding document");
-            }
-        });
+            Map<String, String> postMap = new HashMap<>();
+            postMap.put("userId", currentUserID);
+            postMap.put("description", postText);
+            postMap.put("numOfSeats", numOfSeats);
+            postMap.put("postTimeStamp", saveCurrentTime);
+            postMap.put("location", location);
 
+            postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                @Override
+                public void onSuccess(DocumentReference documentReference) {
+                    Log.d(TAG, "DocumentSnapshot added with ID " + documentReference.getId());
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.w(TAG, "Error adding document");
+                }
+            });
+
+        }
     }
-
 
 
 
