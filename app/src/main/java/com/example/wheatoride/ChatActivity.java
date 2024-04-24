@@ -77,6 +77,7 @@ public class ChatActivity extends AppCompatActivity {
         backBtn.setOnClickListener((v)-> getOnBackPressedDispatcher().onBackPressed());
         confirmBtn.setOnClickListener((v)-> {
             Intent intent = new Intent(this, ConfirmActivity.class);
+            intent.putExtra("ChatroomID", chatroomId);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         });
