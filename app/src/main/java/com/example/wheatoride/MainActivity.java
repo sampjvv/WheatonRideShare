@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     ProfileFragment profileFragment;
     ForumFragment forumFragment;
 
+    RequestRideFragment requestRideFragment;
+
     SettingsFragment settingsFragment;
     boolean inChat = true;
     boolean inRide = false;
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         profileFragment = new ProfileFragment();
         forumFragment = new ForumFragment();
         settingsFragment = new SettingsFragment();
+        requestRideFragment = new RequestRideFragment();
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -88,6 +91,15 @@ public class MainActivity extends AppCompatActivity {
                     searchFinder(forumFragment);
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,forumFragment).commit();
                 }
+                if(item.getItemId()==R.id.menu_request){
+                    searchButton.setEnabled(true);
+                    searchButton.setOnClickListener((v)->{
+                        startActivity(new Intent(MainActivity.this,SearchRideActivity.class));
+                    });
+                    searchFinder(forumFragment);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,requestRideFragment).commit();
+                }
+
                 if(item.getItemId()==R.id.menu_settings){
                     searchFinder(settingsFragment);
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,settingsFragment).commit();
@@ -98,9 +110,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        boolean toForum = false;
+        boolean toReqForum = false;
 
-        bottomNavigationView.setSelectedItemId(R.id.menu_chat);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            toForum = extras.getBoolean("toForum");
+            toReqForum = extras.getBoolean("toReqForum");
 
+        }
+
+        if (toForum) {
+            bottomNavigationView.setSelectedItemId(R.id.menu_offer);
+            searchFinder(forumFragment);
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, forumFragment).commit();
+        } else if (toReqForum) {
+            bottomNavigationView.setSelectedItemId(R.id.menu_request);
+            searchFinder(requestRideFragment);
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, requestRideFragment).commit();
+        } else {
+            bottomNavigationView.setSelectedItemId(R.id.menu_chat);
+        }
 
 
         getFCMToken();

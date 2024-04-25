@@ -1,5 +1,6 @@
 package com.example.wheatoride.adapter;
 
+import android.util.Log;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -8,11 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wheatoride.CreatePostActivity;
+import com.example.wheatoride.PostScreenActivity;
 import com.example.wheatoride.model.ForumModel;
 import com.example.wheatoride.ChatActivity;
 import com.example.wheatoride.R;
@@ -22,6 +25,7 @@ import com.example.wheatoride.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 
 public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, ForumRecyclerAdapter.ForumModelViewHolder> {
@@ -42,11 +46,13 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
                         UserModel otherUserModel = task.getResult().toObject(UserModel.class);
                         assert otherUserModel != null;
 
+
                         AndroidUtil.setProfilePic(context, Uri.parse(otherUserModel.getProfilePicUri()),holder.profilePic);
                         holder.usernameText.setText(otherUserModel.getFullName());
 
                         holder.description.setText(model.getDescription());
                         holder.availableSeats.setText("# of seats:  " + model.getSeats());
+                        Log.d("seats: ", "seats: " + model.getSeats());
                         holder.location.setText(model.getLocation());
                         //holder.createdTimeStamp.setText(DateFormat.getDateInstance().format(model.getCreatedTimestamp().toDate()));
                         //holder.createdTimeStamp.setText(model.getCreatedTimestamp().toString());
@@ -54,8 +60,16 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
 
 
                         holder.itemView.setOnClickListener(v -> {
+                            Intent intent = new Intent(context, PostScreenActivity.class);
+                            Bundle bundle = new Bundle();
 
+                            bundle.putString("name", holder.usernameText.getText().toString());
+                            bundle.putCharSequence("desc", holder.description.getText());
+                            bundle.putString("profilepic", otherUserModel.getProfilePicUri());
+                            intent.putExtras(bundle);
 
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            context.startActivity(intent);
                         });
                     }
                 });
@@ -70,13 +84,14 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
     }
 
 
+
     class ForumModelViewHolder extends RecyclerView.ViewHolder{
         TextView usernameText;
         TextView availableSeats;
-        TextView location;
         TextView description;
         TextView createdTimeStamp;
         ImageView profilePic;
+        TextView location;
 
         public ForumModelViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -86,7 +101,6 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
             profilePic = itemView.findViewById(R.id.profile_pic_image_view);
             createdTimeStamp = itemView.findViewById(R.id.post_time_text);
             location = itemView.findViewById(R.id.location_text);
-
         }
     }
 }

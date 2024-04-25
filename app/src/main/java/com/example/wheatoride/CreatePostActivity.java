@@ -67,6 +67,7 @@ public class CreatePostActivity extends AppCompatActivity {
        // backButton.setOnClickListener((v)-> getOnBackPressedDispatcher().onBackPressed());
         backButton.setOnClickListener((v)-> {
             Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("toForum", true);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         });
@@ -76,7 +77,7 @@ public class CreatePostActivity extends AppCompatActivity {
             postText = text.getText().toString();
             saveCurrentTime = FirebaseUtil.timestampToString(Timestamp.now());
             numOfSeats = availbaleSeatsText.getText().toString();
-            Log.d("seats: ", numOfSeats);
+            Log.d("SET seats: ", "==========" + numOfSeats);
             location = locationEdit.getText().toString();
             forumModel = new ForumModel(numOfSeats,text.toString(),location, Timestamp.now());
 

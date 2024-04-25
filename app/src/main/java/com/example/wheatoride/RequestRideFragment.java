@@ -21,7 +21,7 @@ import com.google.firebase.firestore.Query;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link RequestRideFragment#newInstance} factory method to
+ * Use the {@link RequestRideFragment# newInstance} factory method to
  * create an instance of this fragment.
  */
 public class RequestRideFragment extends Fragment {
@@ -36,13 +36,13 @@ public class RequestRideFragment extends Fragment {
     }
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_forum, container, false);
+        View view =  inflater.inflate(R.layout.fragment_request_ride, container, false);
 
         addPostButton = view.findViewById(R.id.add_post_button);
         recyclerView = view.findViewById(R.id.forum_recycler_view);
 
         addPostButton.setOnClickListener((v) -> {
-            Intent intent = new Intent(getContext(), CreatePostActivity.class);
+            Intent intent = new Intent(getContext(), CreateRidesActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         });
@@ -54,7 +54,7 @@ public class RequestRideFragment extends Fragment {
 
     void setupForumRecyclerView(){
 
-        Query query = FirebaseUtil.allPostsCollectionReference()
+        Query query = FirebaseUtil.allRidesCollectionRefrence()
                 .orderBy("postTimeStamp", Query.Direction.DESCENDING);
 
         FirestoreRecyclerOptions<ForumModel> options = new FirestoreRecyclerOptions.Builder<ForumModel>()
