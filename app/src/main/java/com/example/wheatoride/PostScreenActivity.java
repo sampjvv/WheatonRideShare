@@ -38,13 +38,14 @@ public class PostScreenActivity extends AppCompatActivity {
 
     ImageView profilePic;
     TextView nameView;
-    TextView id;
     TextView descriptionInput;
     TextView phoneInput;
     TextView location;
     TextView vehicleModel;
     TextView vehicleNumSeats;
     TextView vehicleDescription;
+
+    Button directMsg;
 
     String userID;
 
@@ -65,26 +66,41 @@ public class PostScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_screen);
         userInfo = getIntent().getExtras();
-
+            //profile picture
         profilePic = findViewById(R.id.profile_image_view);
         selectedImageUri = Uri.parse(userInfo.getString("profilepic"));
         AndroidUtil.setProfilePic(getBaseContext(), Uri.parse(selectedImageUri.toString()), profilePic);
 
-        descriptionInput = findViewById(R.id.profile_description);
-        CharSequence descText = userInfo.getCharSequence("desc");
-        descriptionInput.setText(descText);
-
-        location = findViewById(R.id.real_location);
-
+        //student name
         nameView = findViewById(R.id.student_name);
         String nameOfUser = (String) userInfo.getString("name");
         nameView.setText(nameOfUser);
 
-        //userID = post.currentUserID;
-        id = findViewById(R.id.student_id);
+            //description
+        descriptionInput = findViewById(R.id.profile_description);
+        CharSequence descText = userInfo.getCharSequence("desc");
+        descriptionInput.setText(descText);
+
+            //role
+
+
+            //location
+        location = findViewById(R.id.real_location);
+
+
+            //vehicle info
         vehicleModel = findViewById(R.id.real_car_model);
-        vehicleNumSeats = findViewById(R.id.seat_count);
+        vehicleNumSeats = findViewById(R.id.seat_count_label);
         //vehicleDescription = view.findViewById(R.id.vehicle_description);*/
+
+            //message button
+        directMsg = findViewById(R.id.post_to_user_button);
+        directMsg.setOnClickListener((v)-> {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("toForum", true);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        });
     }
 
 

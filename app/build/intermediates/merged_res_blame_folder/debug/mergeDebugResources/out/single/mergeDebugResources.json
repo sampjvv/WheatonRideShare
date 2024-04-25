@@ -20,16 +20,16 @@
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-47:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-47:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\drawable_edit_text_rounded_corner.xml.flat",
+        "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\drawable\\edit_text_rounded_corner.xml"
     },
     {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-47:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\drawable_edit_text_rounded_corner.xml.flat",
-        "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\drawable\\edit_text_rounded_corner.xml"
+        "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-47:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_confirm.xml.flat",
@@ -92,10 +92,6 @@
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-47:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.wheatoride.app-debug-46:/layout_fragment_forum.xml.flat",
-        "source": "com.example.wheatoride.app-main-48:/layout/fragment_forum.xml"
-    },
-    {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\drawable_offer_icon.xml.flat",
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\drawable\\offer_icon.xml"
     },
@@ -142,6 +138,10 @@
     {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_search_ride.xml.flat",
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_search_ride.xml"
+    },
+    {
+        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_post_screen.xml.flat",
+        "source": "com.example.wheatoride.app-main-48:/layout/activity_post_screen.xml"
     },
     {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_post_screen_2.xml.flat",
@@ -192,10 +192,6 @@
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-47:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.wheatoride.app-debug-46:/layout_activity_create_rides.xml.flat",
-        "source": "com.example.wheatoride.app-main-48:/layout/activity_create_rides.xml"
-    },
-    {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_confirmation.xml.flat",
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_confirmation.xml"
     },
@@ -218,10 +214,6 @@
     {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-47:\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "com.example.wheatoride.app-debug-46:/layout_fragment_request_ride.xml.flat",
-        "source": "com.example.wheatoride.app-main-48:/layout/fragment_request_ride.xml"
     },
     {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
@@ -274,5 +266,9 @@
     {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_post_screen.xml.flat",
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_post_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_create_rides.xml.flat",
+        "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_create_rides.xml"
     }
 ]

@@ -90,28 +90,28 @@ public class CreatePostActivity extends AppCompatActivity {
         });
 
     }
-    void savingPostInformationToDatabase(){
-        Map<String,String> postMap = new HashMap<>();
-        postMap.put("userId", currentUserID);
-        postMap.put("description", postText);
-        postMap.put("numOfSeats", numOfSeats);
-        postMap.put("postTimeStamp", saveCurrentTime);
-        postMap.put("location", location);
-
-        //FirebaseFirestore.getInstance().collection("posts").document(FirebaseUtil.currentUserId()).set(forumModel);
-
-        postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Log.d(TAG, "DocumentSnapshot added with ID " + documentReference.getId());
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.w(TAG, "Error adding document");
-            }
-        });
+    void savingPostInformationToDatabase() {
+        if (!postText.equals("") && !location.equals("")) {
+            Map<String, String> postMap = new HashMap<>();
+            postMap.put("userId", currentUserID);
+            postMap.put("description", postText);
+            postMap.put("numOfSeats", numOfSeats);
+            postMap.put("postTimeStamp", saveCurrentTime);
+            postMap.put("location", location);
 
 
+            postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                @Override
+                public void onSuccess(DocumentReference documentReference) {
+                    Log.d(TAG, "DocumentSnapshot added with ID " + documentReference.getId());
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.w(TAG, "Error adding document");
+                }
+            });
+
+        }
     }
 }

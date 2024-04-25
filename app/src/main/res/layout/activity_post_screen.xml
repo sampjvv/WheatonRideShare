@@ -4,22 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#517D36"
+    android:background="@color/off_white"
     tools:context=".PostScreenActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/back_btn"
+            android:text="Post Details"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_back" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/role_and_seats"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="570dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/role_label"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_rounded_corner"
+            android:backgroundTint="@color/gold"
+            android:paddingTop="10dp"
+            android:text="Driver"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="15dp" />
+
+        <TextView
+            android:id="@+id/seat_count_label"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_rounded_corner"
+            android:backgroundTint="@color/gold"
+            android:paddingTop="10dp"
+            android:text="_ seats"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="15dp" />
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="250dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="400dp"
+        android:layout_marginBottom="320dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/student_name"
@@ -28,28 +101,13 @@
             android:fontFamily="sans-serif-medium"
             android:text="Charles"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.71000004" />
-
-        <TextView
-            android:id="@+id/student_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="122379"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.9" />
 
         <ImageView
             android:id="@+id/profile_image_view"
@@ -70,14 +128,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="170dp"
-        android:layout_marginBottom="400dp"
+        android:layout_marginBottom="320dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/location_header"
@@ -86,18 +146,18 @@
             android:fontFamily="sans-serif-medium"
             android:text="Location"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="35dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/real_location"
             android:layout_width="match_parent"
-            android:layout_height="47dp"
+            android:layout_height="65dp"
             android:fontFamily="sans-serif-medium"
             android:text="Wheaton Downtown"
             android:textAlignment="center"
-            android:textColor="#e2973b"
+            android:textColor="@color/orange"
             android:textSize="25dp" />
 
         <TextView
@@ -107,7 +167,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Make of Car"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="35dp"
             android:textStyle="bold" />
 
@@ -118,60 +178,17 @@
             android:fontFamily="sans-serif-medium"
             android:text="Navy 2014\nChevy Cruze"
             android:textAlignment="center"
-            android:textColor="#e2973b"
+            android:textColor="@color/orange"
             android:textSize="25dp" />
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/seat_count_banner"
-        android:layout_width="249dp"
-        android:layout_height="104dp"
-        android:layout_marginTop="-12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/postbannerback" />
-
-    <ImageView
-        android:id="@+id/role_banner"
-        android:layout_width="314dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="-70dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/postbannerfront" />
-
     <TextView
-        android:id="@+id/role_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-225dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Driver"
-        android:textColor="@color/white"
-        android:textSize="65dp"
-        android:visibility="visible"
-        app:layout_constraintStart_toEndOf="@+id/role_banner"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/seat_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
-        android:text="3 seats"
-        android:textColor="@color/white"
-        android:textSize="45dp"
-        app:layout_constraintEnd_toEndOf="@+id/seat_count_banner"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/profile_description"
         android:layout_width="390dp"
         android:layout_height="234dp"
         android:layout_margin="10dp"
-        android:background="@android:drawable/editbox_background"
+        android:background="@drawable/edit_text_rounded_corner"
         android:color="@style/textInverse"
         android:elevation="5dp"
         android:enabled="true"
@@ -184,9 +201,24 @@
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.092" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/post_to_user_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="30dp"
+        android:text="Direct Message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
