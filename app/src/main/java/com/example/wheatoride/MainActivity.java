@@ -100,11 +100,6 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,requestRideFragment).commit();
                 }
 
-                if(item.getItemId()==R.id.menu_settings){
-                    searchFinder(settingsFragment);
-                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,settingsFragment).commit();
-                }
-
                 return true;
             }
         });
