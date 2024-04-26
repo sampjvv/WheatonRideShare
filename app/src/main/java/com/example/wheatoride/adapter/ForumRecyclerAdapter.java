@@ -22,6 +22,7 @@ import com.example.wheatoride.utils.AndroidUtil;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 
 import java.text.DateFormat;
@@ -72,7 +73,6 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
 
                         holder.deletePostButton.setOnClickListener(c -> {
                             FirebaseUtil.deletePost(model.getUserId(),model.getDescription());
-                            Log.d("DeletePostButton", "CLICK");
                         });
                     }
                 });
