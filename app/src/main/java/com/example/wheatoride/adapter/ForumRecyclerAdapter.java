@@ -14,19 +14,14 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.wheatoride.CreatePostActivity;
 import com.example.wheatoride.PostScreenActivity;
 import com.example.wheatoride.model.ForumModel;
-import com.example.wheatoride.ChatActivity;
 import com.example.wheatoride.R;
 import com.example.wheatoride.model.UserModel;
 import com.example.wheatoride.utils.AndroidUtil;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-
-import java.io.Serializable;
-import java.text.DateFormat;
 
 public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, ForumRecyclerAdapter.ForumModelViewHolder> {
 
@@ -51,8 +46,8 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
                         holder.usernameText.setText(otherUserModel.getFullName());
 
                         holder.description.setText(model.getDescription());
-                        holder.availableSeats.setText("# of seats:  " + model.getSeats());
-                        Log.d("seats: ", "seats: " + model.getSeats());
+                        holder.availableSeats.setText("# of seats:  " + model.getNumOfSeats());
+                        Log.d("seats: ", "seats: " + model.getNumOfSeats());
                         holder.location.setText(model.getLocation());
                         //holder.createdTimeStamp.setText(DateFormat.getDateInstance().format(model.getCreatedTimestamp().toDate()));
                         //holder.createdTimeStamp.setText(model.getCreatedTimestamp().toString());

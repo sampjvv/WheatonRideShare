@@ -1,6 +1,5 @@
 package com.example.wheatoride.model;
 
-import com.example.wheatoride.utils.FirebaseUtil;
 import com.google.firebase.Timestamp;
 
 public class ForumModel {
@@ -32,7 +31,7 @@ public class ForumModel {
 
     public String getLocation(){ return location;}
 
-    public String getSeats() {
+    public String getNumOfSeats() {
         return seats;
     }
 
@@ -48,7 +47,7 @@ public class ForumModel {
         this.description = description;
     }
 
-    public void setSeats(String seats) {
+    public void setNumOfSeats(String seats) {
         this.seats = seats;
     }
 
