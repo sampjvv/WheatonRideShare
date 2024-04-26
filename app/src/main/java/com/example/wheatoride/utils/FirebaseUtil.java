@@ -93,7 +93,12 @@ public static void deleteChatroomModel(String chatroomID){
         task.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                task.getResult().getDocuments().get(0).getReference().delete();
+                if(currentUserDetails().getId().equals(userId)) {
+                    task.getResult().getDocuments().get(0).getReference().delete();
+                    System.out.println("deleted");
+                } else {
+                    System.out.println("NOT deleted: " + currentUserDetails().getId() + " " + userId);
+                }
             }
         });
 
