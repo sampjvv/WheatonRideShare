@@ -46,17 +46,14 @@ public class PostScreenActivity extends AppCompatActivity {
     TextView vehicleNumSeats;
     TextView vehicleDescription;
 
-    Button directMsg;
-
     String userID;
 
     Switch driverSwitch;
-    LinearLayout vehicleInfoContainer;
-    Button updateProfileBtn;
-    ProgressBar progressBar;
     UserModel currentUserModel;
+
+    Button directMsg;
+    ImageButton backBtn;
     ImageButton confirmBtn;
-    ActivityResultLauncher<Intent> imagePickLauncher;
     Uri selectedImageUri;
 
     ForumRecyclerAdapter forum;
@@ -67,15 +64,18 @@ public class PostScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_screen);
 
+        currentUserModel = AndroidUtil.getUserModelFromIntent(getIntent());
         userInfo = getIntent().getExtras();
             //profile picture
         profilePic = findViewById(R.id.profile_image_view);
-        selectedImageUri = Uri.parse(userInfo.getString("profilepic"));
+        //selectedImageUri = Uri.parse(userInfo.getString("profilepic"));
+        selectedImageUri = Uri.parse(currentUserModel.getProfilePicUri());
         AndroidUtil.setProfilePic(getBaseContext(), Uri.parse(selectedImageUri.toString()), profilePic);
 
         //student name
         nameView = findViewById(R.id.student_name);
-        String nameOfUser = (String) userInfo.getString("name");
+        //String nameOfUser = (String) userInfo.getString("name");
+        String nameOfUser = currentUserModel.getFullName();
         nameView.setText(nameOfUser);
 
             //description
@@ -84,20 +84,30 @@ public class PostScreenActivity extends AppCompatActivity {
         descriptionInput.setText(descText);
 
             //role
-
+        //String role = curr
 
             //location
         location = findViewById(R.id.real_location);
-
+        String locationText = (String) userInfo.getString("location");
+        location.setText(locationText);
 
             //vehicle info
         vehicleModel = findViewById(R.id.real_car_model);
-        vehicleNumSeats = findViewById(R.id.seat_count_label);
-        //vehicleDescription = view.findViewById(R.id.vehicle_description);*/
+        String vehicleText = currentUserModel.getVehicleModel();
+        vehicleModel.setText(vehicleText);
+
+        vehicleNumSeats = findViewById(R.id.seat_count_header);
+        String seatCount = currentUserModel.getVehicleNumSeats();
+        vehicleNumSeats.setText(seatCount);
+
+            //back button
+        backBtn = findViewById(R.id.back_btn);
+        backBtn.setOnClickListener((v)-> getOnBackPressedDispatcher().onBackPressed());
+
+            //confirm button
         confirmBtn = findViewById(R.id.confirmRide);
         confirmBtn.setOnClickListener((v)-> {
             Intent intent = new Intent(this, ConfirmActivity.class);
-           // intent.putExtra("post", );
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         });
