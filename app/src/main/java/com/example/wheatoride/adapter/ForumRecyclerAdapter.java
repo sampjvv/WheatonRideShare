@@ -56,11 +56,14 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
 
                         holder.itemView.setOnClickListener(v -> {
                             Intent intent = new Intent(context, PostScreenActivity.class);
-                            Bundle bundle = new Bundle();
+                            AndroidUtil.passUserModelAsIntent(intent,otherUserModel);
 
+                            Bundle bundle = new Bundle();
                             bundle.putString("name", holder.usernameText.getText().toString());
                             bundle.putCharSequence("desc", model.getDescription());
                             bundle.putString("profilepic", otherUserModel.getProfilePicUri());
+                            bundle.putString("seats", model.getNumOfSeats());
+                            bundle.putString("location", model.getLocation());
                             intent.putExtras(bundle);
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -89,7 +92,7 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
         TextView usernameText;
         TextView createdTimeStamp;
         ImageView profilePic;
-        TextView location, seats, newNumOfSeats, deletePostButton;
+        TextView location, seats, deletePostButton, description;
 
         public ForumModelViewHolder(@NonNull View itemView) {
             super(itemView);
