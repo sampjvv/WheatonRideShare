@@ -100,9 +100,9 @@ public class PostScreenActivity extends AppCompatActivity {
         vehicleModel = findViewById(R.id.real_car_model);
         String vehicleText = currentUserModel.getVehicleModel();
         //Log.d("car model", vehicleText);
-        if(vehicleText.isEmpty())
+        /*if(vehicleText.isEmpty())
             vehicleModel.setText("?");
-        else
+        else*/
             vehicleModel.setText(vehicleText);
 
         vehicleNumSeats = findViewById(R.id.real_seat_count);
