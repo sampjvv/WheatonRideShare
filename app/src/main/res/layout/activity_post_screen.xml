@@ -4,189 +4,206 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#517D36"
+    android:background="@color/off_white"
     tools:context=".PostScreenActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+    <RelativeLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="400dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/student_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="Charles"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.71000004" />
-
-        <TextView
-            android:id="@+id/student_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="122379"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.9" />
-
-        <ImageView
-            android:id="@+id/profile_image_view"
-            android:layout_width="104dp"
-            android:layout_height="103dp"
-            android:background="@drawable/circular_bg"
-            android:backgroundTint="@color/primary"
-            android:scaleType="centerCrop"
-            android:src="@drawable/person_icon"
-            app:layout_constraintBottom_toTopOf="@+id/student_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="170dp"
-        android:layout_marginBottom="400dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/location_header"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="Location"
-            android:textAlignment="center"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/back_btn"
+            android:text="Post Details"
             android:textColor="@color/white"
-            android:textSize="35dp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/real_location"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_back" />
+        <ImageButton
+            android:id="@+id/confirmRide"
+            android:layout_width="52dp"
             android:layout_height="47dp"
-            android:fontFamily="sans-serif-medium"
-            android:text="Wheaton Downtown"
-            android:textAlignment="center"
-            android:textColor="#e2973b"
-            android:textSize="25dp" />
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/confirm_button"
+            android:backgroundTint="@color/gold"
+            android:text="Confirm Ride" />
+        />
+    </RelativeLayout>
 
-        <TextView
-            android:id="@+id/car_model_header"
+    <LinearLayout
+        android:id="@+id/vertical_info"
+        android:layout_width="400dp"
+        android:layout_height="550dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:id="@+id/name_and_profilepic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="Make of Car"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="35dp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/profile_image_view"
+                android:layout_width="104dp"
+                android:layout_height="103dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/circular_bg"
+                android:backgroundTint="@color/primary"
+                android:scaleType="centerCrop"
+                android:src="@drawable/person_icon" />
+
+            <TextView
+                android:id="@+id/student_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Charles"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/location_layout"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/location_header"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Location ->"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/real_location"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Wheaton Downtown"
+                android:textAlignment="center"
+                android:textColor="@color/orange"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/car_model_layout"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/car_model_header"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Make of Car ->"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/real_car_model"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Navy 2014\nChevy Cruze"
+                android:textAlignment="center"
+                android:textColor="@color/orange"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/seat_count_header"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Number of Seats ->"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/real_seat_count"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="_"
+                android:textAlignment="center"
+                android:textColor="@color/orange"
+                android:textSize="25dp" />
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/real_car_model"
+            android:id="@+id/profile_description"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="Navy 2014\nChevy Cruze"
-            android:textAlignment="center"
-            android:textColor="#e2973b"
-            android:textSize="25dp" />
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_rounded_corner"
+            android:color="@style/textInverse"
+            android:elevation="5dp"
+            android:enabled="true"
+            android:gravity="top|start"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            android:maxLength="150"
+            android:textColor="@color/black"
+            android:textSize="24dp" />
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/seat_count_banner"
-        android:layout_width="249dp"
-        android:layout_height="104dp"
-        android:layout_marginTop="-12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/postbannerback" />
-
-    <ImageView
-        android:id="@+id/role_banner"
-        android:layout_width="314dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="-70dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/postbannerfront" />
-
-    <TextView
-        android:id="@+id/role_label"
+    <Button
+        android:id="@+id/post_to_user_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="-225dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Driver"
-        android:textColor="@color/white"
-        android:textSize="65dp"
-        android:visibility="visible"
-        app:layout_constraintStart_toEndOf="@+id/role_banner"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/seat_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
-        android:text="3 seats"
-        android:textColor="@color/white"
-        android:textSize="45dp"
-        app:layout_constraintEnd_toEndOf="@+id/seat_count_banner"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/profile_description"
-        android:layout_width="390dp"
-        android:layout_height="234dp"
-        android:layout_margin="10dp"
-        android:background="@android:drawable/editbox_background"
-        android:color="@style/textInverse"
-        android:elevation="5dp"
-        android:enabled="true"
-        android:gravity="top|start"
-        android:hint="Description"
-        android:inputType="textMultiLine"
-        android:maxLength="150"
-        android:padding="10dp"
-        android:textColor="@color/black"
-        android:textSize="24dp"
+        android:text="Direct Message"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.092" />
+        app:layout_constraintTop_toBottomOf="@+id/vertical_info" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

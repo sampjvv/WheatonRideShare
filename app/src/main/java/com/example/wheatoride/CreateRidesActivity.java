@@ -21,6 +21,7 @@ import com.example.wheatoride.model.ForumModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -67,12 +68,12 @@ public class CreateRidesActivity extends AppCompatActivity {
 
 
         createPostButton.setOnClickListener(v-> {
-            forumModel = new ForumModel(text.toString());
             postText = text.getText().toString();
-            saveCurrentTime = FirebaseUtil.timestampToString(Timestamp.now());
+            saveCurrentTime = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(Timestamp.now().toDate()).toString();
             numOfSeats = availbaleSeatsText.getText().toString();
-
             location = locationEdit.getText().toString();
+            forumModel = new ForumModel(numOfSeats,text.toString(),location,saveCurrentTime);
+
             savingPostInformationToDatabase();
             Intent intent = new Intent(this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -81,28 +82,30 @@ public class CreateRidesActivity extends AppCompatActivity {
         });
 
     }
-    void savingPostInformationToDatabase(){
-        Map<String,String> postMap = new HashMap<>();
-        postMap.put("userId", currentUserID);
-        postMap.put("description", postText);
-        postMap.put("numOfSeats", numOfSeats);
-        postMap.put("postTimeStamp", saveCurrentTime);
-        postMap.put("location", location);
+    void savingPostInformationToDatabase() {
+        if (!postText.equals("") && !location.equals("") && !numOfSeats.equals("")) {
 
-        postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Log.d(TAG, "DocumentSnapshot added with ID " + documentReference.getId());
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.w(TAG, "Error adding document");
-            }
-        });
+            Map<String, String> postMap = new HashMap<>();
+            postMap.put("userId", currentUserID);
+            postMap.put("description", postText);
+            postMap.put("numOfSeats", numOfSeats);
+            postMap.put("postTimeStamp", saveCurrentTime);
+            postMap.put("location", location);
 
+            postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                @Override
+                public void onSuccess(DocumentReference documentReference) {
+                    Log.d(TAG, "DocumentSnapshot added with ID " + documentReference.getId());
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.w(TAG, "Error adding document");
+                }
+            });
+
+        }
     }
-
 
 
 

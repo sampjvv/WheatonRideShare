@@ -38,6 +38,9 @@
             android:name=".CreatePostActivity"
             android:exported="false" />
         <activity
+            android:name=".PostScreenActivity"
+            android:exported="false" />
+        <activity
             android:name=".ConfirmActivity"
             android:exported="false" />
 
