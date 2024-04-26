@@ -260,10 +260,6 @@
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_search_user.xml"
     },
     {
-        "merged": "com.example.wheatoride.app-debug-46:/layout_forum_create_post.xml.flat",
-        "source": "com.example.wheatoride.app-main-48:/layout/forum_create_post.xml"
-    },
-    {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-47:\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
@@ -320,16 +316,16 @@
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\drawable\\launcher_icon.png"
     },
     {
+        "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_post_screen.xml.flat",
+        "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_post_screen.xml"
+    },
+    {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\drawable_phone_icon.xml.flat",
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\drawable\\phone_icon.xml"
     },
     {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\xml\\data_extraction_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_post_screen.xml.flat",
-        "source": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_post_screen.xml"
     },
     {
         "merged": "C:\\Users\\sampe\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\mipmap-hdpi_ic_launcher_round.png.flat",
