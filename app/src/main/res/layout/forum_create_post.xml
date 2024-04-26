@@ -1,101 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="-90dp">
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:padding="10dp">
 
-        <RelativeLayout
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/primary"
-            android:padding="10dp">
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/back_btn"
+            android:text="Create Post"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
-                android:layout_toRightOf="@id/back_btn"
-                android:text="Create Post"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+    </RelativeLayout>
 
-            <ImageButton
-                android:id="@+id/back_btn"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_centerVertical="true"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/icon_back" />
+    <!-- Post Text -->
+    <EditText
+        android:id="@+id/post_text"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="10dp"
+        android:background="@drawable/edit_text_rounded_corner"
+        android:color="@style/textInverse"
+        android:elevation="5dp"
+        android:enabled="true"
+        android:gravity="top|start"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:maxLength="150"
+        android:padding="10dp"
+        android:textColor="@color/black" />
 
-        </RelativeLayout>
+    <!-- Create Location Text -->
 
+    <!-- Available Seats Text -->
+    <EditText
+        android:id="@+id/create_location_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/post_text"
+        android:layout_margin="10dp"
+        android:layout_marginTop="-184dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_text_rounded_corner"
+        android:color="@style/textInverse"
+        android:elevation="5dp"
+        android:enabled="true"
+        android:gravity="top|start"
+        android:hint="where?"
+        android:inputType="textMultiLine"
+        android:maxLength="150"
+        android:padding="10dp"
+        android:textColor="@color/black" />
 
-        <EditText
-            android:id="@+id/post_text"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/edit_text_rounded_corner"
-            android:color="@style/textInverse"
-            android:elevation="5dp"
-            android:enabled="true"
-            android:gravity="top|start"
-            android:hint="Description"
-            android:inputType="textMultiLine"
-            android:maxLength="150"
-            android:padding="10dp"
-            android:textColor="@color/black" />
+    <EditText
+        android:id="@+id/avalible_seats_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/create_location_text"
+        android:layout_margin="10dp"
+        android:background="@drawable/edit_text_rounded_corner"
+        android:color="@style/textInverse"
+        android:elevation="5dp"
+        android:enabled="true"
+        android:gravity="top|start"
+        android:hint="number of seats"
+        android:inputType="textMultiLine"
+        android:maxLength="150"
+        android:padding="10dp"
+        android:textColor="@color/black" />
 
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/save_new_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/avalible_seats_text"
+        android:text="save and post" />
 
-
-        <EditText
-            android:id="@+id/create_location_text"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/edit_text_rounded_corner"
-            android:elevation="5dp"
-            android:enabled="true"
-            android:hint="where?"
-            android:inputType="textMultiLine"
-            android:padding="10dp"
-            android:color="@style/textInverse"
-            android:maxLength="150"
-            android:textColor="@color/black"
-            android:gravity="top|start"/>
-
-        <EditText
-            android:id="@+id/avalible_seats_text"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/edit_text_rounded_corner"
-            android:color="@style/textInverse"
-            android:elevation="5dp"
-            android:enabled="true"
-            android:gravity="top|start"
-            android:hint="number of seats"
-            android:inputType="textMultiLine"
-            android:maxLength="150"
-            android:padding="10dp"
-            android:textColor="@color/black" />
-
-        <Button
-            android:id="@+id/save_new_post"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="save and post" />
-
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

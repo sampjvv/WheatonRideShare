@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/off_white"
     tools:context=".PostScreenActivity">
 
@@ -12,21 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/primary"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:layout_toRightOf="@id/back_btn"
-            android:text="Post Details"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+        android:padding="10dp">
 
         <ImageButton
             android:id="@+id/back_btn"
@@ -35,6 +20,19 @@
             android:layout_centerVertical="true"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/back_btn"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="Post Details"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
         <ImageButton
             android:id="@+id/confirmRide"
             android:layout_width="52dp"
@@ -43,21 +41,19 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
             android:background="@drawable/confirm_button"
-            android:backgroundTint="@color/gold"
-            android:text="Confirm Ride" />
-        />
+            android:backgroundTint="@color/gold" />
     </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/vertical_info"
         android:layout_width="400dp"
         android:layout_height="550dp"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        android:orientation="vertical">
 
+        <!-- Include all child LinearLayouts and their children here, positioning them relative to each other -->
         <LinearLayout
             android:id="@+id/name_and_profilepic"
             android:layout_width="match_parent"
@@ -195,15 +191,13 @@
 
     </LinearLayout>
 
+
     <Button
         android:id="@+id/post_to_user_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/vertical_info"
+        android:layout_centerHorizontal="true"
+        android:text="Direct Message" />
 
-        android:text="Direct Message"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vertical_info" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
