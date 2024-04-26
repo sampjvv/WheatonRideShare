@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,26 +66,30 @@ public class PostScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_post_screen);
 
         currentUserModel = AndroidUtil.getUserModelFromIntent(getIntent());
+
         userInfo = getIntent().getExtras();
             //profile picture
         profilePic = findViewById(R.id.profile_image_view);
-        //selectedImageUri = Uri.parse(userInfo.getString("profilepic"));
         selectedImageUri = Uri.parse(currentUserModel.getProfilePicUri());
         AndroidUtil.setProfilePic(getBaseContext(), Uri.parse(selectedImageUri.toString()), profilePic);
 
+            //role
+        Boolean driver = currentUserModel.isDriver();
+        Log.d("role", driver.toString());
+        String roleText = driver ? "Driver" : "Passenger";
+
         //student name
         nameView = findViewById(R.id.student_name);
-        //String nameOfUser = (String) userInfo.getString("name");
         String nameOfUser = currentUserModel.getFullName();
         nameView.setText(nameOfUser);
+
+        /*String nameAndRole = nameOfUser + " (" + roleText + ")";
+        nameView.setText(nameAndRole);*/
 
             //description
         descriptionInput = findViewById(R.id.profile_description);
         CharSequence descText = userInfo.getCharSequence("desc");
         descriptionInput.setText(descText);
-
-            //role
-        //String role = curr
 
             //location
         location = findViewById(R.id.real_location);
@@ -94,10 +99,15 @@ public class PostScreenActivity extends AppCompatActivity {
             //vehicle info
         vehicleModel = findViewById(R.id.real_car_model);
         String vehicleText = currentUserModel.getVehicleModel();
-        vehicleModel.setText(vehicleText);
+        //Log.d("car model", vehicleText);
+        if(vehicleText.isEmpty())
+            vehicleModel.setText("?");
+        else
+            vehicleModel.setText(vehicleText);
 
-        vehicleNumSeats = findViewById(R.id.seat_count_header);
-        String seatCount = currentUserModel.getVehicleNumSeats();
+        vehicleNumSeats = findViewById(R.id.real_seat_count);
+        String seatCount = (String) userInfo.getString("seats");
+        //String seatCount = currentUserModel.getVehicleNumSeats();
         vehicleNumSeats.setText(seatCount);
 
             //back button
