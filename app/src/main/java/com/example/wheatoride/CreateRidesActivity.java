@@ -82,7 +82,7 @@ public class CreateRidesActivity extends AppCompatActivity {
 
     }
     void savingPostInformationToDatabase() {
-        if (!postText.equals("") && !location.equals("")) {
+        if (!postText.equals("") && !location.equals("") && !numOfSeats.equals("")) {
 
             Map<String, String> postMap = new HashMap<>();
             postMap.put("userId", currentUserID);

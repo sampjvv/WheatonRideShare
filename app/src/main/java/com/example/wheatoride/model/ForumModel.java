@@ -1,12 +1,11 @@
 package com.example.wheatoride.model;
 
-import com.example.wheatoride.utils.FirebaseUtil;
 import com.google.firebase.Timestamp;
 
 public class ForumModel {
     private String username;
     private String description;
-    private String seats;
+    private String numOfSeats;
     private String userId;
     private String location;
     private Timestamp createdTimestamp;
@@ -16,7 +15,7 @@ public class ForumModel {
     }
 
     public ForumModel( String seats, String description, String location,Timestamp time){
-        this.seats = seats;
+        this.numOfSeats = seats;
         this.location = location;
         this.description = description;
         this.createdTimestamp = time;
@@ -32,9 +31,7 @@ public class ForumModel {
 
     public String getLocation(){ return location;}
 
-    public String getSeats() {
-        return seats;
-    }
+    public String getNumOfSeats() {return numOfSeats;}
 
     public String getUserId () {return userId; }
 
@@ -48,15 +45,14 @@ public class ForumModel {
         this.description = description;
     }
 
-    public void setSeats(String seats) {
-        this.seats = seats;
-    }
+    public void setNumOfSeats(String numOfSeats) {this.numOfSeats = numOfSeats;}
 
     public void setUserId(String userId) {
         this.userId = userId;
     }
 
     public void setLocation(String location){this.location = location;}
+
     public void setCreatedTimestamp(Timestamp createdTimestamp) {
         this.createdTimestamp = createdTimestamp;
     }
