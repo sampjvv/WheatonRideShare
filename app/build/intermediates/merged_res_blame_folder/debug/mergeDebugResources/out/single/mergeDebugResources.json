@@ -120,12 +120,12 @@
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\profile_pic_view.xml"
     },
     {
-        "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_login_google.xml.flat",
-        "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_login_google.xml"
-    },
-    {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\drawable_icon_search.xml.flat",
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\drawable\\icon_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_login_google.xml.flat",
+        "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_login_google.xml"
     },
     {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_test.xml.flat",
@@ -138,10 +138,6 @@
     {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_search_ride.xml.flat",
         "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_search_ride.xml"
-    },
-    {
-        "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\layout_activity_post_screen_2.xml.flat",
-        "source": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-main-48:\\layout\\activity_post_screen_2.xml"
     },
     {
         "merged": "C:\\Users\\sarah\\.gradle\\daemon\\8.6\\com.example.wheatoride.app-debug-46:\\mipmap-xxhdpi_ic_launcher_round.png.flat",

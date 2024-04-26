@@ -8,17 +8,17 @@ public class ForumModel {
     private String numOfSeats;
     private String userId;
     private String location;
-    private Timestamp createdTimestamp;
+    private String postTimeStamp;
 
 
     public ForumModel() {
     }
 
-    public ForumModel( String seats, String description, String location,Timestamp time){
+    public ForumModel( String seats, String description, String location,String time){
         this.numOfSeats = seats;
         this.location = location;
         this.description = description;
-        this.createdTimestamp = time;
+        this.postTimeStamp = time;
     }
 
     public String getUsername() {
@@ -35,7 +35,7 @@ public class ForumModel {
 
     public String getUserId () {return userId; }
 
-    public Timestamp getCreatedTimestamp () {return createdTimestamp; }
+    public String getPostTimeStamp() {return postTimeStamp; }
 
     public void setUsername(String username) {
         this.username = username;
@@ -53,8 +53,8 @@ public class ForumModel {
 
     public void setLocation(String location){this.location = location;}
 
-    public void setCreatedTimestamp(Timestamp createdTimestamp) {
-        this.createdTimestamp = createdTimestamp;
+    public void setPostTimeStamp(String postTimeStamp) {
+        this.postTimeStamp = postTimeStamp;
     }
 
 

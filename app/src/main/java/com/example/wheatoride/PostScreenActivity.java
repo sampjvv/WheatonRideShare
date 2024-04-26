@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -54,7 +55,7 @@ public class PostScreenActivity extends AppCompatActivity {
     Button updateProfileBtn;
     ProgressBar progressBar;
     UserModel currentUserModel;
-
+    ImageButton confirmBtn;
     ActivityResultLauncher<Intent> imagePickLauncher;
     Uri selectedImageUri;
 
@@ -65,6 +66,7 @@ public class PostScreenActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_screen);
+
         userInfo = getIntent().getExtras();
             //profile picture
         profilePic = findViewById(R.id.profile_image_view);
@@ -92,7 +94,13 @@ public class PostScreenActivity extends AppCompatActivity {
         vehicleModel = findViewById(R.id.real_car_model);
         vehicleNumSeats = findViewById(R.id.seat_count_label);
         //vehicleDescription = view.findViewById(R.id.vehicle_description);*/
-
+        confirmBtn = findViewById(R.id.confirmRide);
+        confirmBtn.setOnClickListener((v)-> {
+            Intent intent = new Intent(this, ConfirmActivity.class);
+           // intent.putExtra("post", );
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        });
             //message button
         directMsg = findViewById(R.id.post_to_user_button);
         directMsg.setOnClickListener((v)-> {

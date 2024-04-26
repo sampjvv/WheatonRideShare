@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.timepicker.TimeFormat;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
@@ -23,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.text.DateFormat;
 
 public class CreatePostActivity extends AppCompatActivity {
 
@@ -68,10 +70,10 @@ public class CreatePostActivity extends AppCompatActivity {
 
         createPostButton.setOnClickListener(v-> {
             postText_s = descriptionEditText.getText().toString();
-            saveCurrentTime_s = FirebaseUtil.timestampToString(Timestamp.now());
+            saveCurrentTime_s = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(Timestamp.now().toDate()).toString();
             numOfSeats_s = seatsEditText.getText().toString();
             location_s = locationEditText.getText().toString();
-            forumModel = new ForumModel(numOfSeats_s,descriptionEditText.toString(), location_s, Timestamp.now());
+            forumModel = new ForumModel(numOfSeats_s,descriptionEditText.toString(), location_s, saveCurrentTime_s);
 
             savingPostInformationToDatabase();
             Intent intent = new Intent(this, MainActivity.class);
@@ -89,6 +91,7 @@ public class CreatePostActivity extends AppCompatActivity {
             postMap.put("numOfSeats", numOfSeats_s);
             postMap.put("postTimeStamp", saveCurrentTime_s);
             postMap.put("location", location_s);
+
 
 
             postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

@@ -21,6 +21,7 @@ import com.example.wheatoride.model.ForumModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,10 +69,10 @@ public class CreateRidesActivity extends AppCompatActivity {
 
         createPostButton.setOnClickListener(v-> {
             postText = text.getText().toString();
-            saveCurrentTime = FirebaseUtil.timestampToString(Timestamp.now());
+            saveCurrentTime = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(Timestamp.now().toDate()).toString();
             numOfSeats = availbaleSeatsText.getText().toString();
             location = locationEdit.getText().toString();
-            forumModel = new ForumModel(numOfSeats,text.toString(),location,Timestamp.now());
+            forumModel = new ForumModel(numOfSeats,text.toString(),location,saveCurrentTime);
 
             savingPostInformationToDatabase();
             Intent intent = new Intent(this, MainActivity.class);

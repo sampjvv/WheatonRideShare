@@ -3,6 +3,7 @@ package com.example.wheatoride.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,9 @@ import com.example.wheatoride.utils.AndroidUtil;
 import com.example.wheatoride.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+
+import java.text.DateFormat;
 
 public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, ForumRecyclerAdapter.ForumModelViewHolder> {
 
@@ -44,8 +48,10 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
                         AndroidUtil.setProfilePic(context, Uri.parse(otherUserModel.getProfilePicUri()),holder.profilePic);
                         holder.usernameText.setText(otherUserModel.getFullName());
 
-                        holder.location.setText(model.getLocation());
-                        holder.seats.setText(model.getNumOfSeats());
+
+                        holder.location.setText("location: " + model.getLocation());
+                        holder.seats.setText("# of people: " + model.getNumOfSeats());
+                        holder.createdTimeStamp.setText(model.getPostTimeStamp());
 
 
                         holder.itemView.setOnClickListener(v -> {
@@ -59,6 +65,11 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
+                        });
+
+                        holder.deletePostButton.setOnClickListener(c -> {
+                            FirebaseUtil.deletePost(model.getUserId(),model.getDescription());
+                            Log.d("DeletePostButton", "CLICK");
                         });
                     }
                 });
@@ -78,7 +89,7 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
         TextView usernameText;
         TextView createdTimeStamp;
         ImageView profilePic;
-        TextView location, seats, newNumOfSeats;
+        TextView location, seats, newNumOfSeats, deletePostButton;
 
         public ForumModelViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,6 +98,7 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
             createdTimeStamp = itemView.findViewById(R.id.post_time_text);
             location = itemView.findViewById(R.id.location_text);
             seats = itemView.findViewById(R.id.post_seats_text);
+            deletePostButton = itemView.findViewById(R.id.delete_post_button);
 
         }
     }

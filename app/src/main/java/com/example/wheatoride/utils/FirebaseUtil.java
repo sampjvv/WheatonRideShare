@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
@@ -83,6 +84,68 @@ public static void deleteChatroomModel(String chatroomID){
                     }
                 });
     }
+
+    public static void deletePost(String userId, String description){
+
+        String TAG = "FirebaseUtil:DeletePost";
+        Log.d(TAG, "deletePostEntered");
+        CollectionReference postCollection = FirebaseFirestore.getInstance().collection("posts");
+
+        Task<QuerySnapshot> task = postCollection.whereEqualTo("chatroomId", userId).whereEqualTo("description",description)
+                        .get();
+
+        if (task.isSuccessful()){
+            for (DocumentSnapshot document : task.getResult().getDocuments()) {
+                document.getReference().delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "Post document with userId: " + userId + " & description: " + description + " deleted successfully");
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.e(TAG, "Error deleting chatroom document with userId: " + userId + " & description: " + description , e);
+                            }
+                        });
+            }
+
+        }
+
+/**
+        postCollection.whereEqualTo("chatroomId", userId).whereEqualTo("description",description)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot querySnapshot) {
+                        for (DocumentSnapshot document : querySnapshot.getDocuments()) {
+                            document.getReference().delete()
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Log.d(TAG, "Post document with userId: " + userId + " & description: " + description + " deleted successfully");
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e(TAG, "Error deleting chatroom document with userId: " + userId + " & description: " + description , e);
+                                        }
+                                    });
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e("DeleteChatroom", "Error getting chatroom documents", e);
+                    }
+                });
+ **/
+    }
+
+
 
     public static String getChatroomId(String userId1,String userId2){
         if(userId1.hashCode()<userId2.hashCode()){
