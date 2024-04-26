@@ -5,37 +5,20 @@ import com.google.firebase.Timestamp;
 public class ForumModel {
     private String username;
     private String description;
-    private String seats;
+    private String numOfSeats;
     private String userId;
     private String location;
-    private Timestamp createdTimestamp;
+    private String postTimeStamp;
 
 
-    public ForumModel(){
-        this.userId = "";
-        seats = "";
-        description = "";
-        username = "";
-        location = "";
-        createdTimestamp  = Timestamp.now();
-
+    public ForumModel() {
     }
 
-    public ForumModel(String description){
-        this.userId = "";
-        seats = "";
-        this.description = description;
-        username = "";
-        createdTimestamp  = Timestamp.now();
-    }
-
-    public ForumModel(String username, String seats, String description, String userId, String location, Timestamp createdTimestamp){
-        this.seats = seats;
+    public ForumModel( String seats, String description, String location,String time){
+        this.numOfSeats = seats;
         this.location = location;
         this.description = description;
-        this.username = username;
-        this.userId = userId;
-        this.createdTimestamp = createdTimestamp;
+        this.postTimeStamp = time;
     }
 
     public String getUsername() {
@@ -48,13 +31,11 @@ public class ForumModel {
 
     public String getLocation(){ return location;}
 
-    public String getSeats() {
-        return seats;
-    }
+    public String getNumOfSeats() {return numOfSeats;}
 
     public String getUserId () {return userId; }
 
-    public Timestamp getCreatedTimestamp () {return createdTimestamp; }
+    public String getPostTimeStamp() {return postTimeStamp; }
 
     public void setUsername(String username) {
         this.username = username;
@@ -64,17 +45,16 @@ public class ForumModel {
         this.description = description;
     }
 
-    public void setSeats(String seats) {
-        this.seats = seats;
-    }
+    public void setNumOfSeats(String numOfSeats) {this.numOfSeats = numOfSeats;}
 
     public void setUserId(String userId) {
         this.userId = userId;
     }
 
     public void setLocation(String location){this.location = location;}
-    public void setCreatedTimestamp(Timestamp createdTimestamp) {
-        this.createdTimestamp = createdTimestamp;
+
+    public void setPostTimeStamp(String postTimeStamp) {
+        this.postTimeStamp = postTimeStamp;
     }
 
 
