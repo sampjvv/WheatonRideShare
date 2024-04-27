@@ -118,6 +118,10 @@ public class PostScreenActivity extends AppCompatActivity {
         confirmBtn = findViewById(R.id.confirmRide);
         confirmBtn.setOnClickListener((v)-> {
             Intent intent = new Intent(this, ConfirmActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("userID", userInfo.getString("userID"));
+            bundle.putCharSequence("description", userInfo.getCharSequence("desc"));
+            intent.putExtras(bundle);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         });
