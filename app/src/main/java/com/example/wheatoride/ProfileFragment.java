@@ -143,17 +143,22 @@ public class ProfileFragment extends Fragment {
                 setInProgress(false);
                 return;
             }
-            currentUserModel.setDriver(true);
+            currentUserModel.setDriver(isDriver);
             currentUserModel.setVehicleModel(newVehicleModel);
             currentUserModel.setVehicleNumSeats(newVehicleNumSeats);
             currentUserModel.setVehicleDescription(newVehicleDescription);
+        } else {
+            currentUserModel.setDriver(isDriver);
+            currentUserModel.setVehicleModel("");
+            currentUserModel.setVehicleNumSeats("");
+            currentUserModel.setVehicleDescription("");
         }
 
         //profile pic
         if(selectedImageUri!=null){
-            String finalSuccessMessage = successMessage;
-            FirebaseUtil.getCurrentProfilePicStorageRef().putFile(selectedImageUri)
-                    .addOnCompleteListener(task -> updateToFirestore(finalSuccessMessage));
+            System.out.println("model set profile pic set");
+            currentUserModel.setProfilePicUri(selectedImageUri.toString());
+            updateToFirestore(successMessage);
         }else{
             updateToFirestore(successMessage);
         }

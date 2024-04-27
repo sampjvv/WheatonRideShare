@@ -157,6 +157,8 @@ public static void deleteChatroomModel(String chatroomID){
     }
 
     public static StorageReference  getCurrentProfilePicStorageRef(){
+        System.out.println("profilePicUri " + FirebaseStorage.getInstance().getReference().child("profilePicUri")
+                .child(FirebaseUtil.currentUserId()));
         return FirebaseStorage.getInstance().getReference().child("profilePicUri")
                 .child(FirebaseUtil.currentUserId());
     }
