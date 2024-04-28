@@ -5,7 +5,6 @@ import com.google.firebase.Timestamp;
 public class UserModel {
     private String email;
     private String fullName;
-    private String phoneNumber;
     private String profilePicUri;
     private Timestamp createdTimestamp;
     private String userId;
@@ -130,11 +129,5 @@ public class UserModel {
     public void setVehicleDescription(String vehicleDescription) {
         this.vehicleDescription = vehicleDescription;
     }
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 }

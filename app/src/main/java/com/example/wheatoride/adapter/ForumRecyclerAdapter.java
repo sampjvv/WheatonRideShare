@@ -65,6 +65,7 @@ public class ForumRecyclerAdapter extends FirestoreRecyclerAdapter<ForumModel, F
                             bundle.putString("profilepic", otherUserModel.getProfilePicUri());
                             bundle.putString("seats", model.getNumOfSeats());
                             bundle.putString("location", model.getLocation());
+                            bundle.putString("userID", model.getUserId());
                             intent.putExtras(bundle);
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

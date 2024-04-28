@@ -93,7 +93,26 @@ public static void deleteChatroomModel(String chatroomID){
         task.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                task.getResult().getDocuments().get(0).getReference().delete();
+                if(currentUserDetails().getId().equals(userId)) {
+                    task.getResult().getDocuments().get(0).getReference().delete();
+                    System.out.println("deleted");
+                } else {
+                    System.out.println("NOT deleted: " + currentUserDetails().getId() + " " + userId);
+                }
+            }
+        });
+
+    }
+    public static void confirmPost(String userId, String description){
+
+        Task<QuerySnapshot> task  = allPostsCollectionReference().whereEqualTo("userId",userId).whereEqualTo("description",description).get();
+        task.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                    task.getResult().getDocuments().get(0).getReference().delete();
+                    System.out.println("deleted");
+
             }
         });
 
@@ -152,6 +171,8 @@ public static void deleteChatroomModel(String chatroomID){
     }
 
     public static StorageReference  getCurrentProfilePicStorageRef(){
+        System.out.println("profilePicUri " + FirebaseStorage.getInstance().getReference().child("profilePicUri")
+                .child(FirebaseUtil.currentUserId()));
         return FirebaseStorage.getInstance().getReference().child("profilePicUri")
                 .child(FirebaseUtil.currentUserId());
     }

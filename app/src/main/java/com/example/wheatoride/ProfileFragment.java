@@ -33,7 +33,6 @@ public class ProfileFragment extends Fragment {
     ImageView profilePic;
     TextView nameView;
     TextView emailView;
-    EditText phoneInput;
     EditText descriptionInput;
     Switch driverSwitch;
     LinearLayout vehicleInfoContainer;
@@ -76,7 +75,6 @@ public class ProfileFragment extends Fragment {
         descriptionInput = view.findViewById(R.id.profile_description);
         nameView = view.findViewById(R.id.profile_name);
         emailView = view.findViewById(R.id.profile_email);
-        phoneInput = view.findViewById(R.id.profile_phone_number);
         driverSwitch = view.findViewById(R.id.profile_switch);
         vehicleInfoContainer = view.findViewById(R.id.vehicle_info_container);
         vehicleModel = view.findViewById(R.id.vehicle_model);
@@ -124,14 +122,6 @@ public class ProfileFragment extends Fragment {
 
         String successMessage = "Updated successfully";
 
-        //phone number
-        String newPhone = phoneInput.getText().toString();
-        if(newPhone.isEmpty()){
-            successMessage = successMessage + "; empty phone number";
-        }
-        //TODO: set up area code picker
-        currentUserModel.setPhoneNumber(newPhone);
-
         //description
         String newDescription = descriptionInput.getText().toString();
         if(newDescription.isEmpty()){
@@ -153,17 +143,22 @@ public class ProfileFragment extends Fragment {
                 setInProgress(false);
                 return;
             }
-            currentUserModel.setDriver(true);
+            currentUserModel.setDriver(isDriver);
             currentUserModel.setVehicleModel(newVehicleModel);
             currentUserModel.setVehicleNumSeats(newVehicleNumSeats);
             currentUserModel.setVehicleDescription(newVehicleDescription);
+        } else {
+            currentUserModel.setDriver(isDriver);
+            currentUserModel.setVehicleModel("");
+            currentUserModel.setVehicleNumSeats("");
+            currentUserModel.setVehicleDescription("");
         }
 
         //profile pic
         if(selectedImageUri!=null){
-            String finalSuccessMessage = successMessage;
-            FirebaseUtil.getCurrentProfilePicStorageRef().putFile(selectedImageUri)
-                    .addOnCompleteListener(task -> updateToFirestore(finalSuccessMessage));
+            System.out.println("model set profile pic set");
+            currentUserModel.setProfilePicUri(selectedImageUri.toString());
+            updateToFirestore(successMessage);
         }else{
             updateToFirestore(successMessage);
         }
@@ -207,7 +202,6 @@ public class ProfileFragment extends Fragment {
             descriptionInput.setText(currentUserModel.getDescription());
             nameView.setText(currentUserModel.getFullName());
             emailView.setText(currentUserModel.getEmail());
-            phoneInput.setText(currentUserModel.getPhoneNumber());
             vehicleModel.setText(currentUserModel.getVehicleModel());
             vehicleNumSeats.setText(currentUserModel.getVehicleNumSeats());
             vehicleDescription.setText(currentUserModel.getVehicleDescription());

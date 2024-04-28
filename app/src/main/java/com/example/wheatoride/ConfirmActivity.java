@@ -25,7 +25,9 @@ public class ConfirmActivity extends AppCompatActivity {
             startActivity(intent);
         });
         confirm.setOnClickListener((v)-> {
-
+            if(extras.get("userID") != null && extras.get("description") != null){
+           FirebaseUtil.confirmPost(extras.get("userID").toString(), extras.get("description").toString());
+            }
             Intent intent = new Intent(this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);

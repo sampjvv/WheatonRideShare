@@ -23,6 +23,10 @@ public class AndroidUtil {
        intent.putExtra("fcmToken",model.getFcmToken());
        intent.putExtra("profilePicUri",model.getProfilePicUri());
        intent.putExtra("description",model.getDescription());
+       intent.putExtra("isDriver",model.isDriver());
+       intent.putExtra("vehicleModel",model.getVehicleModel());
+       intent.putExtra("vehicleDescription",model.getVehicleDescription());
+       intent.putExtra("vehicleNumSeats",model.getVehicleNumSeats());
     }
 
     public static UserModel getUserModelFromIntent(Intent intent){
@@ -33,6 +37,9 @@ public class AndroidUtil {
         userModel.setFcmToken(intent.getStringExtra("fcmToken"));
         userModel.setProfilePicUri(intent.getStringExtra("profilePicUri"));
         userModel.setDescription(intent.getStringExtra("description"));
+        userModel.setDriver(intent.getBooleanExtra("isDriver", false));
+        userModel.setVehicleModel(intent.getStringExtra("vehicleModel"));
+        userModel.setVehicleDescription(intent.getStringExtra("vehicleDescription"));
         return userModel;
     }
 

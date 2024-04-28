@@ -51,8 +51,8 @@
     <!-- User profile info -->
     <LinearLayout
         android:id="@+id/vertical_info"
-        android:layout_width="400dp"
-        android:layout_height="550dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
