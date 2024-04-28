@@ -2,6 +2,8 @@ package com.example.wheatoride.model;
 
 import com.google.firebase.Timestamp;
 
+import java.util.Map;
+
 public class ForumModel {
     private String username;
     private String description;
@@ -23,6 +25,13 @@ public class ForumModel {
         isConfirmed = "false";
     }
 
+    public ForumModel(Map<String,Object> map){
+        this.numOfSeats = map.get("numOfSeats").toString();
+        this.location = map.get("location").toString();
+        this.description = map.get("description").toString();
+        this.postTimeStamp = map.get("postTimeStamp").toString();
+        isConfirmed = "false";
+    }
     public String getUsername() {
         return username;
     }

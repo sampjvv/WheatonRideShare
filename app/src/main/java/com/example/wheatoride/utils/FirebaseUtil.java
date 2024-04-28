@@ -5,6 +5,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.wheatoride.model.ForumModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -22,6 +23,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Map;
 
 public class FirebaseUtil {
 
@@ -133,12 +135,21 @@ public static void deleteChatroomModel(String chatroomID){
                             @Override
                             public void onComplete (@NonNull Task < QuerySnapshot > task) {
                                 if(task.getResult().getDocuments().size() == 0){
-                                    deleteRide(userId,description);
+
+                                    confirmRide(userId,description);
+
 
                                 }else{
 
+                                    if(task.getResult().getDocuments().get(0).getString("isConfirmed").equals("true") && currentUserDetails().getId().equals(userId)){
                                         task.getResult().getDocuments().get(0).getReference().delete();
-                                        System.out.println("deleted");
+                                    }else{
+                                        ForumModel trueForumModel = new ForumModel(task.getResult().getDocuments().get(0).getData());
+                                        trueForumModel.setIsConfirmed("true");
+                                        Map<String, Object> information = task.getResult().getDocuments().get(0).getData();
+                                        trueForumModel.setUserId(information.get("userId").toString());
+                                        task.getResult().getDocuments().get(0).getReference().set(trueForumModel);
+                                    }
 
                                 }
                             }
@@ -154,6 +165,26 @@ public static void deleteChatroomModel(String chatroomID){
         });
 
 
+    }
+    public static void confirmRide(String userId, String description){
+
+        Task<QuerySnapshot> task  = allRidesCollectionRefrence().whereEqualTo("userId",userId).whereEqualTo("description",description).get();
+        task.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.getResult().getDocuments().get(0).getString("isConfirmed").equals("true") && currentUserDetails().getId().equals(userId)){
+                    task.getResult().getDocuments().get(0).getReference().delete();
+                }else{
+                    ForumModel trueForumModel = new ForumModel(task.getResult().getDocuments().get(0).getData());
+                    trueForumModel.setIsConfirmed("true");
+                    Map<String, Object> information = task.getResult().getDocuments().get(0).getData();
+                    trueForumModel.setUserId(information.get("userId").toString());
+                    task.getResult().getDocuments().get(0).getReference().set(trueForumModel);
+                }
+
+                }
+
+        });
     }
 
     public static void deleteRide(String userId, String description){
