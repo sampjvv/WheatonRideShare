@@ -126,20 +126,38 @@ public static void deleteChatroomModel(String chatroomID){
     }
     public static void confirmPost(String userId, String description){
         Task<QuerySnapshot> task  = allPostsCollectionReference().whereEqualTo("userId",userId).whereEqualTo("description",description).get();
-            task.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                    if(!task.getResult().getDocuments().isEmpty()) {
-                        task.getResult().getDocuments().get(0).getReference().delete();
-                    }
+        task.addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                task.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>()
+                        {
+                            @Override
+                            public void onComplete (@NonNull Task < QuerySnapshot > task) {
+                                if(task.getResult().getDocuments().size() == 0){
+                                    deleteRide(userId,description);
 
-                }
-            });
+                                }else{
+
+                                        task.getResult().getDocuments().get(0).getReference().delete();
+                                        System.out.println("deleted");
+
+                                }
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                deleteRide(userId,description);
+                                Log.e("FirebaseUtil", "Error getting offer post documents", e);
+                            }
+                        });
+            }
+        });
 
 
     }
 
-    public static void deleteRide(String userId, String description)
+    public static void deleteRide(String userId, String description){
 
         Task<QuerySnapshot> task  = allRidesCollectionRefrence().whereEqualTo("userId",userId).whereEqualTo("description",description).get();
             task.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
