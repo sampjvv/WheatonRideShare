@@ -97,10 +97,9 @@ public static void deleteChatroomModel(String chatroomID){
                 {
                     @Override
                     public void onComplete (@NonNull Task < QuerySnapshot > task) {
-                        if(task.getResult().getDocuments().size() == 0){
-                            deleteRide(userId,description);
-
-                            }else{
+                        if(task.getResult().getDocuments().size() == 0) {
+                            deleteRide(userId, description);
+                        }else{
                             if (currentUserDetails().getId().equals(userId)) {
                                 task.getResult().getDocuments().get(0).getReference().delete();
                                 System.out.println("deleted");
@@ -163,7 +162,12 @@ public static void deleteChatroomModel(String chatroomID){
             task.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                    task.getResult().getDocuments().get(0).getReference().delete();
+                    if (currentUserDetails().getId().equals(userId)) {
+                        task.getResult().getDocuments().get(0).getReference().delete();
+                        System.out.println("deleted");
+                    } else {
+                        System.out.println("NOT deleted: " + currentUserDetails().getId() + " " + userId);
+                    }
                 }
             });
     }
