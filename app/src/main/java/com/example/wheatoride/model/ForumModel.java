@@ -9,6 +9,7 @@ public class ForumModel {
     private String userId;
     private String location;
     private String postTimeStamp;
+    private boolean isConfirmed;
 
 
     public ForumModel() {
@@ -19,6 +20,7 @@ public class ForumModel {
         this.location = location;
         this.description = description;
         this.postTimeStamp = time;
+        isConfirmed = false;
     }
 
     public String getUsername() {
@@ -57,5 +59,11 @@ public class ForumModel {
         this.postTimeStamp = postTimeStamp;
     }
 
+    public boolean isConfirmed() {
+        return isConfirmed;
+    }
 
+    public void setConfirmed(boolean confirmed) {
+        isConfirmed = confirmed;
+    }
 }

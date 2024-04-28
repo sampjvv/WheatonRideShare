@@ -91,6 +91,7 @@ public class CreatePostActivity extends AppCompatActivity {
             postMap.put("numOfSeats", numOfSeats_s);
             postMap.put("postTimeStamp", saveCurrentTime_s);
             postMap.put("location", location_s);
+            postMap.put("isConfirmed", "false");
 
 
 
