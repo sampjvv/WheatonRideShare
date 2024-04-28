@@ -91,6 +91,7 @@ public class CreateRidesActivity extends AppCompatActivity {
             postMap.put("numOfSeats", numOfSeats);
             postMap.put("postTimeStamp", saveCurrentTime);
             postMap.put("location", location);
+            postMap.put("isConfirmed", "false");
 
             postRef.add(postMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                 @Override
